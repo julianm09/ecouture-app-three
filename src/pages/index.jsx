@@ -11,8 +11,9 @@ const Page = ({ title }) => {
   useStore.setState({ title })
   return (
     <>
+    
       <Sphere r3f />
-     
+  
     </>
   )
 }

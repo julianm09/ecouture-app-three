@@ -2,8 +2,11 @@ import { Canvas } from '@react-three/fiber'
 import { Perf } from 'r3f-perf'
 import useStore from '@/helpers/store'
 import { OrbitControls, Preload } from '@react-three/drei'
-import { a, useSpring } from '@react-spring/three'
+import { a, useSpring, PerspectiveCamera } from '@react-spring/three'
 import { A11yUserPreferences } from '@react-three/a11y'
+
+const Controls = OrbitControls;
+
 
 const Bg = () => {
   const router = useStore((state) => state.router)
@@ -27,7 +30,7 @@ const LCanvas = ({ children }) => {
       }}
     >
 
-        <OrbitControls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
+        <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
         {children}
 
     </Canvas>

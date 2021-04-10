@@ -63,13 +63,13 @@ const nextConfig =
       }
     : {}
 
-// manage i18n
+/* // manage i18n
 if (process.env.EXPORT !== 'true') {
   nextConfig.i18n = {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   }
-}
+} */
 
 module.exports = plugins(
   [
@@ -107,3 +107,10 @@ module.exports = plugins(
   ],
   nextConfig
 )
+
+
+module.exports = {
+  future: {
+    webpack5: true,
+  },
+}
