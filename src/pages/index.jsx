@@ -2,6 +2,7 @@ import useStore from '@/helpers/store'
 import dynamic from 'next/dynamic'
 import Go from '@/components/dom/go'
 
+
 const Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
   ssr: false,
 })
@@ -11,7 +12,7 @@ const Page = ({ title }) => {
   return (
     <>
       <Sphere r3f />
-      <Go />
+     
     </>
   )
 }

@@ -13,23 +13,23 @@ const Bg = () => {
   return <a.color attach='background' r={bg} g={bg} b={bg} />
 }
 const LCanvas = ({ children }) => {
+
+
   return (
     <Canvas
       style={{
         position: 'absolute',
         top: 0,
+        background: 'none'
       }}
       onCreated={({ events }) => {
         useStore.setState({ events })
       }}
     >
-      <A11yUserPreferences>
-        <Preload all />
-        <Bg />
-        <Perf openByDefault trackGPU={true} position={'bottom-right'} />
-        <OrbitControls />
+
+        <OrbitControls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
         {children}
-      </A11yUserPreferences>
+
     </Canvas>
   )
 }
