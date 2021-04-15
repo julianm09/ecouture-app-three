@@ -1,18 +1,16 @@
-import useStore from '@/helpers/store'
-import dynamic from 'next/dynamic'
-import Go from '@/components/dom/go'
+import ThreeCanvas from '../components/layout/_canvas'
 
 
-const Sphere = dynamic(() => import('@/components/canvas/Sphere'), {
-  ssr: false,
-})
 
-const Page = ({ title }) => {
-  useStore.setState({ title })
+
+
+const Page = () => {
+
   return (
     <>
     
-      <Sphere r3f />
+    <ThreeCanvas/>
+      
   
     </>
   )
@@ -20,10 +18,4 @@ const Page = ({ title }) => {
 
 export default Page
 
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Sphere',
-    },
-  }
-}
+

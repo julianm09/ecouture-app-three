@@ -108,9 +108,3 @@ module.exports = plugins(
   nextConfig
 )
 
-
-module.exports = {
-  future: {
-    webpack5: true,
-  },
-}

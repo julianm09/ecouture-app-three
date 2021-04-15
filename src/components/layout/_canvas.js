@@ -1,21 +1,57 @@
 import { Canvas } from '@react-three/fiber'
-import { Perf } from 'r3f-perf'
-import useStore from '@/helpers/store'
 import { OrbitControls, Preload } from '@react-three/drei'
 import { a, useSpring, PerspectiveCamera } from '@react-spring/three'
-import { A11yUserPreferences } from '@react-three/a11y'
+import { A11yUserPreferences } from '@react-three/a11y';
+import EarthUI from '../Earth'
+
+// Lights
+function KeyLight({ brightness, color }) {
+  return (
+    <rectAreaLight
+      width={10}
+      height={10}
+      color={color}
+      intensity={brightness}
+      position={[-2, 0, 5]}
+      lookAt={[0, 0, 0]}
+      penumbra={1}
+    />
+  );
+}
+function FillLight({ brightness, color }) {
+  return (
+    <rectAreaLight
+      width={10}
+      height={10}
+      intensity={brightness}
+      color={color}
+      position={[2, 1, 4]}
+      lookAt={[0, 0, 0]}
+      penumbra={2}
+      
+    />
+  );
+}
+
+function RimLight({ brightness, color }) {
+  return (
+    <rectAreaLight
+      width={10}
+      height={10}
+      intensity={brightness}
+      color={color}
+      position={[-1, 4, -2]}
+      rotation={[0, 180, 0]}
+      
+    />
+  );
+}
+
 
 const Controls = OrbitControls;
 
 
-const Bg = () => {
-  const router = useStore((state) => state.router)
-  const { bg } = useSpring({
-    bg: router && router.route !== '/box' ? 0 : 0x17 / 255,
-  })
-  return <a.color attach='background' r={bg} g={bg} b={bg} />
-}
-const LCanvas = ({ children }) => {
+const ThreeCanvas = ({ children }) => {
 
 
   return (
@@ -25,16 +61,19 @@ const LCanvas = ({ children }) => {
         top: 0,
         background: 'none'
       }}
-      onCreated={({ events }) => {
-        useStore.setState({ events })
-      }}
+
     >
+      <KeyLight/>
+      <RimLight/>
+      <FillLight/>
+
+      <EarthUI/>
 
         <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
-        {children}
+     
 
     </Canvas>
   )
 }
 
-export default LCanvas
+export default ThreeCanvas
