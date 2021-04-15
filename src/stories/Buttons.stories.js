@@ -1,4 +1,5 @@
 import React from 'react';
+import './stories.css';
 
 import { StoreInside } from '../components/StoreInside';
 import { StartButton } from '../components/StartButton';

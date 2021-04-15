@@ -51,7 +51,7 @@ function RimLight({ brightness, color }) {
 const Controls = OrbitControls;
 
 
-const ThreeCanvas = ({ children }) => {
+const ThreeCanvas = ({ hide, setHide }) => {
 
 
   return (
@@ -59,7 +59,8 @@ const ThreeCanvas = ({ children }) => {
       style={{
         position: 'absolute',
         top: 0,
-        background: 'none'
+        background: 'none',
+        zIndex: hide ? -100 : 0
       }}
 
     >

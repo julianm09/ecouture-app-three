@@ -17,7 +17,7 @@ align-items: center;
 color: white;
 flex-direction: column;
 transition: 1s ease-out;
-z-index: 100;
+z-index: 1000;
 
 
 `
@@ -79,9 +79,13 @@ cursor: pointer;
 
 
 
-export const Menu = ({ label="hey" }) => {
+export const Menu = ({ hide, setHide }) => {
 
     const [menuActive, setMenuActive] = useState(false)
+    const handleClick = () => {
+        setMenuActive(!menuActive)
+        setHide(!hide)
+    }
 
   return (
     <>
@@ -98,10 +102,10 @@ export const Menu = ({ label="hey" }) => {
           
             {menuActive ? (  
             <Icon.X 
-            onClick={() => setMenuActive(!menuActive)}/>
+            onClick={handleClick}/>
             ) : (            
             <Icon.Menu 
-                onClick={() => setMenuActive(!menuActive)}/>
+            onClick={handleClick}/>
             )}
 
         </IconUI>
