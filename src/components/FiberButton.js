@@ -53,7 +53,7 @@ export const FiberButton = ({
 }) => {
     return (
     
-        <FiberButtonUI bg={bgcolor} textCol={textCol} borderStyle={borderStyle}>
+        <FiberButtonUI onClick={() => console.log('click')}bg={bgcolor} textCol={textCol} borderStyle={borderStyle}>
             <FiberImg>ImageHere</FiberImg>
                 <FiberText>
                     <FiberNameText>

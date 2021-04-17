@@ -85,7 +85,7 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
     const [menuActive, setMenuActive] = useState(false)
     const handleClick = () => {
         setMenuActive(!menuActive)
-        setHide(!hide)
+
      
     }
 
