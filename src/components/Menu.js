@@ -17,7 +17,7 @@ align-items: center;
 color: white;
 flex-direction: column;
 transition: 1s ease-out;
-z-index: 1000;
+z-index: 100;
 
 
 `
@@ -43,6 +43,7 @@ position: absolute;
 top: 0;
 z-index: 100;
 font-size: 18px;
+z-index: 200;
 
 
 `
@@ -79,12 +80,13 @@ cursor: pointer;
 
 
 
-export const Menu = ({ hide, setHide }) => {
+export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white' }) => {
 
     const [menuActive, setMenuActive] = useState(false)
     const handleClick = () => {
         setMenuActive(!menuActive)
         setHide(!hide)
+     
     }
 
   return (
@@ -92,10 +94,10 @@ export const Menu = ({ hide, setHide }) => {
 
     <NavBarUI
         style={{
-            background: colors.blue
+            background: menuColor
         }}>
 
-        <img src='/logo-small.png'/>
+        {menuActive ? <img src='/logo-small.png'/> : <img src={logo}/>}
 
         <IconUI>
 
@@ -105,6 +107,9 @@ export const Menu = ({ hide, setHide }) => {
             onClick={handleClick}/>
             ) : (            
             <Icon.Menu 
+            style={{
+                color:iconColor
+            }}
             onClick={handleClick}/>
             )}
 

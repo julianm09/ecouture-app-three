@@ -4,6 +4,8 @@ import { a, useSpring } from '@react-spring/three'
 import Model from './Earth'
 
 
+
+
 const EarthUI = () => {
 
 

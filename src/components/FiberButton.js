@@ -13,7 +13,7 @@ const FiberButtonUI = styled.div `
 
     &>* {
         color: ${props=>props.textCol};
-        font-family: 'Nunito Sans';
+        font-family: 'Nunito';
     }
 
     &:focus{
