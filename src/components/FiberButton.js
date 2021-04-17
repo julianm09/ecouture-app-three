@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { color } from './color'
+import { color } from './color';
 
+ 
 const FiberButtonUI = styled.div `
     display: flex;
-    width: 365px;
+    width: 90vw;
     height: 75px;
     box-shadow: 0px 4px 4px rgba(128,128,128,0.5);
     border-radius: 10px;
