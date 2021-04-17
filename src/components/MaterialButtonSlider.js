@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { color } from './color'
+import { colors } from './color'
 import * as Icon from 'react-feather';
 
 
 
 
 const ContainerUI = styled.div`
+
 width: 90vw;
 
 `
@@ -17,7 +18,7 @@ font-family: Nunito;
 font-style: normal;
 font-weight: bold;
 font-size: 24px;
-color: grey;
+color: white;
 padding: 0 0 50px 0;
 
 
@@ -25,10 +26,24 @@ padding: 0 0 50px 0;
 
 const ScrollContainerUI = styled.div`
 
+
+overflow-x: scroll;
+
+
+&::-webkit-scrollbar {
+    display: none;
+    
+  }
+
+
+`
+const Scroll = styled.div`
+
+-webkit-overflow-scrolling: touch;
+width: 200vw;
 display: flex;
 flex-direction: row;
-overflow: scroll;
-width: 200vw;
+
 
 `
 
@@ -55,7 +70,7 @@ margin: 0 0 25px 0;
 
 `
 
-export const MaterialButtonSlider = ({ materialType="plant", materialColor="#51B27E"}) => {
+export const MaterialButtonSlider = ({ materialType="Plant", materialColor=colors.green, materialIcon='/plant-icon.png'}) => {
 
     const materials = [
 
@@ -77,17 +92,22 @@ export const MaterialButtonSlider = ({ materialType="plant", materialColor="#51B
 
         <ScrollContainerUI>
 
+            <Scroll>
+
             {materials.map(el => {
                 return(
                     <MaterialCardUI
+
                     style={{
                         background: materialColor
                     }}>
-                        <MaterialIconUI src='/plant-icon.png'/>
+                        <MaterialIconUI src={materialIcon}/>
                         {el.type}
                     </MaterialCardUI>
                 )
             })}
+
+</Scroll>
 
         </ScrollContainerUI>
 
