@@ -42,9 +42,12 @@ const ResourcesButtonUI = styled.button`
   align-items: center;
 `
 
-export const AboutResourcesCont = () => {
+export const AboutResourcesCont = ({margin}) => {
   return (
-    <AboutResourcesContUI>
+    <AboutResourcesContUI
+    style={{
+        margin: margin
+    }}>
       <AboutButtonUI
         style={{
           background: colors.green,
