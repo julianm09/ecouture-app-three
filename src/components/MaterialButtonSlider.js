@@ -7,7 +7,7 @@ import * as Icon from 'react-feather';
 
 
 const ContainerUI = styled.div`
-
+width: 90vw;
 
 `
 

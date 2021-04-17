@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { color } from '../public/color'
+import { color } from '../components/color'
 
 const TopText = styled.div`
 
