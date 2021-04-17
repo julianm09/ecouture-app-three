@@ -18,7 +18,7 @@ const StartButtonUI = styled.button`
 
     `
 
-export const StartButton = () => {
+export const StartButton = ({}) => {
 
     return (
         <StartButtonUI

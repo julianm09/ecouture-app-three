@@ -1,6 +1,3 @@
-import useStore from '@/helpers/store'
-import { Badge } from '@pmndrs/branding'
-import Head from 'next/head'
 import { Menu } from './Menu'
 import styled from 'styled-components';
 
