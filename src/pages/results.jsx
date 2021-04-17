@@ -50,9 +50,10 @@ font-family: Nunito;
 
 export const ResultsPage = () => {
 
-    const [hide, setHide] = useState(false)
+  const [hide, setHide] = useState(false)
 
   return (
+
     <Container>
     
     <Menu hide={hide} setHide={setHide} logo='/logo-small-blue.png' iconColor={colors.blue} />
@@ -63,6 +64,7 @@ export const ResultsPage = () => {
       <Results>Click the points to see your impact on the earth</Results>
     
     </Container>
+
   )
 }
 
