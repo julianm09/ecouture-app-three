@@ -4,7 +4,7 @@ import { colors } from './color'
 
 const AboutResourcesContUI = styled.div`
   height: 75px;
-  width: 365px;
+  width: 90vw;
   border-style: solid;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.5);
@@ -15,7 +15,7 @@ const AboutResourcesContUI = styled.div`
 `
 const AboutButtonUI = styled.div`
   height: 75px;
-  width: 182.5px;
+  width: 50%;
   border-style: solid;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.5);
@@ -28,7 +28,7 @@ const AboutButtonUI = styled.div`
 
 const RightButtonUI = styled.div`
   height: 75px;
-  width: 182.5px;
+  width: 50%;
   border-style: solid;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.5);

@@ -8,7 +8,7 @@ const RecycleButtonUI = styled.div`
     justify-content: center;
     align-items: center;
     height: 75px;
-    width: 365px;
+    width: 90vw;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.5);
@@ -21,7 +21,7 @@ const RecycleButtonUI = styled.div`
 
     `
 
-export const RecycleButton = ({ margin, bgColor = colors.green, buttonText = 'Thrift' }) => {
+export const RecycleButton = ({ margin = '20px 0 20px 0', bgColor = colors.green, buttonText = 'Thrift' }) => {
 
     return (
         <RecycleButtonUI

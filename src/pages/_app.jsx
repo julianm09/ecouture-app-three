@@ -19,7 +19,7 @@ function MyApp({ }) {
 
     <>
 
-
+    <MaterialsPage pageColor={colors.green}/>
 
 
 
