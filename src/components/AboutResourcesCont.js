@@ -55,6 +55,7 @@ export const AboutResourcesCont = ({ margin, bgColor = colors.green, buttonText 
       style={{
         margin: margin,
       }}>
+
       <AboutButtonUI
         onClick={() => setMySwitch(false)}
 

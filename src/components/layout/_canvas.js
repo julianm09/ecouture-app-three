@@ -1,8 +1,19 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload } from '@react-three/drei'
+import { Canvas, useThree } from '@react-three/fiber'
+import { Html, OrbitControls, Preload, Sphere } from '@react-three/drei'
 import { a, useSpring, PerspectiveCamera } from '@react-spring/three'
 import { A11yUserPreferences } from '@react-three/a11y';
-import EarthUI from '../Earth'
+import EarthUI from '../Earth';
+import styled from 'styled-components';
+import { colors } from '../color'
+
+
+const Point = styled.div`
+  width: 25px;
+  height:25px;
+  background: ${colors.green};
+  border-radius: 50%;
+  cursor: pointer;
+`
 
 // Lights
 function KeyLight({ brightness, color }) {
@@ -51,6 +62,8 @@ function RimLight({ brightness, color }) {
 const Controls = OrbitControls;
 
 
+
+
 const ThreeCanvas = ({ hide, setHide }) => {
 
 
@@ -69,6 +82,11 @@ const ThreeCanvas = ({ hide, setHide }) => {
       <FillLight/>
 
       <EarthUI/>
+
+      <Html position={[-1, 1, 1]}><Point/></Html>
+      <Html position={[1, 1, -1]}><Point/></Html>
+      <Html position={[1, -1, 1]}><Point/></Html>
+      <Html position={[-1, -1, -1]}><Point/></Html>
 
         <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
      
