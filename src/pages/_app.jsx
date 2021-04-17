@@ -16,7 +16,7 @@ function MyApp({ }) {
 
     <>
 
-      <TestPage pageColor={colors.blue} />
+
 
 
 
