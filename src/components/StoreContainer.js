@@ -5,10 +5,11 @@ import { StoreInside } from '../components/StoreInside';
 
 const StoreContainerUI = styled.div`
 
-width: 500px;
-height: 400px;
+width: 100vw;
 display: flex;
 flex-direction: column;
+align-items: center;
+justify-content: center;
 
 
 `

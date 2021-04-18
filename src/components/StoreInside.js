@@ -3,12 +3,10 @@ import styled from 'styled-components';
 
 const StoreInsideUI = styled.div`
 
-width: 400px;
+width: 90vw;
 height: 75px;
 font-size: 18pt;
 font-family: 'Nunito', sans-serif;
-background: blue;
-background-image: url("/public/wildthrift.jpg");
 border-radius: 15px;
 box-shadow: 0px 5px 8px #888888;
 display: flex;
@@ -19,6 +17,8 @@ text-align: center;
 justify-content: center;
 margin-bottom: 25px;
 overflow: hidden;
+object-fit: contain;
+position: relative;
 `
 
 const StoreSubheadUI = styled.div`
@@ -26,15 +26,38 @@ const StoreSubheadUI = styled.div`
 font-size: 10pt;
 color: white;
 font-family: 'Open Sans', sans-serif;
+z-index: 100;
+`
+const ImageFilter = styled.div`
+background: #3884FF;
+opacity: 70%;
+position: absolute;
+z-index: 0;
+top: 0;
+width: 100%;
+height: 100%;
+`
+const StoreText = styled.div`
+z-index: 100;
 `
 
-export const StoreInside = () => {
+export const StoreInside = ({ storeImage='/store-wildlife.jpeg', storeName='Wildlife Thrift Store', storeLocation='456 Robson St Vancouver'}) => {
 
     return (
 
         <StoreInsideUI>
-            Wildlife Thrift Store
-            <StoreSubheadUI>456 Robson St Vancouver</StoreSubheadUI></StoreInsideUI>
+          <StoreText>{storeLocation}</StoreText>
+          <StoreSubheadUI>{storeName}</StoreSubheadUI>
+          <ImageFilter/>
+          <img src={storeImage} style={{
+            zIndex: '-100',
+            position: 'absolute',
+            top: '-60px',
+           
+          }}></img>
+            
+            </StoreInsideUI>
+            
 
     )
 

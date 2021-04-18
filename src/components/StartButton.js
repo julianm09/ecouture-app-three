@@ -14,17 +14,16 @@ const StartButtonUI = styled.div`
     border-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    background-color: ;
+    background: #3884ff;
     color: white;
     font-size: 24px;
     font-weight: bold;
     font-family: Nunito;
 
-    
 
     `
 
-export const StartButton = ({}) => {
+export const StartButton = () => {
 
     return (
         <StartButtonUI>Get Started</StartButtonUI>
