@@ -6,7 +6,7 @@ import { StoreContainer } from '../components/StoreContainer'
 import { MaterialButtonSlider } from '../components/MaterialButtonSlider'
 import { StoreText } from '@/components/StoreText';
 
-export const LearnFibersPage = ({
+const LearnFibersPage = ({
     pageColor=colors.teal,
     fiberName='Cotton',
     
@@ -71,3 +71,5 @@ const [changePage, setChangePage] = useState('cotton')
         </div>
     )
 }
+
+export default LearnFibersPage
