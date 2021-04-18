@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from './color'
-
 import * as Icon from 'react-feather';
+import { useRouter } from 'next/router'
+
 
 
 
@@ -80,12 +81,18 @@ cursor: pointer;
 
 
 
-export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white' }) => {
+export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white', three=false }) => {
 
+
+    const router = useRouter()
+    
     const [menuActive, setMenuActive] = useState(false)
     const handleClick = () => {
         setMenuActive(!menuActive)
-
+        
+        if (three){
+            setHide(!hide)
+        }
      
     }
 
@@ -97,7 +104,7 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
             background: menuColor
         }}>
 
-        {menuActive ? <img src='/logo-small.png'/> : <img src={logo}/>}
+        {menuActive ? <img onClick={() => router.push('/results')} src='/logo-small.png'/> : <img onClick={() => router.push('/results')} src={logo}/>}
 
         <IconUI>
 

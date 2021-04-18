@@ -10,7 +10,7 @@ const EarthUI = () => {
 
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div>loading</div>}>
 
         <Model />
     
