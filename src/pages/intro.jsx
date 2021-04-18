@@ -5,7 +5,7 @@ import { RoundBlueButton } from '@/components/RoundBlueButton';
 
 
 
-export const IntroPage = ({ pageColor }) => {
+const IntroPage = ({ pageColor }) => {
 
     const [mySwitch, setMySwitch] = useState(false)
     
@@ -31,3 +31,5 @@ export const IntroPage = ({ pageColor }) => {
     </div>
     )
 }
+
+export default IntroPage
