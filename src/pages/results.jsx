@@ -1,7 +1,7 @@
 import ThreeCanvas from '../components/layout/_canvas'
 
 import { Menu } from '../components/Menu'
-
+/* import '../styles/index.module.css'*/
 import React, { useState } from 'react';
 import { colors } from '@/components/color';
 import styled from 'styled-components';
@@ -62,6 +62,33 @@ const Results = () => {
     <Score>Eco Score: 70%</Score>
       
       <ResultsUI>Click the points to see your impact on the earth</ResultsUI>
+
+
+      <style jsx global>{`
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Nunito;
+  
+}
+
+* {
+
+margin: 0
+}
+
+a{
+color: white;
+}
+`}
+</style>
     
     </Container>
 
