@@ -19,7 +19,7 @@ function MyApp({ }) {
 
     <>
  
-    <StorePage></StorePage>
+
 
     </>
 
