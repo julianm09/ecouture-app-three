@@ -5,6 +5,9 @@ import { Menu } from '../components/Menu'
 import React, { useState } from 'react';
 import { colors } from '@/components/color';
 import styled from 'styled-components';
+import {useSpring, animated} from 'react-spring'
+
+
 
 const Container = styled.div`
 
@@ -30,12 +33,19 @@ font-family: Nunito;
 
 `
 
+const Space = styled.div`
+
+width: 10px;
+
+
+`
+
 const ResultsUI = styled.div`
 
 width: 100vw;
 min-height: 100px;
 position: absolute;
-bottom: 10vh;
+bottom: 5vh;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -50,16 +60,25 @@ font-family: Nunito;
 
 const Results = () => {
 
+  const props = useSpring({ 
+  config: { duration: 2250 }, 
+  number: 70, from: { number: 0 },
+  })
+
+
   const [hide, setHide] = useState(false)
 
   return (
 
     <Container>
     
-    <Menu hide={hide} setHide={setHide} logo='/logo-small-blue.png' iconColor={colors.blue} />
+    <Menu hide={hide} setHide={setHide} logo='/logo-small-blue.png' iconColor={colors.blue} three={true} />
     <ThreeCanvas r3f hide={hide} setHide={setHide}/>
 
-    <Score>Eco Score: 70%</Score>
+    <Score>
+    {`Your Eco Score`}<Space></Space><animated.span>{props.number.interpolate(val => Math.floor(val))}</animated.span>
+    </Score>
+
       
       <ResultsUI>Click the points to see your impact on the earth</ResultsUI>
 

@@ -67,8 +67,11 @@ export const DialogueUI = styled.div`
   width: 100vw;
   color: white;
   transition: 1s ease;
-  height: 20vh;
+  height: 10vh;
   width: 90vw;
+  position: absolute;
+  bottom: 1vh;
+  text-align: center;
 
 `;
 

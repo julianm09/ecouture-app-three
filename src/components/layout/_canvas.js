@@ -5,6 +5,8 @@ import { A11yUserPreferences } from '@react-three/a11y';
 import EarthUI from '../Earth';
 import styled from 'styled-components';
 import { colors } from '../color'
+import { useRouter } from 'next/router'
+
 
 
 const Point = styled.div`
@@ -66,6 +68,8 @@ const Controls = OrbitControls;
 
 const ThreeCanvas = ({ hide, setHide }) => {
 
+  const router = useRouter()
+
 
   return (
     <Canvas
@@ -83,10 +87,18 @@ const ThreeCanvas = ({ hide, setHide }) => {
 
       <EarthUI/>
 
-      <Html position={[-1, 1, 1]}><Point/></Html>
-      <Html position={[1, 1, -1]}><Point/></Html>
-      <Html position={[1, -1, 1]}><Point/></Html>
-      <Html position={[-1, -1, -1]}><Point/></Html>
+      <Html position={[-1, 1, 1]}>
+        <Point onClick={() => router.push('/material')}/>
+      </Html>
+      <Html position={[1, 1, -1]}>
+        <Point onClick={() => router.push('/store')}/>
+      </Html>
+      <Html position={[1, -1, 1]}>
+        <Point onClick={() => router.push('/learn')}/>
+      </Html>
+      <Html position={[-1, -1, -1]}>
+        <Point onClick={() => router.push('/home')}/>
+      </Html>
 
         <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
      
