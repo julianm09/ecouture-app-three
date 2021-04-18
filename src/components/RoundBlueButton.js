@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { color } from '../components/color'
+import { colors } from '../components/color'
 
-const RoundBlueButtonUI = styled.button `
+const RoundBlueButtonUI = styled.div `
 height: 50px;
 width: 370px;
 border-radius: 10px;
-background-color: ${color.blue};
+background-color: ${props=>props.bgcolor};
 margin-top: 20px;
 font-family: 'Nunito',sans-serif;
 font-size: x-large;
 color: white;
 border: 1px solid white;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0px 4px 4px rgba(0,0,0,.25);
 `
 
 const RoundButtonContainer = styled.div`
@@ -39,18 +43,14 @@ margin-bottom: 50px;
 `
 
 
-export const RoundBlueButton = () => {
+export const RoundBlueButton = ({
+    buttonText = 'Burnaby',
+    bgcolor = colors.blue,
+}) => {
 
     return (
-
-        <RoundButtonContainer>
-            <TopText>Where are you located?</TopText>
-        <RoundBlueButtonUI>Burnaby</RoundBlueButtonUI>
-        <RoundBlueButtonUI>Vancouver</RoundBlueButtonUI>
-        <RoundBlueButtonUI>North Vancouver</RoundBlueButtonUI>
-        <RoundBlueButtonUI>Richmond</RoundBlueButtonUI>
-        <BottomText>Shopping online contributes significantly more waste than in store.</BottomText>
-       </RoundButtonContainer>
+        
+        <RoundBlueButtonUI bgcolor={bgcolor}>{buttonText}</RoundBlueButtonUI>
         
     )
 }
