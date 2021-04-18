@@ -7,69 +7,66 @@ import { colors } from '../components/color';
 import styled from 'styled-components';
 import { StoreContainer } from '@/components/StoreContainer';
 
+const Material = styled.div`
 
+display: flex;
+text-align: left;
+align-self: flex;
+margin: 150px 0 0 0;
+width: 90vw;
 
-export const MaterialsPage = ({ pageColor, materialText='Bamboo', materialType='Plant', materialImage='/plant-icon.png', materialInfo='Bamboo requires no need for pesticides or fertilizers'}) => {
+color: white;
+font-size: 36px; 
+font-family: Nunito;
+font-weight: bold;
+
+`
+
+const MaterialType = styled.div`
+
+display: flex;
+text-align: left;
+align-self: flex;
+margin: 10px 0 0 0;
+width: 90vw;
+
+color: white;
+font-size: 18px; 
+font-family: Open Sans;
+
+`
+
+const SubHeading = styled.div`
+
+display: flex;
+text-align: left;
+align-self: flex;
+margin: 40px 0 20px 0;
+width: 90vw;
+
+color: white;
+font-size: 24px; 
+font-family: Open Sans;
+
+`
+
+const MaterialInfo = styled.div`
+
+display: flex;
+text-align: left;
+align-self: flex;
+margin: 15px 0 100px 0;
+width: 90vw;
+
+color: white;
+font-size: 18px; 
+font-family: Open Sans;
+
+`
+
+const MaterialsPage = ({ pageColor, materialText='Bamboo', materialType='Plant', materialImage='/plant-icon.png', materialInfo='Bamboo requires no need for pesticides or fertilizers'}) => {
 
     const [mySwitch, setMySwitch] = useState(false)
-
-    const Material = styled.div`
-
-    display: flex;
-    text-align: left;
-    align-self: flex;
-    margin: 150px 0 0 0;
-    width: 90vw;
-
-    color: white;
-    font-size: 36px; 
-    font-family: Nunito;
-    font-weight: bold;
-
-    `
-
-    const MaterialType = styled.div`
-
-    display: flex;
-    text-align: left;
-    align-self: flex;
-    margin: 10px 0 0 0;
-    width: 90vw;
-
-    color: white;
-    font-size: 18px; 
-    font-family: Open Sans;
-
-    `
-
-    const SubHeading = styled.div`
-
-    display: flex;
-    text-align: left;
-    align-self: flex;
-    margin: 40px 0 20px 0;
-    width: 90vw;
-
-    color: white;
-    font-size: 24px; 
-    font-family: Open Sans;
-
-    `
-
-    const MaterialInfo = styled.div`
-
-    display: flex;
-    text-align: left;
-    align-self: flex;
-    margin: 15px 0 100px 0;
-    width: 90vw;
-
-    color: white;
-    font-size: 18px; 
-    font-family: Open Sans;
-
-    `
-
 
 
     return (
@@ -123,5 +120,5 @@ export const MaterialsPage = ({ pageColor, materialText='Bamboo', materialType='
     )
 }
 
-
+export default MaterialsPage
 

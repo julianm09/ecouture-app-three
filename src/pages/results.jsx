@@ -30,7 +30,7 @@ font-family: Nunito;
 
 `
 
-const Results = styled.div`
+const ResultsUI = styled.div`
 
 width: 100vw;
 min-height: 100px;
@@ -48,7 +48,7 @@ font-family: Nunito;
 
 
 
-export const ResultsPage = () => {
+const Results = () => {
 
   const [hide, setHide] = useState(false)
 
@@ -61,7 +61,7 @@ export const ResultsPage = () => {
 
     <Score>Eco Score: 70%</Score>
       
-      <Results>Click the points to see your impact on the earth</Results>
+      <ResultsUI>Click the points to see your impact on the earth</ResultsUI>
     
     </Container>
 
@@ -70,3 +70,4 @@ export const ResultsPage = () => {
 
 
 
+export default Results
