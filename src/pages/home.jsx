@@ -1,5 +1,5 @@
 import { FormButton } from "../components/FormButton";
-import { SurveyPage } from "./survey";
+import { SurveyPage } from "../components/survey";
 /* import '../styles/index.module.css' */
 import React, { useState } from "react";
 
