@@ -34,10 +34,11 @@ const [changePage, setChangePage] = useState('cotton')
                 fontFamily: 'Nunito',
                 fontWeight: 'Bold',
                 color: 'white',
-                margin: '0 0 20px 0'
+                margin: '0 0 20px 0',
+                setChangePage
             
             }}>
-                {fiberName}
+                {fiberName = changePage == 'cotton' ? 'Cotton' : changePage == 'plant' ? 'Plant' : changePage == 'animal' ? 'Animal' : 'Synthetic'}
             </div>
 
             <div style={{
@@ -66,7 +67,6 @@ const [changePage, setChangePage] = useState('cotton')
             </div>
 
             <FiberButtonContainer setChangePage={setChangePage}/>
-            
             
         </div>
     )

@@ -49,11 +49,14 @@ export const FiberButton = ({
     fiberExamples="Organic Cotton, Cotton",
     bgcolor="#36B9C5",
     textCol="white",
-    borderStyle="1px solid white"
+    borderStyle="1px solid white",
+    material='cotton',
+    setChangePage
+
 }) => {
     return (
     
-        <FiberButtonUI onClick={() => console.log('click')}bg={bgcolor} textCol={textCol} borderStyle={borderStyle}>
+        <FiberButtonUI onClick={() => setChangePage(material)} bg={bgcolor} textCol={textCol} borderStyle={borderStyle}>
             <FiberImg>ImageHere</FiberImg>
                 <FiberText>
                     <FiberNameText>
