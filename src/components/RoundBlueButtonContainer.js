@@ -9,7 +9,7 @@ const RoundButtonContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-top: 200px;
+margin-top: 175px;
 `
 
 const BottomText = styled.div`
@@ -35,19 +35,57 @@ margin-bottom: 50px;
 export const RoundBlueButtonContainer = ({
     margin,
     questionText = "Where are you located?",
-    infoText = "Shopping online contributes significantly more waste than in store."
-
-
+    infoText = "Shopping online contributes significantly more waste than in store.",
+    bgColor = colors.blue,
+    mySwitch,
+    setMySwitch
 }) => {
+
+    const handleClick = () => {
+
+        setMySwitch(!mySwitch)
+    
+      }
 
     return (
 
         <RoundButtonContainer style={{margin: margin}}>
             <TopText>{questionText}</TopText>
-         <RoundBlueButton />
-         <RoundBlueButton buttonText="Vancouver"/>
-         <RoundBlueButton buttonText="North Vancouver"/>
-         <RoundBlueButton buttonText="Richmond"/>
+         <RoundBlueButton 
+                 onClick={() => setMySwitch(true)}
+
+                 style={{
+                   backgroundColor: mySwitch ? "white" : bgColor,
+                   color: mySwitch ? bgColor : "white",}}
+                   />
+
+         <RoundBlueButton 
+          onClick={() => setMySwitch(true)}
+
+          style={{
+            backgroundColor: mySwitch ? "white" : bgColor,
+            color: mySwitch ? bgColor : "white",}}
+            buttonText="Vancouver"
+            />
+
+        <RoundBlueButton 
+          onClick={() => setMySwitch(true)}
+
+          style={{
+            backgroundColor: mySwitch ? "white" : bgColor,
+            color: mySwitch ? bgColor : "white",}}
+            buttonText="North Vancouver"
+            />
+            
+            <RoundBlueButton 
+          onClick={() => setMySwitch(true)}
+
+          style={{
+            backgroundColor: mySwitch ? "white" : bgColor,
+            color: mySwitch ? bgColor : "white",}}
+            buttonText="Richmond"
+            />
+            
         <BottomText>{infoText}</BottomText>
 
         </RoundButtonContainer>
