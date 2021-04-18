@@ -1,56 +1,37 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { color } from '../components/color'
+import { colors } from '../components/color'
 
-const RoundBlueButtonUI = styled.button `
+const RoundBlueButtonUI = styled.div `
 height: 50px;
 width: 370px;
 border-radius: 10px;
-background-color: ${color.blue};
+background-color: ${props=>props.bgcolor};
 margin-top: 20px;
 font-family: 'Nunito',sans-serif;
 font-size: x-large;
-color: white;
+color: ${props=>props.textcolor};
 border: 1px solid white;
-`
-
-const RoundButtonContainer = styled.div`
 display: flex;
-flex-direction: column;
-`
-
-const BottomText = styled.div`
-display: flex;
-color: white;
-font-family: 'Nunito',sans-serif;
-font-size: large;
-margin-top: 50px;
-max-width: 350px;
-`
-
-const TopText = styled.div`
-display: flex;
-color: white;
-font-family: 'Nunito',sans-serif;
-font-size: xx-large;
-max-width: 350px;
 justify-content: center;
-margin-bottom: 50px;
+align-items: center;
+box-shadow: 0px 4px 4px rgba(0,0,0,.25);
 `
 
-
-export const RoundBlueButton = () => {
+export const RoundBlueButton = ({
+    buttonText = 'Burnaby',
+    bgcolor = colors.blue,
+    textcolor = 'white'
+}) => {
 
     return (
-
-        <RoundButtonContainer>
-            <TopText>Where are you located?</TopText>
-        <RoundBlueButtonUI>Burnaby</RoundBlueButtonUI>
-        <RoundBlueButtonUI>Vancouver</RoundBlueButtonUI>
-        <RoundBlueButtonUI>North Vancouver</RoundBlueButtonUI>
-        <RoundBlueButtonUI>Richmond</RoundBlueButtonUI>
-        <BottomText>Shopping online contributes significantly more waste than in store.</BottomText>
-       </RoundButtonContainer>
+        
+        <RoundBlueButtonUI
+        bgcolor={bgcolor}
+        textcolor={textcolor}
+        >
+            {buttonText}
+            </RoundBlueButtonUI>
         
     )
 }
