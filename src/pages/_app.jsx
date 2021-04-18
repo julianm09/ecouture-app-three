@@ -9,7 +9,7 @@ import { MaterialsPage } from './material';
 import { LearnFibersPage } from './learnFibers';
 import { ResultsPage } from './results';
 import { TestPage } from './Test';
-
+import { StorePage } from './storePage';
 
 
 
@@ -19,7 +19,7 @@ function MyApp({ }) {
 
     <>
  
-
+    <StorePage></StorePage>
 
     </>
 
