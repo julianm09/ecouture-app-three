@@ -25,6 +25,7 @@ export default function MyApp({ }) {
               buttons={["burnaby", "vancouver", "richmond", "surrey"]}
               dialogue="or closest to"
               title="Where are you located?"
+              logo='/logo-small-blue.png'
             ></SurveyPage>
  
 
