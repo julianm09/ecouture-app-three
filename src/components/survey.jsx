@@ -27,9 +27,9 @@ const TitleContainerUI = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  height: 10vh;
   flex-direction: column;
-  font-size: 36px;
+  font-size: calc(18px + 1vw);
   text-align: left;
   font-weight: 700;
   width: 90vw;
@@ -45,6 +45,8 @@ const ButtonContainerUI = styled.div`
   justify-content: center;
   height: 40vh;
   flex-direction: column;
+  position: fixed; 
+  top: 40vh;
   
 `;
 

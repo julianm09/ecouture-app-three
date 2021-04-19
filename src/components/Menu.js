@@ -19,7 +19,7 @@ align-items: center;
 color: white;
 flex-direction: column;
 transition: 1s ease-out;
-z-index: 500;
+z-index: 1000;
 
 
 `

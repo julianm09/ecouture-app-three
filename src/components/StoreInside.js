@@ -26,19 +26,19 @@ const StoreSubheadUI = styled.div`
 font-size: 10pt;
 color: white;
 font-family: 'Open Sans', sans-serif;
-z-index: 100;
+z-index: 200;
 `
 const ImageFilter = styled.div`
 background: #3884FF;
 opacity: 70%;
 position: absolute;
-z-index: 0;
+z-index: 100;
 top: 0;
 width: 100%;
 height: 100%;
 `
 const StoreText = styled.div`
-z-index: 100;
+z-index: 200;
 `
 
 export const StoreInside = ({ storeImage='/store-wildlife.jpeg', storeName='Wildlife Thrift Store', storeLocation='456 Robson St Vancouver'}) => {
@@ -50,7 +50,7 @@ export const StoreInside = ({ storeImage='/store-wildlife.jpeg', storeName='Wild
           <StoreSubheadUI>{storeName}</StoreSubheadUI>
           <ImageFilter/>
           <img src={storeImage} style={{
-            zIndex: '-100',
+            zIndex: '0',
             position: 'absolute',
             top: '-60px',
            

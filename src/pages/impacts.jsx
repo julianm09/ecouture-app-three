@@ -158,43 +158,7 @@ const Impact = () => {
         }}
       />
 
-      <style jsx global>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
-
-          @keyframes float {
-            from {
-              bottom: 35vh;
-            }
-
-            50% {
-              bottom: 40vh;
-            }
-
-            to {
-              bottom: 35vh;
-            }
-          }
-
-          html,
-          body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: Nunito;
-          }
-
-          * {
-            margin: 0;
-          }
-
-          a {
-            color: white;
-          }
-        `}
-      </style>
+      
     </Container>
   )
 }
