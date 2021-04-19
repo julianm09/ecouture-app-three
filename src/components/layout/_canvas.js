@@ -1,17 +1,16 @@
 import { Canvas, useThree } from '@react-three/fiber'
 import { Html, OrbitControls, Preload, Sphere } from '@react-three/drei'
 import { a, useSpring, PerspectiveCamera } from '@react-spring/three'
-import { A11yUserPreferences } from '@react-three/a11y';
-import EarthUI from '../Earth';
-import styled from 'styled-components';
+import { A11yUserPreferences } from '@react-three/a11y'
+import EarthUI from '../Earth'
+import styled from 'styled-components'
 import { colors } from '../color'
 import { useRouter } from 'next/router'
-
-
+import { useEffect, useState } from 'react'
 
 const Point = styled.div`
   width: 25px;
-  height:25px;
+  height: 25px;
   background: white;
   border-radius: 50%;
   cursor: pointer;
@@ -30,7 +29,7 @@ function KeyLight({ brightness, color }) {
       lookAt={[0, 0, 0]}
       penumbra={1}
     />
-  );
+  )
 }
 function FillLight({ brightness, color }) {
   return (
@@ -42,9 +41,8 @@ function FillLight({ brightness, color }) {
       position={[2, 1, 4]}
       lookAt={[0, 0, 0]}
       penumbra={2}
-      
     />
-  );
+  )
 }
 
 function RimLight({ brightness, color }) {
@@ -56,21 +54,66 @@ function RimLight({ brightness, color }) {
       color={color}
       position={[-1, 4, -2]}
       rotation={[0, 180, 0]}
-      
     />
-  );
+  )
 }
 
-
-const Controls = OrbitControls;
-
-
-
+const Controls = OrbitControls
 
 const ThreeCanvas = ({ hide, setHide }) => {
-
   const router = useRouter()
 
+  const checkLocal = () => {
+    if (localStorage.getItem("completed") === null) {
+      return [false, false, false, false ]
+    } else {
+      return JSON.parse(localStorage.getItem('completed'))
+    }
+  }
+
+  useEffect(() => {
+    console.log(progress)
+  })
+
+  const [progress, setProgress] = useState(checkLocal)
+
+  const handleClick = (el) => {
+    router.push('/impacts')
+    progress[el.target.id] = true
+    console.log(progress)
+    localStorage.setItem('completed', JSON.stringify(progress))
+
+    
+  }
+
+
+/* //initialize progress state 
+  let completed = [false, false, false, false]
+//initialize progress state 
+
+  let progress = JSON.parse(localStorage.getItem('completed'))
+
+
+  useEffect(() => {
+    
+    console.log(progress)
+  })
+
+  const handleClick = (el) => {
+    router.push('/impacts')
+
+    console.log(progress)
+
+    progress[el.target.id] = true
+
+    if (progress) {
+      localStorage.setItem('completed', JSON.stringify(progress))
+    } else {
+      localStorage.setItem('completed', JSON.stringify(completed))
+    }
+  } */
+
+  
 
   return (
     <Canvas
@@ -78,32 +121,68 @@ const ThreeCanvas = ({ hide, setHide }) => {
         position: 'absolute',
         top: 0,
         background: 'none',
-        zIndex: hide ? -100 : 0
+        zIndex: hide ? -100 : 0,
       }}
-
     >
-      <KeyLight/>
-      <RimLight/>
-      <FillLight/>
+      <KeyLight />
+      <RimLight />
+      <FillLight />
 
-      <EarthUI/>
+      <EarthUI />
 
       <Html position={[-0.7, 0.7, 0.7]}>
-        <Point onClick={() => router.push('/impacts')}/>
+        <Point
+          id='0'
+          style={{
+            background: progress[0] ? colors.green : 'white',
+          }}
+          onClick={(e) => handleClick(e)}
+        />
       </Html>
       <Html position={[0.7, 0.7, -0.7]}>
-        <Point onClick={() => router.push('/impacts')}/>
+        <Point
+          style={{
+            background: progress[1] ? colors.green : 'white',
+          }}
+          id='1'
+          onClick={(e) => handleClick(e)}
+        />
       </Html>
       <Html position={[0.7, -0.7, 0.7]}>
-        <Point onClick={() => router.push('/impacts')}/>
+        <Point
+          style={{
+            background: progress[2] ? colors.green : 'white',
+          }}
+          id='2'
+          onClick={(e) => handleClick(e)}
+        />
       </Html>
       <Html position={[-0.7, -0.7, -0.7]}>
-        <Point onClick={() => router.push('/impacts')}/>
+        <Point
+          style={{
+            background: progress[3] ? colors.green : 'white',
+          }}
+          id='3'
+          onClick={(e) => handleClick(e)}
+        />
       </Html>
 
-        <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
-     
+      <Html position={[-1.2, -1.2, -1.2]}>
+        <Point
+          style={{
+            background: 'red'
+          }}
+          id='4'
+          onClick={(e) => {localStorage.clear()}}
+        />
+      </Html>
 
+      <Controls
+        enablePan={false}
+        enableZoom={false}
+        enableDamping={true}
+        autoRotate
+      />
     </Canvas>
   )
 }

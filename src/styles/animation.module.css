@@ -1,0 +1,13 @@
+@keyframes float {
+    from {
+      bottom: 35vh;
+    }
+
+    50% {
+      bottom: 40vh;
+    }
+
+    to {
+      bottom: 35vh;
+    }
+  }

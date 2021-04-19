@@ -16,15 +16,16 @@ export default function MyApp({}) {
   return (
     <>
       <SurveyPage
-        colorOne='#3884ff'
+        title='What makes up most of your wardrobe?'
+        colorOne='green'
         choices={choices}
         setChoices={setChoices}
-        linkTo='/form3'
-        page='form2'
-        waterHeight='65'
-        buttons={['on-line', 'in-store', 'both']}
-        dialogue='Shopping online contributes significantly more waste than in store.'
-        title='Where do you shop?'
+        linkTo='/loading'
+        page='form5'
+        waterHeight='100'
+        buttons={['cotton', 'animal', 'plant', 'synthetic']}
+        dialogue='* or most of your clothes'
+        logo='/logo-small.png'
       ></SurveyPage>
     </>
   )
