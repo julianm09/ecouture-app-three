@@ -19,7 +19,7 @@ const Container = styled.div`
 `
 
 const Score = styled.div`
-  width: 80vw;
+  width: 90vw;
   min-height: 100px;
   position: absolute;
   top: 25vh;
@@ -37,7 +37,7 @@ const Space = styled.div`
 `
 
 const ResultsUI = styled.div`
-  width: 100vw;
+  width: 90vw;
   min-height: 100px;
   position: absolute;
   bottom: 5vh;

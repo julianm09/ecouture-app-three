@@ -98,7 +98,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point onClick={() => router.push('/impacts')}/>
       </Html>
       <Html position={[-0.7, -0.7, -0.7]}>
-        <Point onClick={() => router.push('/imapcts')}/>
+        <Point onClick={() => router.push('/impacts')}/>
       </Html>
 
         <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
