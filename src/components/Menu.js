@@ -45,7 +45,7 @@ position: absolute;
 top: 0;
 z-index: 100;
 font-size: 18px;
-z-index: 1000;
+z-index: 1500;
 
 
 `
@@ -80,9 +80,18 @@ cursor: pointer;
 
 `
 
+const BackIconUI = styled.div`
+
+position: absolute;
+left: 10vw;
+
+cursor: pointer;
+
+`
 
 
-export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white', three=false }) => {
+
+export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white', three=false, backButton=true }) => {
 
 
     const router = useRouter()
@@ -100,10 +109,25 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
   return (
     <>
 
+
+
     <NavBarUI
         style={{
             background: menuColor
         }}>
+{(backButton && !menuActive) ? (
+    <BackIconUI   
+    onClick={() => router.back()}>
+            <Icon.ArrowLeft
+              style={{
+                color:iconColor
+            }}></Icon.ArrowLeft>
+        </BackIconUI>
+
+) : (
+    <></>
+)}
+
 
         {menuActive ? <img onClick={() => router.push('/results')} src='/logo-small.png'/> : <img onClick={() => router.push('/results')} src={logo}/>}
 

@@ -29,7 +29,7 @@ const TitleContainerUI = styled.div`
   justify-content: center;
   height: 10vh;
   flex-direction: column;
-  font-size: calc(18px + 1vw);
+  font-size: 24px;
   text-align: left;
   font-weight: 700;
   width: 90vw;
@@ -101,7 +101,8 @@ export const SurveyPage = ({
   dialogue,
   dialogueColor,
   title,
-  colorOne
+  colorOne, 
+  logo = '/logo-small-blue.png'
 }) => {
   let history = useHistory();
 
@@ -119,7 +120,7 @@ export const SurveyPage = ({
   return (
     <SurveyPageUI>
       <LogoUI>
-        <img src={waterHeight == "100" || waterHeight == "110" ? '/logo-small.png' : '/logo-small.png'} />
+        <img src={logo} />
       </LogoUI>
 
       <TitleContainerUI style={{

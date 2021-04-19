@@ -48,25 +48,25 @@ export const FormButton = ({
 
 
 
-  if (content == "cotton" && hovered) {
+  if (content == "cotton" ) {
     height = "50px";
     colorOne = colors.cyan;
     content = "";
     details = "cotton, organic cotton";
     icon = '/cotton-icon-white.svg';
-  } else if (content == "animal" && hovered) {
+  } else if (content == "animal" ) {
     height = "50px";
     colorOne = colors.orange;
     content = "";
     details = "wool, fleece";
     icon = '/animal-icon-white.svg';
-  } else if (content == "plant" && hovered) {
+  } else if (content == "plant") {
     height = "50px";
     colorOne = colors.green;
     content = "";
     details = "hemp, bamboo";
     icon = '/plant-icon-white.svg';
-  } else if (content == "synthetic" && hovered) {
+  } else if (content == "synthetic" ) {
     height = "50px";
     colorOne = colors.purple;
     content = "";
@@ -79,12 +79,8 @@ export const FormButton = ({
       <ButtonUI
         onClick={() => {}}
         style={{
-          background: hovered ? colorOne : "white",
-          color:
-            hovered 
-              ? colors.white
-              : colors.blue,
-
+          background: colorOne,
+          color: 'white',
           height: height,
         }}
         onMouseEnter={() => {

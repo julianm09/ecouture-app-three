@@ -1,13 +1,12 @@
 import ThreeCanvas from '../components/layout/_canvas'
-
 import { Menu } from '../components/Menu'
 /* import '../styles/index.module.css'*/
 import React, { useState } from 'react'
 import { colors } from '@/components/color'
 import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
-import Wave from 'react-wavify';
-import { useRouter } from 'next/router';
+import Wave from 'react-wavify'
+import { useRouter } from 'next/router'
 
 const Container = styled.div`
   width: 100vw;
@@ -18,7 +17,7 @@ const Container = styled.div`
   justify-content: center;
 `
 
-const Score = styled.div`
+const Information = styled.div`
   width: 90vw;
   min-height: 100px;
   position: absolute;
@@ -72,31 +71,27 @@ const Impact = () => {
     from: { number: 0 },
   })
 
-  let count = 0;
+  let count = 0
 
   const router = useRouter()
-  
+
   const handleClick = (e) => {
     e.target.style.display = 'none'
     count++
 
-    if (count == 4){
-
+    if (count == 4) {
       router.push('/results')
-
     }
   }
 
   const [hide, setHide] = useState(false)
 
-  
-
   return (
     <Container>
-      <Score>
+      <Information>
         U.S. and Canadian households release over 870 tons of plastic
         microfibers into the ocean every year from laundry alone.
-      </Score>
+      </Information>
 
       <Menu
         hide={hide}
@@ -109,7 +104,7 @@ const Impact = () => {
       <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
 
       <Plastic
-      onClick={(e)=>handleClick(e)}
+        onClick={(e) => handleClick(e)}
         style={{
           left: '10vw',
           animationDelay: '1s',
@@ -117,7 +112,7 @@ const Impact = () => {
       />
 
       <Plastic
-      onClick={(e)=>handleClick(e)}
+        onClick={(e) => handleClick(e)}
         style={{
           left: '30vw',
           animationDelay: '0.2s',
@@ -125,7 +120,7 @@ const Impact = () => {
       />
 
       <Plastic
-      onClick={(e)=>handleClick(e)}
+        onClick={(e) => handleClick(e)}
         style={{
           left: '50vw',
           animationDelay: '0.5s',
@@ -158,7 +153,9 @@ const Impact = () => {
         }}
       />
 
-      
+
+
+
     </Container>
   )
 }
