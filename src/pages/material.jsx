@@ -64,7 +64,7 @@ font-family: Open Sans;
 
 `
 
-const MaterialsPage = ({ pageColor, materialText='Bamboo', materialType='Plant', materialImage='/plant-icon.png', materialInfo='Bamboo requires no need for pesticides or fertilizers'}) => {
+const MaterialsPage = ({ pageColor=colors.green, materialText='Bamboo', materialType='Plant', materialImage='/plant-icon.png', materialInfo='Bamboo requires no need for pesticides or fertilizers'}) => {
 
     const [mySwitch, setMySwitch] = useState(false)
 
@@ -115,6 +115,33 @@ const MaterialsPage = ({ pageColor, materialText='Bamboo', materialType='Plant',
           </div>
 
             )}
+
+
+<style jsx global>{`
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+  
+          html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Nunito;
+            
+          }
+  
+          * {
+        
+          margin: 0
+        }
+  
+        a{
+          color: white;
+        }
+      `}
+      </style>
 
         </div>
     )

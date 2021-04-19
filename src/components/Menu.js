@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { colors } from './color'
 import * as Icon from 'react-feather';
 import { useRouter } from 'next/router'
-
+import { useSpring, animated } from '@react-spring/web'
+import { useDrag } from 'react-use-gesture'
 
 
 
@@ -18,7 +19,7 @@ align-items: center;
 color: white;
 flex-direction: column;
 transition: 1s ease-out;
-z-index: 100;
+z-index: 500;
 
 
 `
@@ -44,7 +45,7 @@ position: absolute;
 top: 0;
 z-index: 100;
 font-size: 18px;
-z-index: 200;
+z-index: 1000;
 
 
 `
@@ -129,11 +130,10 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
         background: colors.blue
     }}>
 
-        <LinkUI>Eco Test</LinkUI>
-        <LinkUI>Sustainable Stores</LinkUI>
-        <LinkUI>Disposal Methods</LinkUI>
-        <LinkUI>Materials</LinkUI>
-        <LinkUI>About</LinkUI>
+        <LinkUI onClick={()=> router.push('/home')}>Eco Test</LinkUI>
+        <LinkUI onClick={()=> router.push('/store')}>Sustainable Stores</LinkUI>
+        <LinkUI onClick={()=> router.push('/material')}>Materials</LinkUI>
+        <LinkUI onClick={()=> router.push('/learn')}>Learn</LinkUI>
 
         <SocialUI>
             <SocialLinkUI>
@@ -144,7 +144,35 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
             </SocialLinkUI>
         </SocialUI>
 
+        <style jsx global>{`
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
+        html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-y: hidden;
+          font-family: Nunito;
+          
+        }
+
+        * {
+      
+        margin: 0
+      }
+
+      a{
+        color: white;
+      }
+    `}
+    </style>
+
     </MenuUI>
+
+    
 
 ) : <div></div>
 }

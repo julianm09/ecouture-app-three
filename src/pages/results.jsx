@@ -14,6 +14,7 @@ const Container = styled.div`
 width: 100vw;
 min-height: 100vh;
 background: white;
+z-index: 0;
 
 `
 
@@ -21,7 +22,7 @@ const Score = styled.div`
 
 width: 100vw;
 min-height: 100px;
-position: absolute;
+position: relative;
 top: 15vh;
 display: flex;
 align-items: center;
@@ -30,6 +31,7 @@ color: ${colors.blue};
 font-size: 24px;
 font-weight: 700;
 font-family: Nunito;
+z-index: 0;
 
 `
 

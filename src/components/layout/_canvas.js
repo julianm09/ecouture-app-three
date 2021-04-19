@@ -12,9 +12,10 @@ import { useRouter } from 'next/router'
 const Point = styled.div`
   width: 25px;
   height:25px;
-  background: ${colors.green};
+  background: white;
   border-radius: 50%;
   cursor: pointer;
+  border: 1px solid ${colors.green};
 `
 
 // Lights
@@ -87,17 +88,17 @@ const ThreeCanvas = ({ hide, setHide }) => {
 
       <EarthUI/>
 
-      <Html position={[-1, 1, 1]}>
-        <Point onClick={() => router.push('/material')}/>
+      <Html position={[-0.7, 0.7, 0.7]}>
+        <Point onClick={() => router.push('/impacts')}/>
       </Html>
-      <Html position={[1, 1, -1]}>
-        <Point onClick={() => router.push('/store')}/>
+      <Html position={[0.7, 0.7, -0.7]}>
+        <Point onClick={() => router.push('/impacts')}/>
       </Html>
-      <Html position={[1, -1, 1]}>
-        <Point onClick={() => router.push('/learn')}/>
+      <Html position={[0.7, -0.7, 0.7]}>
+        <Point onClick={() => router.push('/impacts')}/>
       </Html>
-      <Html position={[-1, -1, -1]}>
-        <Point onClick={() => router.push('/home')}/>
+      <Html position={[-0.7, -0.7, -0.7]}>
+        <Point onClick={() => router.push('/imapcts')}/>
       </Html>
 
         <Controls enablePan = {false} enableZoom = {false} enableDamping={true} autoRotate/>
