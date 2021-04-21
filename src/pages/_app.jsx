@@ -41,6 +41,9 @@ function MyApp({ Component, pageProps }) {
               bottom: 35vh;
             }
           }
+
+
+          
          
           @keyframes cityDown {
             0% {top: 150px;}

@@ -74,10 +74,62 @@ export const FormButton = ({
     icon = 'synthetic-icon-white.svg';
   } 
 
+  
+
+  let points = null
+  let location
+
+  const handleClick = (el) => {
+    router.push(linkTo)
+
+    const answer = el.target.innerHTML
+
+    if (page == 'home'){
+
+      localStorage.clear()
+      /* console.log('form1' + answer) */
+      
+    } else if (page == 'form1'){
+
+      
+      answer == 'burnaby' ? location = 'burnaby' : answer == 'vancouver' ? location = 'vancouver' : answer == 'richmond' ? location = 'richmond' :  location = 'surrey' ;
+
+      localStorage.setItem('location', JSON.stringify(location))
+      /* console.log('form1' + answer) */
+      
+    } else if(page == 'form2'){
+      /* console.log('form2' + answer) */
+      answer == 'online' ? points += 5 : answer == 'local' ? points += 20 : answer == 'both' ? points += 10 : points+= 0;
+    
+    } else if (page == 'form3'){
+      /* console.log('form3' + answer) */
+      answer == 'new' ? points += 5 : answer == 'used' ? points += 20 : answer == 'both' ? points += 10 : points+= 0;
+   
+    } else if (page == 'form4'){
+      /* console.log('form4' + answer) */
+      answer == '1' ? points += 5 : answer == '2-3' ? points += 20 : answer == '4-5' ? points += 10 : points+= 5;
+    
+    } else if (page == 'form5'){
+      /* console.log('form5' + answer) */
+      answer == 'cotton, organic cotton' ? points += 15 : answer == 'wool, fleece' ? points += 10 : answer == 'hemp, bamboo' ? points += 20 : points+= 5;
+
+    }
+    
+    let score = JSON.parse(localStorage.getItem('score'))
+    /* console.log(points) */
+    localStorage.setItem('score', JSON.stringify(points + score))
+
+    console.log(JSON.parse(localStorage.getItem('score')))
+
+    console.log(JSON.parse(localStorage.getItem('location')))
+
+
+  }
+
   return (
-    <a onClick={() => router.push(linkTo) } style={{ textDecoration: "none" }}>
+    <div>
       <ButtonUI
-        onClick={() => {}}
+        onClick={(e) => handleClick(e)}
         style={{
           background: colorOne,
           color: 'white',
@@ -146,6 +198,6 @@ export const FormButton = ({
           (content = content)
         )}
       </ButtonUI>
-    </a>
+    </div>
   );
 };
