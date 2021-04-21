@@ -34,6 +34,10 @@ const FiberImg = styled.div `
     justify-content: center;
     align-items: center;
     flex: 1;
+
+    &> img{
+        width: 50px;
+    }
     
 `
 
@@ -51,13 +55,14 @@ export const FiberButton = ({
     textCol="white",
     borderStyle="1px solid white",
     material='cotton',
-    setChangePage
+    setChangePage,
+    image='/cotton-icon.svg'
 
 }) => {
     return (
     
         <FiberButtonUI onClick={() => setChangePage(material)} bg={bgcolor} textCol={textCol} borderStyle={borderStyle}>
-            <FiberImg>ImageHere</FiberImg>
+            <FiberImg><img src={image}></img></FiberImg>
                 <FiberText>
                     <FiberNameText>
                         {fiberName}

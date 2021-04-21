@@ -17,7 +17,7 @@ const LearnFibersPage = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
         alignItems: 'center',
         backgroundColor:
           changePage == 'cotton'
-            ? colors.teal
+            ? colors.cyan
             : changePage == 'plant'
             ? colors.green
             : changePage == 'synthetic'
@@ -60,7 +60,7 @@ const LearnFibersPage = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
           backgroundColor: 'lightgrey',
         }}
       >
-        placeholder
+        
       </div>
 
       <MaterialButtonSlider />
