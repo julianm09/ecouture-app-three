@@ -42,6 +42,27 @@ function MyApp({ Component, pageProps }) {
             }
           }
          
+          @keyframes cityDown {
+            0% {top: 150px;}
+          
+            100% {top: 300px;}
+          }
+
+          @keyframes cityUp {
+            0%{top: 300px}
+
+            100%{top: 150px}
+
+          }
+
+          @keyframes waterUp {
+
+            0%{height: 50vh}
+
+            50%{height: 65vh}
+
+            100%%{height: 50vh}
+          }
 
 
 
