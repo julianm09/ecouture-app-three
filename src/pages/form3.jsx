@@ -22,7 +22,7 @@ export default function MyApp({}) {
         setChoices={setChoices}
         linkTo='/form4'
         page='form3'
-        waterHeight='75'
+        waterHeight='60'
         buttons={['new', 'used', 'both']}
         dialogue='Buying used clothing can reduce your carbon footprint.'
       ></SurveyPage>

@@ -167,7 +167,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
         />
       </Html>
 
-      <Html position={[-1.2, -1.2, -1.2]}>
+{/*       <Html position={[-1.2, -1.2, -1.2]}>
         <Point
           style={{
             background: 'red'
@@ -175,7 +175,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
           id='4'
           onClick={(e) => {localStorage.clear()}}
         />
-      </Html>
+      </Html> */}
 
       <Controls
         enablePan={false}
