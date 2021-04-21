@@ -63,7 +63,7 @@ const Controls = OrbitControls
 const ThreeCanvas = ({ hide, setHide }) => {
   const router = useRouter()
 
-  const checkLocal = () => {
+/*   const checkLocal = () => {
     if (localStorage.getItem("completed") === null) {
       return [false, false, false, false ]
     } else {
@@ -84,36 +84,9 @@ const ThreeCanvas = ({ hide, setHide }) => {
     localStorage.setItem('completed', JSON.stringify(progress))
 
     
-  }
-
-
-/* //initialize progress state 
-  let completed = [false, false, false, false]
-//initialize progress state 
-
-  let progress = JSON.parse(localStorage.getItem('completed'))
-
-
-  useEffect(() => {
-    
-    console.log(progress)
-  })
-
-  const handleClick = (el) => {
-    router.push('/impacts')
-
-    console.log(progress)
-
-    progress[el.target.id] = true
-
-    if (progress) {
-      localStorage.setItem('completed', JSON.stringify(progress))
-    } else {
-      localStorage.setItem('completed', JSON.stringify(completed))
-    }
   } */
 
-  
+
 
   return (
     <Canvas
@@ -134,24 +107,24 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point
           id='0'
           style={{
-            background: progress[0] ? colors.green : 'white',
+            background: /* progress[0] ? colors.green : */ 'white',
           }}
-          onClick={(e) => handleClick(e)}
+          onClick={(e) => router.push('/impacts')}
         />
       </Html>
-      <Html position={[0.7, 0.7, -0.7]}>
+      <Html position={[-0.7, -0.7, -0.7]}>
         <Point
           style={{
-            background: progress[1] ? colors.green : 'white',
+            background: /* progress[1] ? colors.green : */ 'white',
           }}
           id='1'
-          onClick={(e) => handleClick(e)}
+          onClick={(e) => router.push('/ice-impact')}
         />
       </Html>
-      <Html position={[0.7, -0.7, 0.7]}>
+ {/*      <Html position={[0.7, -0.7, 0.7]}>
         <Point
           style={{
-            background: progress[2] ? colors.green : 'white',
+            background: 'white',
           }}
           id='2'
           onClick={(e) => handleClick(e)}
@@ -160,14 +133,14 @@ const ThreeCanvas = ({ hide, setHide }) => {
       <Html position={[-0.7, -0.7, -0.7]}>
         <Point
           style={{
-            background: progress[3] ? colors.green : 'white',
+            background: 'white',
           }}
           id='3'
           onClick={(e) => handleClick(e)}
         />
       </Html>
 
-{/*       <Html position={[-1.2, -1.2, -1.2]}>
+      <Html position={[-1.2, -1.2, -1.2]}>
         <Point
           style={{
             background: 'red'

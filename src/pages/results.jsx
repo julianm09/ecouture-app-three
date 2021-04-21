@@ -76,7 +76,7 @@ const ProgressBar = styled.div`
 
 const Results = () => {
 
-  const checkLocal = () => {
+/*   const checkLocal = () => {
     if (localStorage.getItem("completed") === null) {
       return [false, false, false, false ]
     } else {
@@ -88,13 +88,15 @@ const Results = () => {
     console.log(progress)
   })
 
-  const [progress, setProgress] = useState(checkLocal)
+  const [progress, setProgress] = useState(checkLocal) 
 
   const completion = progress.filter(Boolean).length * 5;
 
+  */
+
   const props = useSpring({
     config: { duration: 2250 },
-    number: 80 + completion,
+    number: 80 /* + completion */,
     from: { number: 0 },
   })
 
@@ -124,7 +126,7 @@ const Results = () => {
     
     <Progress>
       <ProgressBar style={{
-        width: 80 + completion + 'vw'
+        width: 80 + /* completion +  */'vw'
       }}/>
     </Progress>
     
