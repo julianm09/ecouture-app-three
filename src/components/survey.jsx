@@ -128,7 +128,7 @@ export const SurveyPage = ({
       }}>{title}</TitleContainerUI>
 
       {page == "loading" ? (
-        <Loading>loading</Loading>
+        <Loading>calculating your score...</Loading>
       ) : (
         <>
           <ButtonContainerUI>

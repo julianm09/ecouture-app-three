@@ -22,9 +22,9 @@ export default function MyApp({}) {
         linkTo='/form3'
         page='form2'
         waterHeight='65'
-        buttons={['on-line', 'in-store', 'both']}
+        buttons={['online', 'local', 'both']}
         dialogue='Shopping online contributes significantly more waste than in store.'
-        title='Where do you shop?'
+        title='Where do you shop for clothes?'
       ></SurveyPage>
     </>
   )
