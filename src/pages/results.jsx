@@ -17,10 +17,11 @@ const Container = styled.div`
 `
 
 const Score = styled.div`
-  width: 90vw;
-  height: 100px;
+
+ 
   position: absolute;
-  text-align: center;
+  text-align: left;
+  left: 5vw;
   bottom: 5vh;
   display: flex;
   align-items: center;
@@ -29,6 +30,7 @@ const Score = styled.div`
   font-size: 18px;
   font-weight: 700;
   font-family: Nunito;
+
   z-index: 0;
 `
 
@@ -68,6 +70,7 @@ const ProgressBar = styled.div`
   align-items: center;
   justify-content: center;
   background: ${colors.blue};
+  transition: 1s ease;
  
   font-family: Nunito;
 `
@@ -94,10 +97,24 @@ const Results = () => {
 
   */
 
+
+
+  const score = JSON.parse(localStorage.getItem('score'))
+
+  
   const props = useSpring({
-    config: { duration: 2250 },
-    number: 80 /* + completion */,
+    config: { duration: 2000 },
+    number: score /* + completion */,
     from: { number: 0 },
+  })
+
+  const [progress, setProgress] = useState(0)
+
+
+  useEffect(() => {
+
+    setProgress(score)
+    
   })
 
   const [hide, setHide] = useState(false)
@@ -114,6 +131,22 @@ const Results = () => {
       />
       <ThreeCanvas r3f hide={hide} setHide={setHide} />
 
+
+
+      <ResultsUI>Click the points to see your impact on the earth</ResultsUI>
+    
+    <Progress>
+      <animated.div style={{
+        width: progress + 'vw',
+        minHeight: '5vh',
+        bottom: '0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: colors.blue,
+        transition: '2s ease'
+      }}/>
+
       <Score>
         {`Your Eco Score`}
         <Space></Space>
@@ -121,13 +154,6 @@ const Results = () => {
           {props.number.interpolate((val) => Math.floor(val))}
         </animated.span>
       </Score>
-
-      <ResultsUI>Click the points to see your impact on the earth</ResultsUI>
-    
-    <Progress>
-      <ProgressBar style={{
-        width: 80 + /* completion +  */'vw'
-      }}/>
     </Progress>
     
     </Container>
