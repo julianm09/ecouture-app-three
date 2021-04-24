@@ -105,7 +105,7 @@ const shops = [
         'website' : 'https://www.shscommunitythriftstore.com/',
         'instagram' : '',
         'twitter' : 'https://twitter.com/CommThrift',
-        'facebook' : 'https://www.facebook.com/CommThrift/'
+        'facebook' : 'https://www.facebook.com/CommThrift'
     },
     {
         'name' : 'Mcc Thrift Shop',
