@@ -99,19 +99,23 @@ const Results = () => {
 
 
 
-  const score = JSON.parse(localStorage.getItem('score'))
+
 
   
-  const props = useSpring({
-    config: { duration: 2000 },
-    number: score /* + completion */,
-    from: { number: 0 },
-  })
+
 
   const [progress, setProgress] = useState(0)
 
+  const props = useSpring({
+    config: { duration: 2000 },
+    number: progress /* + completion */,
+    from: { number: 0 },
+  })
+
 
   useEffect(() => {
+
+    let score = JSON.parse(localStorage.getItem('score'))
 
     setProgress(score)
     

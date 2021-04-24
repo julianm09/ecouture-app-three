@@ -21,7 +21,7 @@ export default function MyApp({}) {
         setChoices={setChoices}
         linkTo='/form3'
         page='form2'
-        waterHeight='65'
+        waterHeight='45'
         buttons={['online', 'local', 'both']}
         dialogue='Shopping online contributes significantly more waste than in store.'
         title='Where do you shop for clothes?'
