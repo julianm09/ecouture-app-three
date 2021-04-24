@@ -91,7 +91,7 @@ const shops = [
         'contact' : '604-274-8866',
         'address' : '3800 Moncton St, Richmond, BC V7E 3A7',
         'website' : 'https://sosthriftstorefoundation.org/thrift-stores/steveston',
-        'instagram' : 'https://www.instagram.com/sosbcthriftstores/',
+        'instagram' : 'https://www.instagram.com/sosbcthriftstores',
         'twitter' : 'https://twitter.com/SOSThriftStores',
         'facebook' : 'https://www.facebook.com/sosbc.org'
     },
