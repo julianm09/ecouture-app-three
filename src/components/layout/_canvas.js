@@ -87,6 +87,29 @@ const ThreeCanvas = ({ hide, setHide }) => {
   } */
 
 
+ /*  const checkLocal = () => {
+    if (localStorage.getItem("completed") === null) {
+      return [false, false, false, false ]
+    } else {
+      return JSON.parse(localStorage.getItem('completed'))
+    }
+  }
+
+  const [checkpoint, setCheckpoint] = useState([])
+
+  const handleClick = (el) => {
+    router.push('/impacts')
+    progress[el.target.id] = true    
+  }
+
+  useEffect(() => {
+    setCheckpoint(checkLocal)
+  }) */
+  
+
+  
+
+
 
   return (
     <Canvas

@@ -102,7 +102,7 @@ const Results = () => {
 
 
   
-
+  const [completion, setCompletion] = useState(0)
 
   const [progress, setProgress] = useState(0)
 
@@ -115,11 +115,29 @@ const Results = () => {
 
   useEffect(() => {
 
+
+    //get score
     let score = JSON.parse(localStorage.getItem('score'))
 
-    setProgress(score)
+
+    //calculate added score increments 
+    setCompletion((100 - score) / 4)
+
+    //check if points are complete and add increment to score 
     
+
+
+    //set progressbar to score 
+    setProgress(score)
+
+    
+
   })
+
+
+  
+
+
 
   const [hide, setHide] = useState(false)
 
@@ -151,12 +169,23 @@ const Results = () => {
         transition: '2s ease'
       }}/>
 
+<animated.div style={{
+        width: completion + 'vw',
+        minHeight: '5vh',
+        bottom: '0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: colors.green,
+        transition: '2s ease'
+      }}/>
+
       <Score>
-        {`Your Eco Score`}
+        Your Eco Score 
         <Space></Space>
-        <animated.span>
+        <animated.div>
           {props.number.interpolate((val) => Math.floor(val))}
-        </animated.span>
+        </animated.div>
       </Score>
     </Progress>
     
