@@ -13,6 +13,8 @@ const TotalContainer = styled.div`
 
 display: flex;
 flex-direction: column;
+
+
 `
 
 const BodyText = styled.div`
@@ -32,15 +34,16 @@ font-weight: bold;
 color: white;
 `
 
-export const ContactUsContainer = () => {
+export const ContactUsContainer = ({contact, address, twitter, facebook, instagram}) => {
 
     return (
         <TotalContainer>
-       <TopText>487 - 564 - 3324</TopText>
-       <BodyText>456 Robson St Vancouver</BodyText>
-       <BodyText>@wildlifethrift</BodyText>
-       <BodyText>@wildlife</BodyText>
-       <BottomText>About Wildlife Thrift</BottomText>
+       <TopText>{contact}</TopText>
+       <BodyText>{address}</BodyText>
+       <BodyText>{twitter}</BodyText>
+       <BodyText>{instagram}</BodyText>
+       <BodyText>{facebook}</BodyText>
+
         </TotalContainer>
     )
 }

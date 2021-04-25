@@ -1,4 +1,4 @@
-const shops = [
+export const shops = [
     {
         'name' : 'Wildlife Thrift Store',
         'type' : 'online',

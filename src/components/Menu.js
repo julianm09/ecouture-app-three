@@ -155,7 +155,7 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
     }}>
 
         <LinkUI onClick={()=> router.push('/home')}>Eco Test</LinkUI>
-        <LinkUI onClick={()=> router.push('/store')}>Sustainable Stores</LinkUI>
+        <LinkUI onClick={()=> router.push('/shops')}>Sustainable Stores</LinkUI>
         <LinkUI onClick={()=> router.push('/material')}>Materials</LinkUI>
         <LinkUI onClick={()=> router.push('/learn')}>Learn</LinkUI>
 

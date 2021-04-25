@@ -18,6 +18,13 @@ function MyApp({ Component, pageProps }) {
             padding: 0;
             overflow-x: hidden;
             font-family: Nunito;
+
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none; 
+          }
+
+          *::-webkit-scrollbar {
+            display: none;
           }
 
           * {

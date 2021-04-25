@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const StoreTextUI = styled.div`
 
-width: 400px;
-height: 125px;
-color: gray;
-font-size: 24pt;
+width: 90vw;
+margin: 25px 0 25px 0;
+color: white;
+font-size: 24px;
 font-family: 'Nunito', sans-serif;
 
 
