@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { useRouter } from 'next/router'
+
+
 const StoreInsideUI = styled.div`
 
 width: 90vw;
@@ -19,6 +22,7 @@ margin-bottom: 25px;
 overflow: hidden;
 object-fit: contain;
 position: relative;
+cursor: pointer;
 `
 
 const StoreSubheadUI = styled.div`
@@ -41,13 +45,30 @@ const StoreText = styled.div`
 z-index: 200;
 `
 
-export const StoreInside = ({ storeImage='/store-wildlife.jpeg', storeName='Wildlife Thrift Store', storeLocation='456 Robson St Vancouver'}) => {
+export const StoreInside = ({ currentStore, setCurrentStore, storeImage='/store-wildlife.jpeg', storeName='Wildlife Thrift Store', storeLocation='456 Robson St Vancouver'}) => {
+
+  const router = useRouter()
+
+  const handleClick = () => {
+
+   
+
+    setCurrentStore(storeName)
+
+
+    localStorage.setItem('currentStore', JSON.stringify(storeName))
+
+    router.push('/store')
+  }
+
+
 
     return (
 
-        <StoreInsideUI>
-          <StoreText>{storeLocation}</StoreText>
-          <StoreSubheadUI>{storeName}</StoreSubheadUI>
+        <StoreInsideUI
+        onClick = {handleClick}>
+          <StoreText>{storeName}</StoreText>
+          <StoreSubheadUI>{storeLocation}</StoreSubheadUI>
           <ImageFilter/>
           <img src={storeImage} style={{
             zIndex: '0',
