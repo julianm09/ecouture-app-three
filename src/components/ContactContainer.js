@@ -40,9 +40,10 @@ export const ContactUsContainer = ({contact, address, twitter, facebook, instagr
         <TotalContainer>
        <TopText>{contact}</TopText>
        <BodyText>{address}</BodyText>
-       <BodyText>{twitter}</BodyText>
-       <BodyText>{instagram}</BodyText>
        <BodyText>{facebook}</BodyText>
+       <BodyText>{instagram}</BodyText>
+       <BodyText>{twitter}</BodyText>
+       
 
         </TotalContainer>
     )
