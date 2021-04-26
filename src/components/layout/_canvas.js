@@ -15,6 +15,9 @@ const Point = styled.div`
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid ${colors.green};
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  
 `
 
 // Lights
@@ -63,50 +66,45 @@ const Controls = OrbitControls
 const ThreeCanvas = ({ hide, setHide }) => {
   const router = useRouter()
 
-/*   const checkLocal = () => {
-    if (localStorage.getItem("completed") === null) {
-      return [false, false, false, false ]
-    } else {
-      return JSON.parse(localStorage.getItem('completed'))
-    }
-  }
+  const [progress, setProgress] = useState([false, false, false, false])
+
 
   useEffect(() => {
     console.log(progress)
-  })
 
-  const [progress, setProgress] = useState(checkLocal)
+    const completed = () => {
+      if (localStorage.getItem("completed") === null) {
+        return [false, false, false, false ]
+      } else {
+        return JSON.parse(localStorage.getItem('completed'))
+      }
+    }
+
+    setProgress(completed)
+
+
+
+
+  },[])
+
+
+  
 
   const handleClick = (el) => {
+    if(el.target.id == 0){
     router.push('/impacts')
+    } else if (el.target.id == 1){
+      router.push('/ice-impact')
+    }
+
     progress[el.target.id] = true
     console.log(progress)
     localStorage.setItem('completed', JSON.stringify(progress))
 
     
-  } */
-
-
- /*  const checkLocal = () => {
-    if (localStorage.getItem("completed") === null) {
-      return [false, false, false, false ]
-    } else {
-      return JSON.parse(localStorage.getItem('completed'))
-    }
   }
 
-  const [checkpoint, setCheckpoint] = useState([])
-
-  const handleClick = (el) => {
-    router.push('/impacts')
-    progress[el.target.id] = true    
-  }
-
-  useEffect(() => {
-    setCheckpoint(checkLocal)
-  }) */
-  
-
+ 
   
 
 
@@ -130,18 +128,18 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point
           id='0'
           style={{
-            background: /* progress[0] ? colors.green : */ 'white',
+            background: progress[0] ? colors.green : 'white',
           }}
-          onClick={(e) => router.push('/impacts')}
+          onClick={(el) => handleClick(el)}
         />
       </Html>
       <Html position={[-0.7, -0.7, -0.7]}>
         <Point
           style={{
-            background: /* progress[1] ? colors.green : */ 'white',
+            background: progress[1] ? colors.green : 'white',
           }}
           id='1'
-          onClick={(e) => router.push('/ice-impact')}
+          onClick={(el) => handleClick(el)}
         />
       </Html>
  {/*      <Html position={[0.7, -0.7, 0.7]}>

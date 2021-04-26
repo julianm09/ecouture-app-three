@@ -98,19 +98,13 @@ const Results = () => {
   */
 
 
-
-
+  const [progress, setProgress] = useState([false, false, false, false])
 
   
   const [completion, setCompletion] = useState(0)
 
-  const [progress, setProgress] = useState(0)
+  const [progressBar, setProgressBar] = useState(0)
 
-  const props = useSpring({
-    config: { duration: 2000 },
-    number: progress /* + completion */,
-    from: { number: 0 },
-  })
 
 
   useEffect(() => {
@@ -120,18 +114,44 @@ const Results = () => {
     let score = JSON.parse(localStorage.getItem('score'))
 
 
-    //calculate added score increments 
-    setCompletion((100 - score) / 4)
 
-    //check if points are complete and add increment to score 
+
+    const completed = () => {
+      if (localStorage.getItem("completed") === null) {
+        return [false, false, false, false ]
+      } else {
+        return JSON.parse(localStorage.getItem('completed'))
+      }
+    }
+
+    setProgress(completed)
+
+
+
+
+        //check if points are complete and add increment to score 
+        let count = progress.filter(Boolean).length
+        console.log(count)
+
+
+
+        const x = (100 - score) / 2 * count
+                //calculate added score increments 
+        setCompletion(x)
+    
+        //set progressbar to score 
+        setProgressBar(score)
+
     
 
+  },[])
 
-    //set progressbar to score 
-    setProgress(score)
 
-    
 
+  const props = useSpring({
+    config: { duration: 2000 },
+    number: progressBar + completion /* + completion */,
+    from: { number: 0 },
   })
 
 
@@ -159,7 +179,7 @@ const Results = () => {
     
     <Progress>
       <animated.div style={{
-        width: progress + 'vw',
+        width: progressBar + 'vw',
         minHeight: '5vh',
         bottom: '0',
         display: 'flex',
