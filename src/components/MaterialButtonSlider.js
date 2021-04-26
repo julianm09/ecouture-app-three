@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from './color'
 import * as Icon from 'react-feather';
+import { materials } from '../data/materials'
+import { useRouter } from 'next/router';
 
 
 
 
 const ContainerUI = styled.div`
 
-width: 90vw;
+width: 100vw;
 
 `
 
@@ -20,14 +22,16 @@ font-weight: bold;
 font-size: 24px;
 color: white;
 padding: 0 0 50px 0;
+margin: 0 0 0 5vw;
 
 
 `
 
 const ScrollContainerUI = styled.div`
 
-
+margin: 0 0 0 5vw;
 overflow-x: scroll;
+height: 300px;
 
 
 &::-webkit-scrollbar {
@@ -61,48 +65,71 @@ border: 1px solid rgba(255, 255, 255, 0.5);
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 border-radius: 10px;
 margin: 0 50px 0 0;
+cursor: pointer;
 
 `
 
 const MaterialIconUI = styled.img`
 
 margin: 0 0 25px 0;
+width: 50px;
 
 `
 
-export const MaterialButtonSlider = ({ materialType="Plant", materialColor=colors.green, materialIcon='/plant-icon.png'}) => {
+export const MaterialButtonSlider = ({ changePage, materialType="Plant", materialColor=colors.green, materialIcon='/plant-icon.png'}) => {
 
-    const materials = [
-
-        {'type': 'Hemp'},
-        {'type': 'Bamboo'},
-        {'type': 'Lyocell'}
-
-    ]
-
+    const router = useRouter()
 
     const [menuActive, setMenuActive] = useState(false)
+
+    const [currentMaterial, setCurrentMaterial] = useState('')
+
+    var showMaterials = materials.filter(function (el) {
+        return el.type.toLowerCase() == changePage 
+      });
+
+      const handleClick = (el) => {
+
+        localStorage.setItem('currentMaterial', JSON.stringify(el.target.lastChild.innerHTML))
+
+        router.push('/material')
+    /*     localStorage.setItem('currentStore', JSON.stringify(storeName))
+     */
+
+        /* router.push('/material') */
+
+      }
 
   return (
     <>
 
     <ContainerUI>
 
-        <HeaderUI>Other {materialType} Fibers</HeaderUI>
+        <HeaderUI>Learn About {changePage.charAt(0).toUpperCase() +changePage.slice(1)} Fibers</HeaderUI>
 
         <ScrollContainerUI>
 
             <Scroll>
 
-            {materials.map(el => {
+            {showMaterials.map(el => {
                 return(
                     <MaterialCardUI
+                    onClick={(el => handleClick(el))}
+
+                    
 
                     style={{
-                        background: materialColor
+                        background: 
+                        changePage == 'cotton'
+                        ? colors.cyan
+                        : changePage == 'plant'
+                        ? colors.green
+                        : changePage == 'synthetic'
+                        ? colors.purple
+                        : colors.orange,
                     }}>
-                        <MaterialIconUI src={materialIcon}/>
-                        {el.type}
+                        <MaterialIconUI src={'/' + changePage + '-icon-white.svg'}/>
+                        <div>{el.name}</div>
                     </MaterialCardUI>
                 )
             })}

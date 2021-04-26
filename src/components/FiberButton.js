@@ -6,11 +6,14 @@ import { color } from './color';
 const FiberButtonUI = styled.div `
     display: flex;
     width: 90vw;
-    height: 75px;
+    height: 50px;
     box-shadow: 0px 4px 4px rgba(128,128,128,0.5);
     border-radius: 10px;
     border: ${props=>props.borderStyle};
     background-color: ${props=>props.bg};
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease;
 
     &>* {
         color: ${props=>props.textCol};
@@ -36,7 +39,7 @@ const FiberImg = styled.div `
     flex: 1;
 
     &> img{
-        width: 50px;
+        width: 25px;
     }
     
 `
@@ -56,21 +59,30 @@ export const FiberButton = ({
     borderStyle="1px solid white",
     material='cotton',
     setChangePage,
-    image='/cotton-icon.svg'
+    image='/cotton-icon.svg',
+    changePage
 
 }) => {
     return (
     
-        <FiberButtonUI onClick={() => setChangePage(material)} bg={bgcolor} textCol={textCol} borderStyle={borderStyle}>
+        <FiberButtonUI
+        style={{
+            border: changePage == material ? '1px solid' + bgcolor : '1px solid white',
+            background: bgcolor,
+            color: 'white',
+            boxShadow: changePage == material ? 'none' : '0px 4px 4px rgba(128,128,128,0.5);',
+            left: changePage == material ? '-12vw' :'0'
+
+        }} onClick={() => setChangePage(material)} borderStyle={borderStyle}>
             <FiberImg><img src={image}></img></FiberImg>
                 <FiberText>
                     <FiberNameText>
                         {fiberName}
                     </FiberNameText>
 
-                    <FiberExamplesText>
+      {/*               <FiberExamplesText>
                         {fiberExamples}
-                    </FiberExamplesText>
+                    </FiberExamplesText> */}
                 </FiberText>
         </FiberButtonUI>
 

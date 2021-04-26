@@ -1,4 +1,4 @@
-const materials = [
+export const materials = [
     // Plant Materials //
     {
         'name' : 'Bamboo',
@@ -39,7 +39,7 @@ const materials = [
     // Synthetic Materials //
     {
         'name' : 'Acrylic',
-        'type' : 'Synethetic',
+        'type' : 'Synthetic',
         'score' : '8/10.',
         'fact1' : 'Once it is woven into fabric, linen feels cool and fresh and is very tear-resistant.',
         'fact2' : 'Linen is made from flax fibres, which require few pesticides or fertilisers for cultivation.',
@@ -48,7 +48,7 @@ const materials = [
     },
     {
         'name' : 'Polyester',
-        'type' : 'Synethetic',
+        'type' : 'Synthetic',
         'score' : '8/10.',
         'fact1' : 'The fibres are very tear-resistant but poor at absorbing liquids, which is especially useful for sportswear.',
         'fact2' : 'Polyethylene terephthalate (PET) is one of the most common material types for making clothes.',
@@ -57,7 +57,7 @@ const materials = [
     },
         {
         'name' : 'Nylon',
-        'type' : 'Synethetic',
+        'type' : 'Synthetic',
         'score' : '5/10.',
         'fact1' : 'It takes thousands of years to decompose under cold conditions like in the ocean.',
         'fact2' : 'Nylon waste ends up in landfills and oceans and pollutes the air, water sources, and entire food chain, threatening human health, wildlife and the planet.',
@@ -76,7 +76,7 @@ const materials = [
     // Animal Materials //
     {
         'name' : 'Sheep Wool',
-        'type' : 'Animal Fiber',
+        'type' : 'Animal',
         'score' : '6/10.',
         'fact1' : 'It’s long lasting and typically doesn’t require a lot of chemicals during the processing stage.',
         'fact2' : 'Most animal agriculture has been associated with environmental degradation and land clearing, and this includes operations that raise sheep for wool.',
@@ -85,7 +85,7 @@ const materials = [
     },
     {
         'name' : 'Fur',
-        'type' : 'Animal Fiber',
+        'type' : 'Animal',
         'score' : '3/10.',
         'fact1' : 'For the most part, the animals are kept on fur farms in inappropriate conditions. In addition to physical suffering, the animals often exhibit negative behavioural patterns.',
         'fact2' : 'Additionally, so-called fur animals generally experience agonizing deaths.',
@@ -94,7 +94,7 @@ const materials = [
     },
     {
         'name' : 'Leather',
-        'type' : 'Animal Fiber',
+        'type' : 'Animal',
         'score' : '4/10.',
         'fact1' : 'Contemporary leather production is a poisonous business since industrially mass-produced leather is mostly tanned and treated with toxic chemicals.',
         'fact2' : 'Leather is not simply a by-product of the meat industry – much of the slaughter worldwide is carried out exclusively on behalf of the leather industry.',

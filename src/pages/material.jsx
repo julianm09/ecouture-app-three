@@ -1,11 +1,12 @@
 import { Menu } from '../components/Menu'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MaterialButtonSlider } from '../components/MaterialButtonSlider'
 import { AboutResourcesCont } from '../components/AboutResourcesCont'
 import { RecycleButton } from '../components/RecycleButton'
 import { colors } from '../components/color'
 import styled from 'styled-components'
 import { StoreContainer } from '@/components/StoreContainer'
+import { materials } from '../data/materials'
 
 const Material = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const MaterialType = styled.div`
   display: flex;
   text-align: left;
   align-self: flex;
-  margin: 10px 0 0 0;
+  margin: 25px 0 50px 0;
   width: 90vw;
 
   color: white;
@@ -36,7 +37,7 @@ const SubHeading = styled.div`
   display: flex;
   text-align: left;
   align-self: flex;
-  margin: 40px 0 20px 0;
+  margin: 25px 0 25px 0;
   width: 90vw;
 
   color: white;
@@ -48,7 +49,7 @@ const MaterialInfo = styled.div`
   display: flex;
   text-align: left;
   align-self: flex;
-  margin: 15px 0 100px 0;
+  margin: 25px 0 25px 0;
   width: 90vw;
 
   color: white;
@@ -60,10 +61,44 @@ const MaterialsPage = ({
   pageColor = colors.green,
   materialText = 'Bamboo',
   materialType = 'Plant',
-  materialImage = '/plant-icon.png',
+  materialImage = '/bamboo.svg',
   materialInfo = 'Bamboo requires no need for pesticides or fertilizers',
 }) => {
   const [mySwitch, setMySwitch] = useState(false)
+
+
+  const [name, setName] = useState('')
+  const [type, setType] = useState('')
+  
+  const [factOne, setFactOne] = useState('')
+  const [factTwo, setFactTwo] = useState('')
+  const [factThree, setFactThree] = useState('')
+
+  useEffect(() => {
+
+
+    //get score
+    let currentMaterial = JSON.parse(localStorage.getItem('currentMaterial'))
+
+
+  
+    const displayMaterial = materials.filter((el) => {
+      return el.name == currentMaterial
+    })
+
+
+    //set progressbar to score 
+    setName(displayMaterial[0].name)
+    setType(displayMaterial[0].type)
+
+    setFactOne(displayMaterial[0].fact1)
+    setFactTwo(displayMaterial[0].fact2)
+    setFactThree(displayMaterial[0].fact3)
+
+    console.log(displayMaterial[0])
+
+  }, [])
+  
 
   return (
     <div
@@ -71,21 +106,24 @@ const MaterialsPage = ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        background: pageColor,
+        background: type == 'Cotton' ? colors.cyan : type == 'Synthetic' ? colors.purple : type == 'Animal' ? colors.orange : colors.green,
         minHeight: '100vh',
       }}
     >
       <Menu />
 
-      <Material>{materialText}</Material>
+      <Material>{name}</Material>
 
-      <MaterialType>Type: {materialType} Fiber</MaterialType>
+      <MaterialType>Type: {type} Fiber</MaterialType>
 
-      <img src={materialImage}></img>
+{/*       <img style={{
+        width: '100px',
+        margin: '25px 0 25px 0'
+      }} src={materialImage}></img> */}
 
       <AboutResourcesCont
-        margin={'50px'}
-        bgColor={colors.green}
+        margin={'0 0 25px 0'}
+        bgColor={type == 'Cotton' ? colors.cyan : type == 'Synthetic' ? colors.purple : type == 'Animal' ? colors.orange : colors.green}
         buttonText={'Resources'}
         mySwitch={mySwitch}
         setMySwitch={setMySwitch}
@@ -101,9 +139,9 @@ const MaterialsPage = ({
         >
           <SubHeading>Where to Recylce</SubHeading>
 
-          <RecycleButton></RecycleButton>
+          <RecycleButton bgColor={type == 'Cotton' ? colors.cyan : type == 'Synthetic' ? colors.purple : type == 'Animal' ? colors.orange : colors.green}></RecycleButton>
 
-          <RecycleButton buttonText={'Vancouver Recycle'}></RecycleButton>
+          <RecycleButton bgColor={type == 'Cotton' ? colors.cyan : type == 'Synthetic' ? colors.purple : type == 'Animal' ? colors.orange : colors.green} buttonText={'Vancouver Recycle'}></RecycleButton>
 
           <SubHeading>
             To help save the world check out these sustainable store options
@@ -114,11 +152,15 @@ const MaterialsPage = ({
         </div>
       ) : (
         <div>
-          <SubHeading>About {materialText}</SubHeading>
+          <SubHeading>About {name}</SubHeading>
 
-          <MaterialInfo>{materialInfo}</MaterialInfo>
+          <MaterialInfo>{factOne}</MaterialInfo>
 
-          <MaterialButtonSlider />
+          <MaterialInfo>{factTwo}</MaterialInfo>
+
+          <MaterialInfo>{factThree}</MaterialInfo>
+
+          {/* <MaterialButtonSlider /> */}
         </div>
       )}
     </div>
