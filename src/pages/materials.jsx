@@ -1,5 +1,5 @@
 import { Menu } from '../components/Menu'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { colors } from '../components/color'
 import { FiberButtonContainer } from '../components/FiberButtonContainer'
 import { StoreContainer } from '../components/StoreContainer'
@@ -11,6 +11,7 @@ const Materials = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
 
   return (
     <div
+   
       style={{
         display: 'flex',
         flexDirection: 'column',

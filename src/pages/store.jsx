@@ -28,6 +28,8 @@ const StoreImage = styled.div`
   overflow: hidden;
 
 
+
+
 `
 
 const SubHead = styled.div`
@@ -70,6 +72,8 @@ const StorePage = ({
   const [twitter, setTwitter] = useState('')
   const [facebook, setFacebook] = useState('')
 
+  const [offset, setOffset] = useState(0)
+
 
 
         
@@ -108,9 +112,22 @@ const StorePage = ({
 
 
 
-
       //empty array so this only renders once when page loads
     }, [])
+
+
+    useEffect(() => {
+      document.body.addEventListener('scroll', handleScroll)
+      return () => document.body.removeEventListener('scroll', handleScroll)
+    })
+  
+  const handleScroll = () => {
+      console.log('scroll event', document.body.scrollTop)
+
+      setOffset(document.body.scrollTop)
+    }
+
+
 
 
     
@@ -132,10 +149,21 @@ const StorePage = ({
     >
       <Menu />
 
-      <StoreName>{storeName}</StoreName>
+      <StoreName
+              style={{
+              
+                transform: `translateY(${offset * 0.5}px`
+              }}
+              >{storeName}</StoreName>
 
       <StoreImage>
-        <img src={storeImg}></img>
+        <img
+        style={{
+
+          transform: `translateY(${offset * 0.5}px`
+        }}
+    
+           src={storeImg}></img>
       </StoreImage>
 
       <RecycleButton

@@ -1,7 +1,10 @@
 import App from 'next/app'
 import '../styles/index.css'
+import {useEffect} from 'react'
 
 function MyApp({ Component, pageProps }) {
+
+
   return (
     <>
       <Component {...pageProps} />

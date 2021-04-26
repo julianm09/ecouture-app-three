@@ -60,7 +60,7 @@ top: 0;
 const SocialUI = styled.a`
 
 display: flex;
-height: 100px;
+height: 20vh;
 width: 100vw;
 justify-content: center;
 align-items: center;

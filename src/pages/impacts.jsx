@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  height: 200vh;
   background: white;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ const ResultsUI = styled.div`
   width: 90vw;
   min-height: 100px;
   position: absolute;
-  bottom: 5vh;
+  bottom: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,10 +81,13 @@ const Impact = () => {
 
     if (count == 4) {
       router.push('/results')
+      /* setInstructions('swipe up to see how you can help') */
     }
   }
 
   const [hide, setHide] = useState(false)
+
+  const [instructions, setInstructions] = useState('Click to pick up the microfibers from the ocean')
 
   return (
     <Container>
@@ -101,7 +104,7 @@ const Impact = () => {
         three={true}
       />
 
-      <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+      <ResultsUI>{instructions}</ResultsUI>
 
       <Plastic
         onClick={(e) => handleClick(e)}
