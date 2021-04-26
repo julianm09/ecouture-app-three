@@ -63,7 +63,7 @@ const LearnFibersPage = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
         
       </div>
 
-      <MaterialButtonSlider />
+      {/* <MaterialButtonSlider /> */}
 
       <StoreText />
 
