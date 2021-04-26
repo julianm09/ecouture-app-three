@@ -8,10 +8,11 @@ const StoreInsideUI = styled.div`
 
 width: 90vw;
 height: 75px;
-font-size: 18pt;
+font-size: 18px;
 font-family: 'Nunito', sans-serif;
 border-radius: 15px;
-box-shadow: 0px 5px 8px #888888;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border: 1px solid rgba(255, 255, 255, 0.5);
 display: flex;
 flex-direction: column;
 color: white;
@@ -27,7 +28,7 @@ cursor: pointer;
 
 const StoreSubheadUI = styled.div`
 
-font-size: 10pt;
+font-size: 12px;
 color: white;
 font-family: 'Open Sans', sans-serif;
 z-index: 200;

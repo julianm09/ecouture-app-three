@@ -17,8 +17,7 @@ width: 100vw;
 const HeaderUI = styled.div`
 
 font-family: Nunito;
-font-style: normal;
-font-weight: bold;
+font-weight: 700;
 font-size: 24px;
 color: white;
 padding: 0 0 50px 0;
@@ -29,9 +28,10 @@ margin: 0 0 0 5vw;
 
 const ScrollContainerUI = styled.div`
 
-margin: 0 0 0 5vw;
+padding: 0 0 0 5vw;
 overflow-x: scroll;
 height: 300px;
+margin: 0 5vw 0 0;
 
 
 &::-webkit-scrollbar {
@@ -43,10 +43,11 @@ height: 300px;
 `
 const Scroll = styled.div`
 
--webkit-overflow-scrolling: touch;
-width: 200vw;
+
 display: flex;
 flex-direction: row;
+
+
 
 
 `
@@ -59,7 +60,7 @@ justify-content: center;
 align-items: center;
 color: white;
 font-family: nunito;
-width: 200px;
+min-width: 200px;
 height: 200px;
 border: 1px solid rgba(255, 255, 255, 0.5);
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

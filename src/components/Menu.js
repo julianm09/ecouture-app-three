@@ -20,6 +20,9 @@ color: white;
 flex-direction: column;
 transition: 1s ease-out;
 z-index: 1000;
+position: fixed;
+top: 0;
+
 
 
 `
@@ -41,11 +44,15 @@ height: 100px;
 width: 100vw;
 justify-content: center;
 align-items: center;
-position: absolute;
-top: 0;
 z-index: 100;
 font-size: 18px;
 z-index: 1500;
+position: absolute;
+top: 0;
+
+
+
+
 
 
 `
@@ -111,10 +118,7 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
 
 
 
-    <NavBarUI
-        style={{
-            background: menuColor
-        }}>
+    <NavBarUI>
 {(backButton && !menuActive) ? (
     <BackIconUI   
     onClick={() => router.back()}>

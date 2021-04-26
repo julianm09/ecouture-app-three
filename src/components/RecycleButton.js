@@ -13,8 +13,7 @@ const RecycleButtonUI = styled.div`
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
- 
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
     color: white;
     font-size: 18px; 
     font-family: Nunito;
