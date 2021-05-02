@@ -8,6 +8,7 @@ import { useSpring, animated } from 'react-spring'
 import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton';
+import Image from 'next/image';
 
 
 const Container = styled.div`
@@ -221,7 +222,7 @@ const Impact = () => {
 
 <img style={{
         position: 'absolute',
-        bottom: '20vh',
+        top: '60vh',
         width: '200px',
         zIndex:"100"
       

@@ -8,6 +8,8 @@ import { useSpring, animated } from 'react-spring'
 import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton';
+import Image from 'next/image';
+
 
 const Container = styled.div`
   width: 100vw;
@@ -199,8 +201,8 @@ const Impact = () => {
       onClick={handleClick}
       style={{
         position: 'absolute',
-        bottom: '25vh',
-        width: '300px',
+        bottom: '30vh',
+        height: '30vh',
         zIndex: '300',
         cursor: 'pointer'
       
@@ -209,9 +211,9 @@ const Impact = () => {
 
 <img style={{
         position: 'absolute',
-        bottom: '27vh',
-        width: '250px',
-        height: '250px',
+        bottom: '30vh',
+        height: '25vh',
+        
         opacity: fill ? '100%' : '0%',
         transition: '1s ease'
       }} src="/water-fill.png"/>

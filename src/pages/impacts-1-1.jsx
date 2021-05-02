@@ -17,7 +17,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: none;
+  overflow: hidden;
 `
 export const CompletionCard = styled.div`
   
