@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-x: hidden;
             font-family: Nunito;
 
             -ms-overflow-style: none;  /* IE and Edge */
@@ -96,6 +96,24 @@ function MyApp({ Component, pageProps }) {
 
             to {
               bottom: -10vh;
+            }
+          }
+
+          @keyframes smoke {
+            from {
+              opacity: 0;
+              bottom: 45vh;
+            }
+            30%{
+              opacity: 100%;
+
+            }
+
+           
+
+            to {
+              bottom: 55vh;
+              opacity: 0;
             }
           }
 

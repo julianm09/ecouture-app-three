@@ -18,7 +18,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  overflow-x: hidden;
+  overflow-y: hidden;
 `
 const CompletionCard = styled.div`
   
@@ -109,7 +109,7 @@ const Plastic = styled.img`
   z-index: 200;
   position: absolute;
   bottom: 35vh;
-  animation: float 3s infinite;
+  animation: smoke 3s infinite;
   cursor: pointer;
   max-width: 100px;
   padding: 10px;
@@ -164,7 +164,7 @@ const Impact = () => {
       <img 
          style={{
           width: '100px',
-          animation: 'float 3s infinite',
+          
         }}
       src="/grey-cloud.png"/>
 
@@ -197,7 +197,8 @@ const Impact = () => {
         style={{
           left: '35%',
           animationDelay: '1s',
-          zIndex: '200'
+          zIndex: '200',
+          opacity: '0%'
         }}
       />
 
@@ -206,7 +207,8 @@ const Impact = () => {
         style={{
           left: '40%',
           animationDelay: '0.2s',
-          zIndex: '200'
+          zIndex: '200',
+          opacity: '0%'
         }}
       />
 
@@ -216,15 +218,17 @@ const Impact = () => {
         style={{
           left: '51%',
           animationDelay: '0.5s',
-          zIndex: '200'
+          zIndex: '200',
+          opacity: '0%'
         }}
       />
 
 <img style={{
         position: 'absolute',
-        top: '60vh',
+        bottom: '20vh',
         width: '200px',
-        zIndex:"100"
+        zIndex:"100",
+        
       
       }} src="/factory.png"/>
       <img style={{
@@ -232,7 +236,8 @@ const Impact = () => {
         bottom: '0vh',
         width: '100%',
         zIndex:"0",
-        height:'65vh'
+        height: '70vh'
+        
        
        
         

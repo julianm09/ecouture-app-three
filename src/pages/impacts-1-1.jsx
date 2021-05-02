@@ -18,6 +18,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  overflow-y: hidden
 `
 export const CompletionCard = styled.div`
   
