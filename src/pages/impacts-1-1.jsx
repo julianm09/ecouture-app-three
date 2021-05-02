@@ -17,7 +17,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
 `
 export const CompletionCard = styled.div`
   
@@ -221,15 +221,16 @@ const Impact = () => {
 <img style={{
         position: 'absolute',
         bottom: '0vh',
-        width: '250%',
-        height: '50vh',
+        width: '100%',
+        height: '50%',
         animation: '3s waves ease infinite'
       }} src="/water.png"/>
       <img style={{
         position: 'absolute',
         bottom: '0vh',
-        width: '250%',
-        height: '41vh',
+        width: '100%',
+        height: '50%',
+        
         animation: '4s waves-2 ease infinite',
         
         zIndex: '400'

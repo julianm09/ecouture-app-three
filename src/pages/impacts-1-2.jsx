@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: none;
+  overflow: hidden;
 `
 const CompletionCard = styled.div`
   
@@ -201,7 +201,7 @@ const Impact = () => {
       style={{
         position: 'absolute',
         bottom: '30vh',
-        height: '30vh',
+        height: '25vh',
         zIndex: '300',
         cursor: 'pointer'
       
@@ -211,7 +211,7 @@ const Impact = () => {
 <img style={{
         position: 'absolute',
         bottom: '30vh',
-        height: '25vh',
+        height: '20vh',
         
         opacity: fill ? '100%' : '0%',
         transition: '1s ease'

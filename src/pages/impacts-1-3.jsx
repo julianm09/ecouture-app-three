@@ -17,7 +17,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: none;
+  overflow-x: hidden;
+  overflow-x: hidden;
 `
 const CompletionCard = styled.div`
   

@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            overflow: hidden;
             font-family: Nunito;
 
             -ms-overflow-style: none;  /* IE and Edge */
@@ -73,29 +73,29 @@ function MyApp({ Component, pageProps }) {
 
           @keyframes waves {
             from {
-              left: -10vw;
+              bottom: -5vh;
             }
 
             50% {
-              left: 0vw;
+              bottom: 0vh;
             }
 
             to {
-              left: -10vw;
+              bottom: -5vh;
             }
           }
 
           @keyframes waves-2 {
             from {
-              left: -50vw;
+              bottom: -10vh;
             }
 
             50% {
-              left: -40vw;
+              bottom: -20vh;
             }
 
             to {
-              left: -50vw;
+              bottom: -10vh;
             }
           }
 
