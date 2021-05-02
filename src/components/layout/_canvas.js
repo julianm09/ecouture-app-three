@@ -175,7 +175,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point
           id='3'
           style={{
-            background: progress[0] ? colors.green : 'white',
+            background: colors.orange
           }}
           
         />
@@ -204,7 +204,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point
           id='6'
           style={{
-            background: colors.orange
+            background: colors.cyan
           }}
           
         />
