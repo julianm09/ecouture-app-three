@@ -8,7 +8,6 @@ import { useSpring, animated } from 'react-spring'
 import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton';
-import Image from 'next/image';
 
 
 const Container = styled.div`
