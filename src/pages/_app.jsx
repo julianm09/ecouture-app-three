@@ -102,7 +102,7 @@ function MyApp({ Component, pageProps }) {
           @keyframes smoke {
             from {
               opacity: 0;
-              bottom: 45vh;
+              bottom: -10vh;
             }
             30%{
               opacity: 100%;
@@ -112,7 +112,7 @@ function MyApp({ Component, pageProps }) {
            
 
             to {
-              bottom: 55vh;
+              bottom: 10vh;
               opacity: 0;
             }
           }

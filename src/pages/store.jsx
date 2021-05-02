@@ -26,7 +26,7 @@ const StoreImage = styled.div`
   
   object-fit: cover;
   overflow: hidden;
-
+  height: 50vh;
 
 
 
@@ -159,7 +159,7 @@ const StorePage = ({
       <StoreImage>
         <img
         style={{
-
+          
           transform: `translateY(${offset * 0.5}px`
         }}
     

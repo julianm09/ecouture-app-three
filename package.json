@@ -54,8 +54,7 @@
     "rest-hooks": "^5.0.20",
     "styled-components": "^5.2.3",
     "three": "^0.127.0",
-    "three-stdlib": "^1.2.2",
-    "use-sound": "^3.0.0"
+    "three-stdlib": "^1.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",

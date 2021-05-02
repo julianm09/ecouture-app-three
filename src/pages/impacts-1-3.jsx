@@ -7,8 +7,8 @@ import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
 import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
-import { RoundBlueButton } from '@/components/RoundBlueButton';
-
+import { RoundBlueButton } from '@/components/RoundBlueButton'
+import {CompletionCard} from '../components/CompletionCard'
 
 const Container = styled.div`
   width: 100vw;
@@ -20,54 +20,6 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: hidden;
 `
-const CompletionCard = styled.div`
-  
-  width: 90vw;
-  height:80vh;
-  background: white;
-  top: 10vw;
-  z-index: 1000;
-  border-radius: 25px;
-  border: 1px solid ${colors.blue};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding:10vh 0 10vh 0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  flex-direction: column;
-  transition:0.5s ease;
-
-`
-
-
-
-const CompletionInformation = styled.div`
-  
-width: 80%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: ${colors.green};
-font-size: 18px;
-font-weight: 700;
-font-family: Nunito;
-
-`
-
-const CompletionFact= styled.div`
-  
-width: 80%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: ${colors.blue};
-font-size: 18px;
-font-weight: 700;
-font-family: Nunito;
-text-align: center;
-
-`
-
 
 
 const Information = styled.div`
@@ -85,10 +37,6 @@ const Information = styled.div`
 `
 
 
-const Space = styled.div`
-  width: 10px;
-`
-
 const ResultsUI = styled.div`
   width: 90vw;
   min-height: 100px;
@@ -103,19 +51,6 @@ const ResultsUI = styled.div`
   animation: 3s blink infinite;
 `
 
-const Plastic = styled.img`
-  width: 20vw;
-  
-  z-index: 200;
-  position: absolute;
-  bottom: 35vh;
-  animation: smoke 3s infinite;
-  cursor: pointer;
-  max-width: 100px;
-  padding: 10px;
-
-
-`
 
 const Impact = () => {
   const props = useSpring({
@@ -142,110 +77,112 @@ const Impact = () => {
 
   const [hide, setHide] = useState(false)
 
-  const [instructions, setInstructions] = useState('Click to pick up the microfibers from the ocean')
+  const [instructions, setInstructions] = useState(
+    'Click to pick up the microfibers from the ocean'
+  )
 
   return (
-
     <>
+      <Container>
 
-    <Container>
+      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
-    <CompletionCard
-    style={{
-      
-      transform: completeTask ? 'translateY(0)' : 'translateY(100vh)'
-    }}>
 
-    <CompletionInformation>
- 
-    You've unlocked a tip!
-    </CompletionInformation>
+        <Information>
+          U.S. and Canadian households release over 870 tons of plastic
+          microfibers into the ocean every year from laundry alone.
+        </Information>
 
-      <img 
-         style={{
-          width: '100px',
-          
-        }}
-      src="/grey-cloud.png"/>
+        <Menu
+          hide={hide}
+          setHide={setHide}
+          logo='/logo-small-blue.png'
+          iconColor={colors.blue}
+          three={true}
+        />
 
-    <CompletionFact>
- 
-    To reduce the microfibers you produce, buy natural textiles and try washing less with cool water.
-    </CompletionFact>
+        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
 
-    <RoundBlueButton text={'more impacts'}/>
 
-      </CompletionCard>
+        <div
+          style={{
+            position:'relative',
+            
+            display: 'flex',
+            background: 'red',
+           
+            width: '100px'
 
-      <Information>
-        U.S. and Canadian households release over 870 tons of plastic
-        microfibers into the ocean every year from laundry alone.
-      </Information>
+          }}>
+        <img
+          src='/grey-cloud.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            
+            animationDelay: '1s',
+            width:'100px',
+            zIndex: '200',
+            opacity: '0%',
+            animation: 'smoke 3s infinite',
+            position:'absolute',
+            cursor: 'pointer',
 
-      <Menu
-        hide={hide}
-        setHide={setHide}
-        logo='/logo-small-blue.png'
-        iconColor={colors.blue}
-        three={true}
-      />
+          }}
+        />
 
-      <ResultsUI>{instructions}</ResultsUI>
+        <img
+          src='/grey-cloud.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            cursor: 'pointer',
+            width:'100px',
+            animationDelay: '0.2s',
+            zIndex: '200',
+            opacity: '0%',
+            animation: 'smoke 3s infinite',
+            position:'absolute',
+            left: '-50px'
+          }}
+        />
 
-      <Plastic src="/grey-cloud.png"
-        onClick={(e) => handleClick(e)}
-        style={{
-          left: '35%',
-          animationDelay: '1s',
-          zIndex: '200',
-          opacity: '0%'
-        }}
-      />
+        <img
+          src='/grey-cloud.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+           
+            animationDelay: '0.5s',
+            width:'100px',
+            zIndex: '200',
+            opacity: '0%',
+            animation: 'smoke 3s infinite',
+            position:'absolute',
+            left: '50px',
+            cursor: 'pointer',
+          }}
+        />
 
-<Plastic src="/grey-cloud.png"
-        onClick={(e) => handleClick(e)}
-        style={{
-          left: '40%',
-          animationDelay: '0.2s',
-          zIndex: '200',
-          opacity: '0%'
-        }}
-      />
+        </div>
 
-<Plastic src="/grey-cloud.png"
-
-        onClick={(e) => handleClick(e)}
-        style={{
-          left: '51%',
-          animationDelay: '0.5s',
-          zIndex: '200',
-          opacity: '0%'
-        }}
-      />
-
-<img style={{
-        position: 'absolute',
-        bottom: '20vh',
-        width: '200px',
-        zIndex:"100",
-        
-      
-      }} src="/factory.png"/>
-      <img style={{
-        position: 'absolute',
-        bottom: '0vh',
-        width: '100%',
-        zIndex:"0",
-        height: '70vh'
-        
-       
-       
-        
-      
-      }} src="/grass.png"/>
-
-    </Container>
-
+        <img
+          style={{
+            position: 'absolute',
+            bottom: '20vh',
+            width: '200px',
+            zIndex: '100',
+          }}
+          src='/factory.png'
+        />
+        <img
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            zIndex: '0',
+            height: '70vh',
+          }}
+          src='/grass.png'
+        />
+      </Container>
     </>
   )
 }

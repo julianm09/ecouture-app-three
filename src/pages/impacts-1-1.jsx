@@ -8,7 +8,7 @@ import { useSpring, animated } from 'react-spring'
 import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton';
-
+import { CompletionCard } from '../components/CompletionCard'
 
 export const Container = styled.div`
   width: 100vw;
@@ -18,58 +18,31 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  overflow-y: hidden
+  overflow-y: hidden;
 `
-export const CompletionCard = styled.div`
-  
-  width: 90vw;
-  height:80vh;
-  background: white;
-  top: 10vw;
-  z-index: 1000;
-  border-radius: 25px;
-  border: 1px solid ${colors.blue};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding:10vh 0 10vh 0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  flex-direction: column;
-  transition:0.5s ease;
-
-`
-
-
 
 export const CompletionInformation = styled.div`
-  
-width: 80%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: ${colors.green};
-font-size: 18px;
-font-weight: 700;
-font-family: Nunito;
-
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${colors.green};
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Nunito;
 `
 
-export const CompletionFact= styled.div`
-  
-width: 80%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: ${colors.blue};
-font-size: 18px;
-font-weight: 700;
-font-family: Nunito;
-text-align: center;
-
+export const CompletionFact = styled.div`
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${colors.blue};
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Nunito;
+  text-align: center;
 `
-
-
-
 
 export const Information = styled.div`
   width: 80vw;
@@ -104,7 +77,7 @@ export const ResultsUI = styled.div`
 
 const Plastic = styled.img`
   width: 20vw;
-  
+
   z-index: 200;
   position: absolute;
   bottom: 35vh;
@@ -112,8 +85,6 @@ const Plastic = styled.img`
   cursor: pointer;
   max-width: 100px;
   padding: 10px;
-
-
 `
 
 const Impact = () => {
@@ -141,104 +112,81 @@ const Impact = () => {
 
   const [hide, setHide] = useState(false)
 
-  const [instructions, setInstructions] = useState('Click to pick up the microfibers from the ocean')
-
   return (
-
     <>
+      <Container>
+        <CompletionCard completeImage="/microfiber.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+          
+        <Information>
+          U.S. and Canadian households release over 870 tons of plastic
+          microfibers into the ocean every year from laundry alone.
+        </Information>
 
-    <Container>
+        <Menu
+          hide={hide}
+          setHide={setHide}
+          logo='/logo-small-blue.png'
+          iconColor={colors.blue}
+          three={true}
+        />
 
-    <CompletionCard
-    style={{
-      
-      transform: completeTask ? 'translateY(0)' : 'translateY(100vh)'
-    }}>
+        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
 
-    <CompletionInformation>
- 
-    You've unlocked a tip!
-    </CompletionInformation>
+        <Plastic
+          src='/microfiber.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            left: '10%',
+            animationDelay: '1s',
+            zIndex: '200',
+          }}
+        />
 
-      <img 
-         style={{
-          width: '100px',
-          animation: 'float 3s infinite',
-        }}
-      src="/microfiber.png"/>
+        <Plastic
+          src='/microfiber.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            left: '40%',
+            animationDelay: '0.2s',
+            zIndex: '200',
+          }}
+        />
 
-    <CompletionFact>
- 
-    To reduce the microfibers you produce, buy natural textiles and try washing less with cool water.
-    </CompletionFact>
+        <Plastic
+          src='/microfiber.png'
+          src='/microfiber.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            left: '70%',
+            animationDelay: '0.5s',
+            zIndex: '200',
+          }}
+        />
 
-    <RoundBlueButton text={'more impacts'}/>
+        <img
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            height: '50%',
+            animation: '3s waves ease infinite',
+          }}
+          src='/water.png'
+        />
+        <img
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            height: '50%',
 
-      </CompletionCard>
+            animation: '4s waves-2 ease infinite',
 
-      <Information>
-        U.S. and Canadian households release over 870 tons of plastic
-        microfibers into the ocean every year from laundry alone.
-      </Information>
-
-      <Menu
-        hide={hide}
-        setHide={setHide}
-        logo='/logo-small-blue.png'
-        iconColor={colors.blue}
-        three={true}
-      />
-
-      <ResultsUI>{instructions}</ResultsUI>
-
-      <Plastic src="/microfiber.png"
-        onClick={(e) => handleClick(e)}
-        style={{
-          left: '10%',
-          animationDelay: '1s',
-          zIndex: '200'
-        }}
-      />
-
-<Plastic src="/microfiber.png"
-        onClick={(e) => handleClick(e)}
-        style={{
-          left: '40%',
-          animationDelay: '0.2s',
-          zIndex: '200'
-        }}
-      />
-
-<Plastic src="/microfiber.png"
- src="/microfiber.png"
-        onClick={(e) => handleClick(e)}
-        style={{
-          left: '70%',
-          animationDelay: '0.5s',
-          zIndex: '200'
-        }}
-      />
-
-<img style={{
-        position: 'absolute',
-        bottom: '0vh',
-        width: '100%',
-        height: '50%',
-        animation: '3s waves ease infinite'
-      }} src="/water.png"/>
-      <img style={{
-        position: 'absolute',
-        bottom: '0vh',
-        width: '100%',
-        height: '50%',
-        
-        animation: '4s waves-2 ease infinite',
-        
-        zIndex: '400'
-      }} src="/water-2.png"/>
-
-    </Container>
-
+            zIndex: '400',
+          }}
+          src='/water-2.png'
+        />
+      </Container>
     </>
   )
 }

@@ -96,8 +96,25 @@ const ThreeCanvas = ({ hide, setHide }) => {
       router.push('/impacts-1-2')
     } else if (el.target.id == 2){
       router.push('/impacts-1-3')
+    } else if (el.target.id == 3){
+      router.push('/impacts-2-1')
+    } else if (el.target.id == 4){
+      router.push('/impacts-2-2')
+    } else if (el.target.id == 5){
+      router.push('/impacts-2-3')
+    } else if (el.target.id == 6){
+      router.push('/impacts-3-1')
+    } else if (el.target.id == 7){
+      router.push('/impacts-3-2')
+    } else if (el.target.id == 8){
+      router.push('/impacts-3-3')
+    } else if (el.target.id == 9){
+      router.push('/impacts-4-1')
+    } else if (el.target.id == 10){
+      router.push('/impacts-4-2')
+    } else if (el.target.id == 11){
+      router.push('/impacts-4-3')
     } 
-
     progress[el.target.id] = true
     console.log(progress)
     localStorage.setItem('completed', JSON.stringify(progress))
@@ -151,6 +168,93 @@ const ThreeCanvas = ({ hide, setHide }) => {
           }}
           id='2'
           onClick={(e) => handleClick(e)}
+        />
+      </Html>
+
+      <Html position={[0.9, 0.9, 0.9]}>
+        <Point
+          id='3'
+          style={{
+            background: progress[0] ? colors.green : 'white',
+          }}
+          
+        />
+      </Html>
+      <Html position={[-0.9, 0.9, -0.9]}>
+        <Point
+          style={{
+            background: colors.orange
+          }}
+          id='4'
+          
+        />
+      </Html>
+      <Html position={[-0.9, -0.9, 0.9]}>
+        <Point
+          style={{
+            background: 'white',
+            background: colors.orange
+          }}
+          id='5'
+          
+        />
+      </Html>
+
+      <Html position={[1.1, 1.1, 1.1]}>
+        <Point
+          id='6'
+          style={{
+            background: colors.orange
+          }}
+          
+        />
+      </Html>
+      <Html position={[-1.1, 1.1, -1.1]}>
+        <Point
+          style={{
+            background: colors.cyan
+          }}
+          id='7'
+          
+        />
+      </Html>
+      <Html position={[-1.1, -1.1, 1.1]}>
+        <Point
+          style={{
+            background: 'white',
+            background: colors.cyan
+          }}
+          id='8'
+          
+        />
+      </Html>
+
+      <Html position={[1.3, 1.3, 1.3]}>
+        <Point
+          id='9'
+          style={{
+            background: colors.blue
+          }}
+          
+        />
+      </Html>
+      <Html position={[-1.3, 1.3, -1.3]}>
+        <Point
+          style={{
+            background: colors.blue
+          }}
+          id='10'
+          
+        />
+      </Html>
+      <Html position={[-1.3, -1.3, 1.3]}>
+        <Point
+          style={{
+            background: 'white',
+            background: colors.blue
+          }}
+          id='11'
+          
         />
       </Html>
 
