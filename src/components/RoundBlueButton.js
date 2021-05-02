@@ -1,36 +1,42 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../components/color'
+import { colors } from '../components/color';
+import { useRouter } from 'next/router'
+
 
 const RoundBlueButtonUI = styled.div `
 height: 50px;
-width: 370px;
+width: 80%;
 border-radius: 10px;
 background-color: ${props=>props.bgcolor};
 margin-top: 20px;
 font-family: 'Nunito',sans-serif;
-font-size: x-large;
+font-size: 18;
 color: ${props=>props.textcolor};
 border: 1px solid white;
 display: flex;
 justify-content: center;
 align-items: center;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+cursor: pointer;
 `
 
 export const RoundBlueButton = ({
-    buttonText = 'Burnaby',
+    text = 'Burnaby',
     bgcolor = colors.blue,
     textcolor = 'white'
 }) => {
+
+    const router = useRouter()
 
     return (
         
         <RoundBlueButtonUI
         bgcolor={bgcolor}
         textcolor={textcolor}
+        onClick = {() => router.push('/results')}
         >
-            {buttonText}
+            {text}
             </RoundBlueButtonUI>
         
     )

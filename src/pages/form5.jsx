@@ -24,7 +24,7 @@ export default function MyApp({}) {
         page='form5'
         waterHeight='100'
         buttons={['cotton', 'animal', 'plant', 'synthetic']}
-        dialogue='* or most of your clothes'
+        dialogue=''
         logo='/logo-small.png'
       ></SurveyPage>
     </>

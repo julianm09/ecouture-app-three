@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 import { colors } from '@/components/color'
 import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
+import * as Icon from 'react-feather'
 
 const Container = styled.div`
   width: 100vw;
@@ -17,17 +18,15 @@ const Container = styled.div`
 `
 
 const Score = styled.div`
-
- 
+  text-align: center;
   position: absolute;
-  text-align: left;
   left: 5vw;
-  bottom: 5vh;
+  bottom: 12.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${colors.blue};
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   font-family: Nunito;
 
@@ -39,30 +38,37 @@ const Space = styled.div`
 `
 
 const ResultsUI = styled.div`
-  width: 100vw;
+  width: 90vw;
   min-height: 100px;
   position: absolute;
   top: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${colors.blue};
+  color: ${colors.green};
   font-family: Nunito;
+  font-size: 14px;
+  animation: 5s ease blink infinite;
 `
 
 const Progress = styled.div`
-  width: 100vw;
+  width: 90vw;
+
   position: absolute;
-  bottom: 0;
+  bottom: 5vh;
   display: flex;
   align-items: center;
   justify-content: left;
   background: white;
   border: 1px solid ${colors.blue};
   font-family: Nunito;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 `
 
-const ProgressBar = styled.div`
+const ProgressBlue = styled.div`
   width: 10vw;
   min-height: 5vh;
   bottom: 0;
@@ -71,15 +77,12 @@ const ProgressBar = styled.div`
   justify-content: center;
   background: ${colors.blue};
   transition: 1s ease;
- 
+
   font-family: Nunito;
 `
 
-
-
 const Results = () => {
-
-/*   const checkLocal = () => {
+  /*   const checkLocal = () => {
     if (localStorage.getItem("completed") === null) {
       return [false, false, false, false ]
     } else {
@@ -93,71 +96,45 @@ const Results = () => {
 
   const [progress, setProgress] = useState(checkLocal) 
 
-  const completion = progress.filter(Boolean).length * 5;
+  const progressGreen = progress.filter(Boolean).length * 5;
 
   */
 
-
   const [progress, setProgress] = useState([false, false, false, false])
-
-  
-  const [completion, setCompletion] = useState(0)
 
   const [progressBar, setProgressBar] = useState(0)
 
-
-
   useEffect(() => {
-
 
     //get score
     let score = JSON.parse(localStorage.getItem('score'))
 
+    let completed = () => {
+            if (localStorage.getItem('completed') === null) {
+              return [false, false, false, false]
+            } else {
+              return JSON.parse(localStorage.getItem('completed'))
+            }
+          }
 
+    //check if points are complete and add increment to score
+    let count = progress.filter(Boolean).length
 
-
-    const completed = () => {
-      if (localStorage.getItem("completed") === null) {
-        return [false, false, false, false ]
-      } else {
-        return JSON.parse(localStorage.getItem('completed'))
-      }
-    }
+    setProgressBar(score + ((100 - score) / 2 * count))
 
     setProgress(completed)
 
 
-
-
-        //check if points are complete and add increment to score 
-        let count = progress.filter(Boolean).length
-        console.log(count)
-
-
-
-        const x = (100 - score) / 2 * count
-                //calculate added score increments 
-        setCompletion(x)
-    
-        //set progressbar to score 
-        setProgressBar(score)
-
+    console.log('rendered')
     
 
   },[])
 
-
-
   const props = useSpring({
     config: { duration: 2000 },
-    number: progressBar + completion /* + completion */,
+    number: progressBar/* + progressGreen */,
     from: { number: 0 },
   })
-
-
-  
-
-
 
   const [hide, setHide] = useState(false)
 
@@ -171,44 +148,50 @@ const Results = () => {
         three={true}
         backButton={false}
       />
-      <ThreeCanvas r3f hide={hide} setHide={setHide} />
 
-
-
-      <ResultsUI>Click the points to see your impact on the earth</ResultsUI>
-    
-    <Progress>
-      <animated.div style={{
-        width: progressBar + 'vw',
-        minHeight: '5vh',
-        bottom: '0',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: colors.blue,
-        transition: '2s ease'
-      }}/>
-
-<animated.div style={{
-        width: completion + 'vw',
-        minHeight: '5vh',
-        bottom: '0',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: colors.green,
-        transition: '2s ease'
-      }}/>
+      <ResultsUI>click the points to see your impact on the earth</ResultsUI>
+      <ThreeCanvas r3f hide={hide} setHide={setHide} progress={progress} setProgress={setProgress}/>
 
       <Score>
-        Your Eco Score 
+        Eco Score:
         <Space></Space>
         <animated.div>
           {props.number.interpolate((val) => Math.floor(val))}
         </animated.div>
+        <Space></Space>
+        {/* progressGreen + progressBlue < 40 ? <Icon.Frown/> : progressGreen + progressBlue >= 40 && progressGreen + progressBlue <= 70 ? <Icon.Meh/> : <Icon.Smile/> */}
       </Score>
-    </Progress>
-    
+
+      <Progress>
+
+        <div
+        
+          style={{
+            width: progressBar + 'vw',
+            minHeight: '5vh',
+            bottom: '0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: colors.blue,
+            transition: '2s ease',
+          }}
+        />
+
+{/*         <div
+          style={{
+            width: progressBar[1]+ 'vw',
+            minHeight: '5vh',
+            bottom: '0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: colors.green,
+            transition: '2s ease',
+          }}
+        /> */}
+
+      </Progress>
     </Container>
   )
 }

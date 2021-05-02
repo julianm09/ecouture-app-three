@@ -38,6 +38,25 @@ function MyApp({ Component, pageProps }) {
             color: white;
           }
 
+          img{
+            max-width: none;
+
+          }
+
+          @keyframes blink {
+            from {
+              opacity: 0%;
+            }
+
+            50% {
+              opacity: 100%;
+            }
+
+            to {
+              opacity: 0%;
+            }
+          }
+
           @keyframes float {
             from {
               bottom: 35vh;
@@ -51,6 +70,36 @@ function MyApp({ Component, pageProps }) {
               bottom: 35vh;
             }
           }
+
+          @keyframes waves {
+            from {
+              left: -10vw;
+            }
+
+            50% {
+              left: 0vw;
+            }
+
+            to {
+              left: -10vw;
+            }
+          }
+
+          @keyframes waves-2 {
+            from {
+              left: -50vw;
+            }
+
+            50% {
+              left: -40vw;
+            }
+
+            to {
+              left: -50vw;
+            }
+          }
+
+
 
 
           

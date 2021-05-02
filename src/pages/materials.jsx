@@ -43,7 +43,7 @@ const Materials = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
           fontWeight: 'Bold',
           color: 'white',
           margin: '0 0 50px 0',
-          setChangePage,
+          
         }}
       >
  

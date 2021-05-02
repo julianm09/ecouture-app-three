@@ -63,7 +63,7 @@ font-family: nunito;
 min-width: 200px;
 height: 200px;
 border: 1px solid rgba(255, 255, 255, 0.5);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 margin: 0 50px 0 0;
 cursor: pointer;

@@ -15,8 +15,7 @@ const Point = styled.div`
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid ${colors.green};
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   
 `
 
@@ -92,10 +91,12 @@ const ThreeCanvas = ({ hide, setHide }) => {
 
   const handleClick = (el) => {
     if(el.target.id == 0){
-    router.push('/impacts')
+    router.push('/impacts-1-1')
     } else if (el.target.id == 1){
-      router.push('/ice-impact')
-    }
+      router.push('/impacts-1-2')
+    } else if (el.target.id == 2){
+      router.push('/impacts-1-3')
+    } 
 
     progress[el.target.id] = true
     console.log(progress)
@@ -124,7 +125,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
 
       <EarthUI />
 
-      <Html position={[-0.7, 0.7, 0.7]}>
+      <Html position={[0.7, 0.7, 0.7]}>
         <Point
           id='0'
           style={{
@@ -133,7 +134,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
           onClick={(el) => handleClick(el)}
         />
       </Html>
-      <Html position={[-0.7, -0.7, -0.7]}>
+      <Html position={[-0.7, 0.7, -0.7]}>
         <Point
           style={{
             background: progress[1] ? colors.green : 'white',
@@ -142,34 +143,19 @@ const ThreeCanvas = ({ hide, setHide }) => {
           onClick={(el) => handleClick(el)}
         />
       </Html>
- {/*      <Html position={[0.7, -0.7, 0.7]}>
+      <Html position={[-0.7, -0.7, 0.7]}>
         <Point
           style={{
             background: 'white',
+            background: progress[2] ? colors.green : 'white',
           }}
           id='2'
           onClick={(e) => handleClick(e)}
         />
       </Html>
-      <Html position={[-0.7, -0.7, -0.7]}>
-        <Point
-          style={{
-            background: 'white',
-          }}
-          id='3'
-          onClick={(e) => handleClick(e)}
-        />
-      </Html>
 
-      <Html position={[-1.2, -1.2, -1.2]}>
-        <Point
-          style={{
-            background: 'red'
-          }}
-          id='4'
-          onClick={(e) => {localStorage.clear()}}
-        />
-      </Html> */}
+
+
 
       <Controls
         enablePan={false}

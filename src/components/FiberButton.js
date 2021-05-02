@@ -7,7 +7,7 @@ const FiberButtonUI = styled.div `
     display: flex;
     width: 90vw;
     height: 50px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
     border-radius: 10px;
     border: ${props=>props.borderStyle};
     background-color: ${props=>props.bg};
@@ -70,7 +70,8 @@ export const FiberButton = ({
             border: changePage == material ? '1px solid' + bgcolor : '1px solid rgba(255, 255, 255, 0.5)',
             background: bgcolor,
             color: 'white',
-            left: changePage == material ? '-12vw' :'0'
+            left: changePage == material ? '-12vw' :'0',
+            boxShadow: changePage == material ? 'none' : '0px 4px 4px rgba(0, 0, 0, 0.25)',
 
         }} onClick={() => setChangePage(material)} borderStyle={borderStyle}>
             <FiberImg><img src={image}></img></FiberImg>

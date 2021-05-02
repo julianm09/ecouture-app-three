@@ -16,7 +16,7 @@ export default function MyApp({}) {
         page='form1'
         waterHeight='25'
         buttons={['burnaby', 'vancouver', 'richmond', 'surrey']}
-        dialogue='or closest to'
+        dialogue=''
         title='Where are you located?'
         logo='/logo-small-blue.png'
       ></SurveyPage>

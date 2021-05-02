@@ -62,7 +62,7 @@ export const AboutResourcesCont = ({ margin, bgColor = colors.green, buttonText 
         style={{
           background: mySwitch ? bgColor : "white",
           color: mySwitch ? "white" : bgColor,
-          filter: mySwitch ? 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))' : 'none'
+          boxShadow: mySwitch ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : 'none'
         }}>
         About
       </AboutButtonUI>
@@ -73,7 +73,7 @@ export const AboutResourcesCont = ({ margin, bgColor = colors.green, buttonText 
         style={{
           background: mySwitch ? "white" : bgColor,
           color: mySwitch ? bgColor : "white",
-          filter: mySwitch ? 'none' : 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))'
+          boxShadow: mySwitch ? 'none' : '0px 4px 4px rgba(0, 0, 0, 0.25)'
         }}
       >
         {buttonText}

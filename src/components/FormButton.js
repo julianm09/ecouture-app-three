@@ -12,9 +12,9 @@ import { useRouter } from 'next/router'
 const ButtonUI = styled.div`
   width: 90vw;
   height: 50px;
-  border: 1px solid #3884ff;
+
   box-sizing: border-box;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -131,8 +131,9 @@ export const FormButton = ({
       <ButtonUI
         onClick={(e) => handleClick(e)}
         style={{
-          background: colorOne,
-          color: 'white',
+          background: hovered ? colorTwo: colorOne,
+          color: hovered ? colorOne : colorTwo,
+          border: hovered ? '1px solid'+ colorOne : '1px solid white',
           height: height,
         }}
         onMouseEnter={() => {
