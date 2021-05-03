@@ -90,8 +90,7 @@ const Impact = () => {
       <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+          70 million trees are cut down each year to make our clothes.
         </Information>
 
         <Menu
@@ -102,12 +101,47 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>tap to plant more trees</ResultsUI>
 
         {/* do animations here  */}
 
+        <img style={{
+          position:'absolute',
+          bottom:'0vh',
+          width:'100%',
+          height:'100%'
+        }}
+        src='/grass.png'
+        />
 
+        <img style={{
+          position:'absolute',
+          bottom:'20vh',
+          height:'40%',
+          zIndex:'1'
+        }}
+        src='/tree.png'
+        />
 
+        <img style={{
+          position:'absolute',
+          bottom:'30vh',
+          height:'30%',
+          left:'50vw',
+          zIndex:'0'
+        }}
+        src='/tree.png'
+        />
+      
+      <img style={{
+          position:'absolute',
+          bottom:'35vh',
+          height:'28%',
+          left:'-10vw',
+          zIndex:'0'
+        }}
+        src='/tree.png'
+        />
 
 
 
