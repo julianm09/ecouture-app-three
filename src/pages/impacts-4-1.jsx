@@ -52,6 +52,18 @@ const ResultsUI = styled.div`
 `
 
 
+const Plastic = styled.img`
+  width: 20vw;
+
+  z-index: 200;
+  position: absolute;
+  bottom: 35vh;
+  animation: float 3s infinite;
+  cursor: pointer;
+  max-width: 100px;
+  padding: 10px;
+`
+
 const Impact = () => {
   const props = useSpring({
     config: { duration: 2250 },
@@ -87,7 +99,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/bottle-empty.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
         <Information>
           U.S. and Canadian households release over 870 tons of plastic
@@ -107,7 +119,60 @@ const Impact = () => {
         {/* do animations here  */}
 
 
+        <Plastic
+          src='/bottle-empty.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            left: '10%',
+            animationDelay: '1s',
+            zIndex: '200',
+          }}
+        />
 
+        <Plastic
+          src='/bottle-empty.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            left: '40%',
+            animationDelay: '0.2s',
+            zIndex: '200',
+          }}
+        />
+
+        <Plastic
+          src='/bottle-empty.png'
+        
+          onClick={(e) => handleClick(e)}
+          style={{
+            left: '70%',
+            animationDelay: '0.5s',
+            zIndex: '200',
+          }}
+        />
+
+        <img
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            height: '50%',
+            animation: '3s waves ease infinite',
+          }}
+          src='/water.png'
+        />
+        <img
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            height: '50%',
+
+            animation: '4s waves-2 ease infinite',
+
+            zIndex: '400',
+          }}
+          src='/water-2.png'
+        />
 
 
 

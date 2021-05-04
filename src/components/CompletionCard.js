@@ -20,6 +20,7 @@ export const Container = styled.div`
   overflow-y: hidden;
   position: absolute; 
   left: 10vw;
+  
 `
 export const CompletionCardUI = styled.div`
   width: 90vw;
@@ -38,6 +39,7 @@ export const CompletionCardUI = styled.div`
   transition: 0.5s ease;
   position: absolute; 
   left: 5vw;
+  top: 10vh;
 `
 
 export const CompletionInformation = styled.div`
@@ -114,7 +116,7 @@ export const CompletionCard = ({completeTask, completeImage="microfiber.png", co
 
         <CompletionCardUI
           style={{
-            transform: completeTask ? 'translateY(0)' : 'translateY(100vh)',
+            transform: completeTask ? 'translateX(0vw)' : 'translateX(-100vw)',
           }}
         >
           <CompletionInformation>{completeMessage}</CompletionInformation>

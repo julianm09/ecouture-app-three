@@ -62,6 +62,7 @@ function RimLight({ brightness, color }) {
 
 const Controls = OrbitControls
 
+
 const ThreeCanvas = ({ hide, setHide }) => {
   const router = useRouter()
 
@@ -71,9 +72,11 @@ const ThreeCanvas = ({ hide, setHide }) => {
   useEffect(() => {
     console.log(progress)
 
+    let score = JSON.parse(localStorage.getItem('score'))
+
     const completed = () => {
       if (localStorage.getItem("completed") === null) {
-        return [false, false, false, false ]
+        return [false, false, false]
       } else {
         return JSON.parse(localStorage.getItem('completed'))
       }
@@ -81,47 +84,77 @@ const ThreeCanvas = ({ hide, setHide }) => {
 
     setProgress(completed)
 
+    console.log(completed)
 
 
 
   },[])
 
 
+  let score = JSON.parse(localStorage.getItem('score'))
+
   
 
   const handleClick = (el) => {
     if(el.target.id == 0){
     router.push('/impacts-1-1')
-        progress[el.target.id] = true
+        progress[0] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
     } else if (el.target.id == 1){
       router.push('/impacts-1-2')
-        progress[el.target.id] = true
+        progress[1] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
     } else if (el.target.id == 2){
       router.push('/impacts-1-3')
-        progress[el.target.id] = true
+        progress[2] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
     } else if (el.target.id == 3){
+      progress[0] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-2-1')
     } else if (el.target.id == 4){
+      progress[1] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-2-2')
     } else if (el.target.id == 5){
+      progress[2] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-2-3')
     } else if (el.target.id == 6){
+      progress[0] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-3-1')
     } else if (el.target.id == 7){
+      progress[1] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-3-2')
     } else if (el.target.id == 8){
+      progress[2] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-3-3')
     } else if (el.target.id == 9){
+      progress[0] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-4-1')
     } else if (el.target.id == 10){
+      progress[1] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-4-2')
     } else if (el.target.id == 11){
+      progress[2] = true
+        console.log(progress)
+        localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-4-3')
     } 
     
@@ -149,6 +182,9 @@ const ThreeCanvas = ({ hide, setHide }) => {
 
       <EarthUI />
 
+
+      { score <= 30 ? (
+        <>
       <Html position={[0.7, 0.7, 0.7]}>
         <Point
           id='0'
@@ -157,7 +193,8 @@ const ThreeCanvas = ({ hide, setHide }) => {
           }}
           onClick={(el) => handleClick(el)}
         />
-      </Html>
+      </Html> 
+      
       <Html position={[-0.7, 0.7, -0.7]}>
         <Point
           style={{
@@ -167,6 +204,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
           onClick={(el) => handleClick(el)}
         />
       </Html>
+      
       <Html position={[-0.7, -0.7, 0.7]}>
         <Point
           style={{
@@ -177,44 +215,50 @@ const ThreeCanvas = ({ hide, setHide }) => {
           onClick={(e) => handleClick(e)}
         />
       </Html>
-
+      </>
+      ) : score >= 30 && score <= 50 ? (
+        <>
       <Html position={[0.9, 0.9, 0.9]}>
         <Point
           id='3'
           style={{
-            background: colors.orange
+            background: progress[0] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           
         />
       </Html>
+      
       <Html position={[-0.9, 0.9, -0.9]}>
         <Point
           style={{
-            background: colors.orange
+            background: progress[1] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           id='4'
           
         />
       </Html>
+      
       <Html position={[-0.9, -0.9, 0.9]}>
         <Point
           style={{
             background: 'white',
-            background: colors.orange
+            background: progress[2] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           id='5'
           
         />
       </Html>
-
+      </>
+      ) : score >= 50 && score <= 60 ? (
+        <>
       <Html position={[1.1, 1.1, 1.1]}>
         <Point
           id='6'
           style={{
-            background: colors.cyan
+            background: progress[0] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           
@@ -223,7 +267,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
       <Html position={[-1.1, 1.1, -1.1]}>
         <Point
           style={{
-            background: colors.cyan
+            background: progress[1] ? colors.green : 'white',
           }}
           id='7'
           onClick={(e) => handleClick(e)}
@@ -234,19 +278,21 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point
           style={{
             background: 'white',
-            background: colors.cyan
+            background: progress[2] ? colors.green : 'white',
           }}
           id='8'
           onClick={(e) => handleClick(e)}
           
         />
       </Html>
-
+      </>
+) : (
+  <>
       <Html position={[1.3, 1.3, 1.3]}>
         <Point
           id='9'
           style={{
-            background: colors.blue
+            background: progress[0] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           
@@ -255,7 +301,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
       <Html position={[-1.3, 1.3, -1.3]}>
         <Point
           style={{
-            background: colors.blue
+            background: progress[1] ? colors.green : 'white',
           }}
           id='10'
           onClick={(e) => handleClick(e)}
@@ -266,13 +312,15 @@ const ThreeCanvas = ({ hide, setHide }) => {
         <Point
           style={{
             background: 'white',
-            background: colors.blue
+            background: progress[2] ? colors.green : 'white',
           }}
           id='11'
           onClick={(e) => handleClick(e)}
-          
         />
       </Html>
+      </>
+)
+      }
 
 
 

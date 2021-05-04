@@ -109,6 +109,7 @@ function MyApp({ Component, pageProps }) {
 
             }
 
+
             to {
               bottom: 10vh;
               opacity: 0;
@@ -124,6 +125,36 @@ function MyApp({ Component, pageProps }) {
           @keyframes waveDown {
             // 0%{bottom: -20vh;}
 
+
+          @keyframes grass {
+            from {
+              opacity: 100%;
+            }
+        
+            to {
+              opacity: 0;
+            }
+          }
+
+
+          @keyframes water-drop {
+            from {
+              opacity: 0;
+              top: 100px;
+            }
+            30%{
+              opacity: 100%;
+
+            }
+
+           
+
+            to {
+              top: 150px;
+              opacity: 0;
+            }
+          }
+
             100%{bottom: -50vh;}
           }
 
@@ -132,6 +163,7 @@ function MyApp({ Component, pageProps }) {
             0%{bottom: -50vh}
 
             50%{bottom: 0vh}
+
 
             100%{bottom: -10vh}
           }

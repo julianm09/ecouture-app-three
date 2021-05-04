@@ -141,7 +141,7 @@ const Impact = () => {
           onClick={handleClick}
           style={{
             position: 'absolute',
-            bottom: '25vh',
+            bottom: '30vh',
             height: '25vh',
             zIndex: '300',
             cursor: 'pointer',
@@ -152,7 +152,7 @@ const Impact = () => {
         <img
           style={{
             position: 'absolute',
-            bottom: '25vh',
+            bottom: '30vh',
             height: '20vh',
 
             opacity: fill ? '100%' : '0%',

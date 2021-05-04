@@ -67,10 +67,23 @@ const Impact = () => {
     e.target.style.display = 'none'
     count++
 
-    if (count == 3) {
-      setCompleteTask(true)
+
+
+
+
+    if (count == 2) {
+
+
+      document.getElementById('grass').style.opacity = '100%'
+      document.getElementById('grass').style.animation = 'none'
+      
       /* setInstructions('swipe up to see how you can help') */
-    }
+    setTimeout(()=> {
+      setCompleteTask(true)
+    }, 500)
+
+  }
+
   }
 
   const [completeTask, setCompleteTask] = useState(false)
@@ -87,7 +100,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/sheep.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
         <Information>
           U.S. and Canadian households release over 870 tons of plastic
@@ -102,12 +115,67 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>Click to save the sheep from ovegrazing</ResultsUI>
 
         {/* do animations here  */}
 
 
+        <img
+          
+          style={{
+            
+            
+            position: 'absolute',
+            width:"100vw",
+            zIndex: '0',
+            bottom: '0',
+            height: '40%'
+            
+          }}
+          src='/sand.png'
+        />
 
+        <img
+          onClick={handleClick}
+          id="grass"
+          style={{
+            position: 'absolute',
+            animation: '10s grass ease forwards',
+            width:"100vw",
+            zIndex: '0',
+            cursor: 'pointer',
+            bottom: '0',
+            height: '50%',
+            transition: '1s ease'
+          }}
+          src='/grass.png'
+        />
+
+        <img
+          onClick={handleClick}
+          style={{
+            position: 'absolute',
+            width:"150px",
+            zIndex: '0',
+            cursor: 'pointer',
+            right: '55vw',
+            bottom: '20vh'
+          }}
+          src='/sheep.png'
+        />
+
+        <img
+          onClick={handleClick}
+          style={{
+            position: 'absolute',
+            width:"200px",
+            zIndex: '0',
+            cursor: 'pointer',
+            right: '15vw',
+            bottom: '20vh'
+          }}
+          src='/sheep.png'
+        />
 
 
 
