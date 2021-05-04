@@ -128,13 +128,18 @@ function MyApp({ Component, pageProps }) {
           }
 
         
-
           @keyframes waterUp {
             0%{bottom: -50vh}
 
             50%{bottom: 0vh}
 
             100%{bottom: -10vh}
+          }
+
+          @keyframes icegrow {
+            0%{height: 50%}
+
+            100%{height: 80%}
           }
          
 
