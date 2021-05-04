@@ -86,7 +86,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/building.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/building.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="Try to shop locally more often than not, as emissions from transportation contributes to the melting of our ice caps and the expansion of our oceans."/>
 
         <Information>
           Sea levels are currently rising at a rate of 1/8 of an inch every year.
