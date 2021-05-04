@@ -78,7 +78,7 @@ const Impact = () => {
   const [hide, setHide] = useState(false)
 
   const [instructions, setInstructions] = useState(
-    'Click to pick up the microfibers from the ocean'
+    'click to pick up the microfibers from the ocean'
   )
 
   return (
@@ -87,11 +87,11 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To help lessen water pollution try purchasing clothing from companies that use a carbon based dyeing process"/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+        Fashion causes water-pollution problems, too. Textile dyeing is the world’s second-largest polluter of water, since the water leftover from the dyeing process is often dumped into ditches, streams, or rivers.
+
         </Information>
 
         <Menu
@@ -102,20 +102,71 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>click to clean up the river</ResultsUI>
 
-        {/* do animations here  */}
+        <img
+          src='/water.png'
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            height: '50%',
+            animation: '3s waves ease infinite',
+          }}
+        />
 
+        <img
+        src='/oil-drum.png'
+        onClick={(e) => handleClick(e)}
+        style={{
+          position:'absolute',
+          width: '350px',
+          marginTop: '50px',
+          marginLeft: '-80px',
+          animation: 'oilDrum 1s linear infinite',
+        }}
+        />
 
+        <img
+          src='/oil-2.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position:'absolute',
+            width: '200px',
+            marginTop: '250px',
+            marginLeft: '150px',
+            zIndex: '1',
+            animation: 'oilTwoFloat 3s ease infinite',
 
+          }}
+        />
 
+        <img
+          src='/oil.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position:'absolute',
+            width: '300px',
+            marginTop: '350px',
+            marginLeft: '-50px',
+            zIndex: '200',
+            animation: 'oilFloat 10s ease infinite',
+          }}
+        />
+        
+        <img
+          src='/water-2.png'
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            height: '50%',
 
+            animation: '4s waves-2 ease infinite',
 
-
-
-
-
-        {/* do animations here  */}
+            zIndex: '400',
+          }}
+        />
 
 
       </Container>

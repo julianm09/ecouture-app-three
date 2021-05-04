@@ -143,6 +143,88 @@ function MyApp({ Component, pageProps }) {
           }
          
 
+          @keyframes oilFloat {
+            from {
+              bottom: 20vh;
+            }
+
+            50% {
+              bottom: 25vh;
+            }
+
+            to {
+              bottom: 20vh;
+            }
+          }
+
+          @keyframes oilTwoFloat {
+            from {
+              bottom: 15vh;
+            }
+
+            50% {
+              bottom: 25vh;
+            }
+
+            to {
+              bottom: 15vh;
+            }
+          }
+
+          @keyframes oilDrum {
+            from {
+              bottom: 31vh;
+            }
+
+            50% {
+              bottom: 32vh;
+            }
+
+            to {
+              bottom: 31vh;
+            }
+          }
+
+          @keyframes stinkyFloatTwo {
+            from {
+              bottom: 30vh;
+              opacity: 0%;
+            }
+
+            50% {
+              opacity: 100%;
+            }
+
+            to {
+              bottom: 100vh;
+            }
+          }
+
+          @keyframes teeShirt {
+            from{
+              width: 350px;
+              transform: rotate(0deg);
+            }
+
+            to{
+              width: 0px;
+              transform:rotate(360deg);
+            }
+          }
+
+          @keyframes cotton {
+            from{
+              width: 0px;
+              transform: rotate(360deg);
+            }
+
+            to{
+              width: 350px;
+              transform:rotate(0deg);
+            }
+          }
+
+
         `}
       </style>
     </>
