@@ -67,7 +67,8 @@ const Impact = () => {
     e.target.style.display = 'none'
     count++
 
-    if (count == 3) {
+    if (count == 6) {
+      
       setCompleteTask(true)
       /* setInstructions('swipe up to see how you can help') */
     }
@@ -78,7 +79,7 @@ const Impact = () => {
   const [hide, setHide] = useState(false)
 
   const [instructions, setInstructions] = useState(
-    'Click to pick up the microfibers from the ocean'
+    'click to pick up the microfibers from the ocean'
   )
 
   return (
@@ -87,11 +88,10 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+        The average American throws out about 82 pounds of textile waste per year. Textiles can take up to 200+ years to decompose in landfills.
         </Information>
 
         <Menu
@@ -102,21 +102,210 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>tap to clear the landfill</ResultsUI>
 
-        {/* do animations here  */}
+        <img
+          src='/grass.png'
+          style={{
+            position: 'absolute',
+            bottom: '0vh',
+            width: '100%',
+            zIndex: '0',
+            height: '85vh',
+          }}
+        />
 
+        <img 
+          src='/garbage.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position: 'absolute',
+            width:'250px',
+            marginLeft: '-70px',
+            marginTop: '25px',
+            zIndex: '1',
+          }}
+        />
 
+        <img 
+          src='/garbage.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position: 'absolute',
+            width:'250px',
+            marginLeft: '70px',
+            marginTop: '30px',
+            zIndex: '1',
+          }}
+        />
 
+        <img 
+          src='/garbage.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position: 'absolute',
+            width:'250px',
+            marginTop: '15px',
+            zIndex: '1',
+          }}
+        />
 
+        <img 
+          src='/garbage.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position: 'absolute',
+            marginTop: '125px',
+            marginLeft: '-100px',
+            width:'250px',
+            zIndex: '1',
+          }}
+        />
 
+        <img 
+          src='/garbage.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position: 'absolute',
+            marginTop: '125px',
+            marginLeft: '100px',
+            width:'250px',
+            zIndex: '1',
+          }}
+        />
 
+        <img 
+          src='/garbage.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position: 'absolute',
+            marginTop: '155px',
+            width:'250px',
+            zIndex: '1',
+          }}
+        />
 
+        <img
+          src='/stinky-two.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'-100px',
+            animation: 'stinkyFloatTwo 10s linear',
+            animationDelay: '1s',
+          }}
+        />
 
+        <img
+          src='/stinky.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'50px',
+            animation:  'stinkyFloatTwo 10s linear',
+            animationDelay: '2s',
+          }}
+        />
 
+        <img
+          src='/stinky-two.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'-100px',
+            animation: 'stinkyFloatTwo 10s linear',
+            animationDelay: '3s',
+            
+          }}
+        />
 
-        {/* do animations here  */}
+        <img
+          src='/stinky.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'50px',
+            animation:  'stinkyFloatTwo 10s linear',
+            animationDelay: '4s',
+          }}
+        />
 
+        <img
+          src='/stinky-two.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'-100px',
+            animation: 'stinkyFloatTwo 10s linear',
+            animationDelay: '5s',           
+          }}
+        />
+
+        <img
+          src='/stinky.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'50px',          
+            animation:  'stinkyFloatTwo 10s linear',
+            animationDelay: '6s',            
+          }}
+        />
+
+      <img
+          src='/stinky-two.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'-100px',
+            animation: 'stinkyFloatTwo 10s linear',
+            animationDelay: '7s',            
+          }}
+        />
+
+        <img
+          src='/stinky.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'50px',          
+            animation:  'stinkyFloatTwo 10s linear',
+            animationDelay: '8s',           
+          }}
+        />
+
+        <img
+          src='/stinky-two.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'-100px',
+            animation: 'stinkyFloatTwo 10s linear',
+            animationDelay: '9s',            
+          }}
+        />
+
+        <img
+          src='/stinky.png'
+          style={{
+            opacity: '0%',
+            position: 'absolute',
+            width:'150px',
+            marginLeft:'50px',          
+            animation:  'stinkyFloatTwo 10s linear',
+            animationDelay: '10s',          
+          }}
+        />
+        
 
       </Container>
     </>
