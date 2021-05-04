@@ -109,40 +109,39 @@ function MyApp({ Component, pageProps }) {
 
             }
 
-           
-
             to {
               bottom: 10vh;
               opacity: 0;
             }
           }
 
+          @keyframes treedrop{
+            0%{top: -50vh;}
 
-
-
-          
-         
-          @keyframes cityDown {
-            0% {top: 150px;}
-          
-            100% {top: 300px;}
+            100%{top: 50vh;}
           }
 
-          @keyframes cityUp {
-            0%{top: 300px}
+          @keyframes waveDown {
+            // 0%{bottom: -20vh;}
 
-            100%{top: 150px}
-
+            100%{bottom: -50vh;}
           }
 
+        
           @keyframes waterUp {
+            0%{bottom: -50vh}
 
-            0%{height: 50vh}
+            50%{bottom: 0vh}
 
-            50%{height: 65vh}
-
-            100%%{height: 50vh}
+            100%{bottom: -10vh}
           }
+
+          @keyframes icegrow {
+            0%{height: 50%}
+
+            100%{height: 80%}
+          }
+         
 
           @keyframes oilFloat {
             from {
@@ -224,6 +223,7 @@ function MyApp({ Component, pageProps }) {
               transform:rotate(0deg);
             }
           }
+
 
         `}
       </style>
