@@ -17,8 +17,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
+
 `
 
 
@@ -45,7 +45,7 @@ const ResultsUI = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${colors.blue};
   font-family: Nunito;
   z-index: 500;
   animation: 3s blink infinite;
@@ -67,7 +67,7 @@ const Impact = () => {
     e.target.style.display = 'none'
     count++
 
-    if (count == 3) {
+    if (count == 1) {
       setCompleteTask(true)
       /* setInstructions('swipe up to see how you can help') */
     }
@@ -87,7 +87,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/water-drop.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
         <Information>
           U.S. and Canadian households release over 870 tons of plastic
@@ -108,6 +108,40 @@ const Impact = () => {
 
 
 
+<div
+style={{
+            
+            
+  position: 'relative'
+}}>
+        <img
+          
+          style={{
+            
+            
+            height: '25vh',
+            zIndex: '300',
+            cursor: 'pointer',
+          }}
+          src='/sink.png'
+        />
+
+        <img
+          onClick={handleClick}
+          style={{
+            position: 'absolute',
+            animation: '1s water-drop ease-in infinite', 
+            height: '10vh',
+            zIndex: '300',
+            cursor: 'pointer',
+            top: '100px',
+            left: '150px',
+            
+          }}
+          src='/water-drop.png'
+        />
+
+</div>
 
 
 

@@ -91,14 +91,14 @@ export const FormButton = ({
       
     } else if (page == 'form1'){
 
-      
       answer == 'burnaby' ? location = 'burnaby' : answer == 'vancouver' ? location = 'vancouver' : answer == 'richmond' ? location = 'richmond' :  location = 'surrey' ;
 
       localStorage.setItem('location', JSON.stringify(location))
       /* console.log('form1' + answer) */
-      
+
     } else if(page == 'form2'){
       /* console.log('form2' + answer) */
+      
       answer == 'online' ? points += 5 : answer == 'local' ? points += 20 : answer == 'both' ? points += 10 : points+= 0;
     
     } else if (page == 'form3'){
@@ -112,7 +112,6 @@ export const FormButton = ({
     } else if (page == 'form5'){
       /* console.log('form5' + answer) */
       answer == 'cotton, organic cotton' ? points += 15 : answer == 'wool, fleece' ? points += 10 : answer == 'hemp, bamboo' ? points += 20 : points+= 5;
-
     }
     
     let score = JSON.parse(localStorage.getItem('score'))
@@ -123,8 +122,7 @@ export const FormButton = ({
 
     console.log(JSON.parse(localStorage.getItem('location')))
 
-
-  }
+    }
 
   return (
     <div>

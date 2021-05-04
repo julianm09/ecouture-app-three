@@ -109,8 +109,7 @@ function MyApp({ Component, pageProps }) {
 
             }
 
-           
-
+        
             to {
               bottom: 10vh;
               opacity: 0;
@@ -118,7 +117,34 @@ function MyApp({ Component, pageProps }) {
           }
 
 
+          @keyframes grass {
+            from {
+              opacity: 100%;
+            }
+        
+            to {
+              opacity: 0;
+            }
+          }
 
+
+          @keyframes water-drop {
+            from {
+              opacity: 0;
+              top: 100px;
+            }
+            30%{
+              opacity: 100%;
+
+            }
+
+           
+
+            to {
+              top: 150px;
+              opacity: 0;
+            }
+          }
 
           
          
