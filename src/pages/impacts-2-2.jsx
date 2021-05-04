@@ -45,7 +45,7 @@ const ResultsUI = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #3884FF;
   font-family: Nunito;
   z-index: 500;
   animation: 3s blink infinite;
@@ -64,13 +64,15 @@ const Impact = () => {
   const router = useRouter()
 
   const handleClick = (e) => {
-    e.target.style.display = 'none'
-    count++
+    e.target.style.animation = 'teeShirt 3s linear forwards'
+    document.getElementById('cotton').style.animation = 'cotton 3s linear forwards'
+    
+    setTimeout(()=>{
 
-    if (count == 3) {
       setCompleteTask(true)
-      /* setInstructions('swipe up to see how you can help') */
-    }
+    },3500)
+
+    
   }
 
   const [completeTask, setCompleteTask] = useState(false)
@@ -87,11 +89,10 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program"/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+        Less than 1 percent of fashion materials are recycled into new clothing at the end of their life cycle.
         </Information>
 
         <Menu
@@ -102,20 +103,28 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>tap to recycle the t-shirt</ResultsUI>
 
-        {/* do animations here  */}
+        <img 
+          src='/tee.png'
+          onClick={(e) => handleClick(e)}
+          style={{
+            position:'absolute',
+            width:'350px',
+          }}
+        />
+
+        <img
+          id='cotton'
+          src='/cotton.png'
+          style={{
+            position:'absolute',
+            width:'0px',
+            animationDelay: '3s',
+          }}
+        />
 
 
-
-
-
-
-
-
-
-
-        {/* do animations here  */}
 
 
       </Container>

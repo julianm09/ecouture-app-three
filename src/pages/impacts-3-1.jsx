@@ -51,6 +51,13 @@ const ResultsUI = styled.div`
   animation: 3s blink infinite;
 `
 
+const Tree = styled.img`
+  height: 45%;
+  right: 40vw;
+  position:absolute;
+  top: -50vh;
+  z-index: 1;
+`
 
 const Impact = () => {
   const props = useSpring({
@@ -63,15 +70,18 @@ const Impact = () => {
 
   const router = useRouter()
 
+
+
   const handleClick = (e) => {
-    e.target.style.display = 'none'
+    document.getElementById('tree1').style.animation = 'treedrop 4s ease forwards'
+    document.getElementById('tree2').style.animation = 'treedrop 4s ease forwards 2s'
     count++
 
-    if (count == 3) {
+    setTimeout(() => {
       setCompleteTask(true)
-      /* setInstructions('swipe up to see how you can help') */
-    }
+    }, 5500)
   }
+
 
   const [completeTask, setCompleteTask] = useState(false)
 
@@ -87,11 +97,10 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/tree.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="Try not to buy clothing made from rayon or viscose, as these fibers are almost completely constucted from wood pulp."/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+          70 million trees are cut down each year to make our clothes.
         </Information>
 
         <Menu
@@ -102,12 +111,64 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>click to plant more trees</ResultsUI>
 
         {/* do animations here  */}
 
+        <img style={{
+          position:'absolute',
+          bottom:'0vh',
+          width:'100%',
+          height:'100%'
+        }}
+        onClick={(e) => handleClick(e)}
+        src='/grass.png'
+        />
 
+        <img style={{
+          position:'absolute',
+          bottom:'20vh',
+          height:'40%',
+          zIndex:'1'
+        }}
+        onClick={(e) => handleClick(e)}
+        src='/tree.png'
+        />
 
+        <img style={{
+          position:'absolute',
+          bottom:'30vh',
+          height:'30%',
+          left:'50vw',
+          zIndex:'0'
+        }}
+        onClick={(e) => handleClick(e)}
+        src='/tree.png'
+        />
+
+        <img style={{
+          position:'absolute',
+          bottom:'35vh',
+          height:'28%',
+          right:'50vw',
+          zIndex:'0'
+        }}
+        onClick={(e) => handleClick(e)}
+        src='/tree.png'
+        />
+
+        <Tree
+        src='/tree.png'
+        id='tree1'
+        />
+
+        <Tree style={{
+          left:'50vw',
+          height:'35%'
+        }}
+        src='/tree.png'
+        id='tree2'
+        />
 
 
 
