@@ -89,7 +89,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program"/>
+      <CompletionCard completeImage="/cotton.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program"/>
 
         <Information>
         Less than 1 percent of fashion materials are recycled into new clothing at the end of their life cycle.

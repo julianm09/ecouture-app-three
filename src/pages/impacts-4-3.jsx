@@ -74,8 +74,8 @@ const Impact = () => {
     if (count == 2) {
 
 
-      document.getElementById('grass').style.opacity = '100%'
-      document.getElementById('grass').style.animation = 'none'
+      document.getElementById('grass').style.animation = '2s grass ease reverse',
+
       
       /* setInstructions('swipe up to see how you can help') */
     setTimeout(()=> {
@@ -136,7 +136,7 @@ const Impact = () => {
         />
 
         <img
-          onClick={handleClick}
+          
           id="grass"
           style={{
             position: 'absolute',
@@ -146,7 +146,7 @@ const Impact = () => {
             cursor: 'pointer',
             bottom: '0',
             height: '50%',
-            transition: '1s ease'
+            transition: '2s ease'
           }}
           src='/grass.png'
         />
@@ -159,7 +159,8 @@ const Impact = () => {
             zIndex: '0',
             cursor: 'pointer',
             right: '55vw',
-            bottom: '20vh'
+            bottom: '20vh',
+            animation:'1s sheep ease infinite'
           }}
           src='/sheep.png'
         />
@@ -172,7 +173,8 @@ const Impact = () => {
             zIndex: '0',
             cursor: 'pointer',
             right: '15vw',
-            bottom: '20vh'
+            bottom: '20vh',
+            animation:'1s sheep ease infinite'
           }}
           src='/sheep.png'
         />

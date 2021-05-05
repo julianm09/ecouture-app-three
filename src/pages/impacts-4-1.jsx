@@ -126,6 +126,7 @@ const Impact = () => {
             left: '10%',
             animationDelay: '1s',
             zIndex: '200',
+            
           }}
         />
 

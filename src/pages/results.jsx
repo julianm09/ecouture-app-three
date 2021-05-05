@@ -21,15 +21,19 @@ const Score = styled.div`
   text-align: center;
   position: absolute;
   left: 5vw;
-  bottom: 12.5vh;
+  bottom: 10vh;
   display: flex;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
   align-items: center;
   justify-content: center;
   color: ${colors.blue};
-  font-size: 24px;
+  border: 1px solid ${colors.blue};
+  font-size: 18px;
   font-weight: 700;
   font-family: Nunito;
-
+  width: 90vw;
+  height:5vh;
   z-index: 0;
 `
 
@@ -53,7 +57,6 @@ const ResultsUI = styled.div`
 
 const Progress = styled.div`
   width: 90vw;
-
   position: absolute;
   bottom: 5vh;
   display: flex;
@@ -62,7 +65,7 @@ const Progress = styled.div`
   background: white;
   border: 1px solid ${colors.blue};
   font-family: Nunito;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   overflow: hidden;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -82,62 +85,47 @@ const ProgressBlue = styled.div`
 `
 
 const Results = () => {
-  /*   const checkLocal = () => {
-    if (localStorage.getItem("completed") === null) {
-      return [false, false, false, false ]
-    } else {
-      return JSON.parse(localStorage.getItem('completed'))
-    }
-  }
+
+  const [progress, setProgress] = useState([false, false, false])
+
+  const [progressBar, setProgressBar] = useState([0, 0])
 
   useEffect(() => {
-    console.log(progress)
-  })
-
-  const [progress, setProgress] = useState(checkLocal) 
-
-  const progressGreen = progress.filter(Boolean).length * 5;
-
-  */
-
-  const [progress, setProgress] = useState([false, false, false, false])
-
-  const [progressBar, setProgressBar] = useState(0)
-
-  useEffect(() => {
-
     //get score
     let score = JSON.parse(localStorage.getItem('score'))
-
+    
     let completed = () => {
+      if (process.browser){
             if (localStorage.getItem('completed') === null) {
-              return [false, false, false, false]
+              return [false, false, false]
             } else {
               return JSON.parse(localStorage.getItem('completed'))
             }
-          }
+        }
+        
+      }
 
+    let p =  completed()
+  
+    setProgress(p);
     //check if points are complete and add increment to score
-    let count = progress.filter(Boolean).length
+    let count = p.filter(Boolean).length;
 
-    setProgressBar(score + ((100 - score) / 2 * count))
-
-    setProgress(completed)
-
-
-    console.log('rendered')
-    
+    setProgressBar([score, ((100 - score) / 3 * count)])
 
   },[])
 
+  console.log('progress', progress)
+  console.log('rendered', progressBar)
+
   const props = useSpring({
     config: { duration: 2000 },
-    number: progressBar/* + progressGreen */,
+    number: progressBar[0]+progressBar[1]/* + progressGreen */,
     from: { number: 0 },
   })
 
   const [hide, setHide] = useState(false)
-
+  console.log("progress bar",progressBar);
   return (
     <Container>
       <Menu
@@ -167,7 +155,7 @@ const Results = () => {
         <div
         
           style={{
-            width: progressBar + 'vw',
+            width: progressBar[0] + 'vw',
             minHeight: '5vh',
             bottom: '0',
             display: 'flex',
@@ -178,7 +166,7 @@ const Results = () => {
           }}
         />
 
-{/*         <div
+        <div
           style={{
             width: progressBar[1]+ 'vw',
             minHeight: '5vh',
@@ -189,7 +177,7 @@ const Results = () => {
             background: colors.green,
             transition: '2s ease',
           }}
-        /> */}
+        />
 
       </Progress>
     </Container>

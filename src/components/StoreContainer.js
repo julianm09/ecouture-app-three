@@ -63,8 +63,10 @@ export const StoreContainer = ({storeImage, storeName, storeLocation}) => {
                 setCurrentStore={setCurrentStore}
                 storeName = {el.name}
                 storeLocation = {el.address}
+                storeImage = {el.image}
                 
                 />
+                
 
             ))
 

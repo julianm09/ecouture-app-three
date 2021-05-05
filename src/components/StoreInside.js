@@ -46,7 +46,7 @@ const StoreText = styled.div`
 z-index: 200;
 `
 
-export const StoreInside = ({ currentStore, setCurrentStore, storeImage='/store-wildlife.jpeg', storeName='Wildlife Thrift Store', storeLocation='456 Robson St Vancouver'}) => {
+export const StoreInside = ({ currentStore, setCurrentStore, storeImage="/bottle.png", storeName='Wildlife Thrift Store', storeLocation='456 Robson St Vancouver'}) => {
 
   const router = useRouter()
 

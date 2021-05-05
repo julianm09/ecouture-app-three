@@ -71,24 +71,19 @@ const StorePage = ({
   const [instagram, setInstagram] = useState('')
   const [twitter, setTwitter] = useState('')
   const [facebook, setFacebook] = useState('')
-
+  const [storeImage, setStoreImage] = useState('')
   const [offset, setOffset] = useState(0)
 
 
 
         
     useEffect(() => {
-     
-
     //get user location from local sto4rage when page loads
-    const currentStore = JSON.parse(localStorage.getItem('currentStore'))
-
-
+      const currentStore = JSON.parse(localStorage.getItem('currentStore'))
     //filter locatiosn to users location 
-    var showStore = shops.filter(function (el) {
+      var showStore = shops.filter(function (el) {
         return el.name == currentStore 
       });
-
 
       let myStore = showStore[0]
 
@@ -107,12 +102,8 @@ const StorePage = ({
       setTwitter(myStore.twitter)
 
       setFacebook(myStore.facebook)
-
-      
-
-
-
       //empty array so this only renders once when page loads
+      setStoreImage(myStore.image)
     }, [])
 
 
@@ -163,7 +154,7 @@ const StorePage = ({
           transform: `translateY(${offset * 0.5}px`
         }}
     
-           src={storeImg}></img>
+           src={storeImage}></img>
       </StoreImage>
 
       <RecycleButton

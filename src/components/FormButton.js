@@ -98,15 +98,17 @@ export const FormButton = ({
 
     } else if(page == 'form2'){
       /* console.log('form2' + answer) */
-      
+
       answer == 'online' ? points += 5 : answer == 'local' ? points += 20 : answer == 'both' ? points += 10 : points+= 0;
     
     } else if (page == 'form3'){
       /* console.log('form3' + answer) */
+
       answer == 'new' ? points += 5 : answer == 'used' ? points += 20 : answer == 'both' ? points += 10 : points+= 0;
    
     } else if (page == 'form4'){
       /* console.log('form4' + answer) */
+      
       answer == '1' ? points += 5 : answer == '2-3' ? points += 20 : answer == '4-5' ? points += 10 : points+= 5;
     
     } else if (page == 'form5'){

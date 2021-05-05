@@ -120,7 +120,11 @@ export const SurveyPage = ({
   return (
     <SurveyPageUI>
       <LogoUI>
-        <img src={logo} />
+        <img 
+        style={{
+          
+        }}
+        src={logo} />
       </LogoUI>
 
       <TitleContainerUI style={{
