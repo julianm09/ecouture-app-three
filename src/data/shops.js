@@ -13,9 +13,9 @@ export const shops = [
         'facebook' : 'https://www.facebook.com/TheWildlifeThriftStore'
     },
     {
-        'name' : 'Vancouver General Hospital Trhift Store',
+        'name' : 'Vancouver General Hospital Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-VGH.png',
         'location' : 'Vancouver',
         'about' : 'VGH is a not-for-profit thrift store. Their mission is to create volunteering opportunities, as well as support their clients, patients, communities, and promote environmental sustainability.',
         'contact' : '604-876-3731',
@@ -28,7 +28,7 @@ export const shops = [
     {
         'name' : 'Still Fabulous Thrift Shop',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-fabulous.jpeg',
         'location' : 'Vancouver',
         'about' : 'specializes in high-quality men’s, women’s & children’s clothing, and accessories. Their mission is to raise funds for patient support services, programs, and equipment.',
         'contact' : '604-566-9136',
@@ -41,7 +41,7 @@ export const shops = [
     {
         'name' : 'Turnabout',
         'type' : 'online',
-        'image' : '',
+        'image' : '/store-turnabout.jpeg',
         'location' : 'Vancouver',
         'about' : 'Turnabout’s vision is curated around luxury and contemporary brands. Combined with beautiful boutique environments, a magnetic social media presence and a mission to make high style accessible for all.',
         'contact' : '604-734-5313',
@@ -54,7 +54,7 @@ export const shops = [
     {
         'name' : 'Value Village',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-valuevillage.jpeg',
         'location' : 'Richmond',
         'about' : 'One of the leading thrifting chains worldwide. Donate clothes, furniture, electronics…most items you can imagine you can donate or buy at great price.',
         'contact' : '604-248-2285',
@@ -67,7 +67,7 @@ export const shops = [
     {
         'name' : 'BC SPCA Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-spca.jpeg',
         'location' : 'Richmond',
         'about' : 'Takes all types of donations from clothing and accessories to large furniture. Each location is privately owned and operated, contributing a percentage of income each year to the lifesaving work of the BC SPCA.',
         'contact' : '604-276-2477',
@@ -80,7 +80,7 @@ export const shops = [
     {
         'name' : 'RAPS Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-raps.jpeg',
         'location' : 'Richmond',
         'about' : 'The RAPS Thrift Stores are animal welfare thrift stores run mainly by volunteers, and where 100% of the profits go towards the care of animals.',
         'contact' : '604-244-7529',
@@ -91,9 +91,9 @@ export const shops = [
         'facebook' : 'https://www.facebook.com/RegionalAnimalProtectionSociety'
     },
     {
-        'name' : 'SOS Children’s Village Thrift Store Foundation - Steveston',
+        'name' : 'SOS Children’s Village Thrift Store Foundation',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-sos.jpeg',
         'location' : 'Richmond',
         'about' : 'this orginization provides support and services to foster children, foster families, and youth at-risk – and to provide direct relief to poor and homeless youth in care/at-risk in the form of free thrift store items or employment and training opportunities.',
         'contact' : '604-274-8866',
@@ -106,7 +106,7 @@ export const shops = [
     {
         'name' : 'Community Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-community.jpeg',
         'location' : 'Surrey',
         'about' : 'The store is a treasure trove of gently used merchandise  that includes clothing, household items, books, electronic goods, art, linens, collectibles, and fashion accessories all at bargain prices.',
         'contact' : '604-599-9930',
@@ -117,9 +117,9 @@ export const shops = [
         'facebook' : 'https://www.facebook.com/CommThrift'
     },
     {
-        'name' : 'Mcc Thrift Shop',
+        'name' : 'MCC Thrift Shop',
         'type' : 'in-store',
-        'image' : '/store-wildlife.jpeg',
+        'image' : '/store-mcc.jpeg',
         'location' : 'Surrey',
         'about' : 'MCC Thrift Shops support Mennonite Central Committee (MCC), a worldwide ministry of Anabaptist churches.',
         'contact' : '604-583-0465',
@@ -132,7 +132,7 @@ export const shops = [
     {
         'name' : 'The Salvation Army Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-army.jpeg',
         'location' : 'Surrey',
         'about' : 'The Salvation Armys goal, is both to generate funds to help The Salvation Army achieve its mission, and to influence positively the communities in which we operate.',
         'contact' : '778-591-6883',
@@ -145,7 +145,7 @@ export const shops = [
     {
         'name' : 'Talize Thrift Store',
         'type' : 'in-store',
-        'image' : '/store-wildlife.jpeg',
+        'image' : '/store-talize.jpeg',
         'location' : 'Surrey',
         'about' : 'Talize is a proudly Canadian owned and operated for-profit retailer. We’re passionate about Sustainable Fashion because we know the best things in life are special, loved and reused! That means offering unbeatable prices on brand names, designer fashions, accessories, leather goods, footwear, housewares, books, toys and more all while contributing to the health and sustainability of our planet.',
         'contact' : '604-599-6116',
@@ -158,7 +158,7 @@ export const shops = [
     {
         'name' : 'BASES Family Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-bases.jpeg',
         'location' : 'Burnaby',
         'about' : 'We will provide opportunities for children, youth, families and our community that lead toward success and independence. Some of the future program opportunities will aim to develop the academic, physical and personal potential of children and families through breakfast programs, homework clubs, sports, cultural programs (arts, crafts, fine arts) and community kitchens.',
         'contact' : '604-540-0110',
@@ -171,7 +171,7 @@ export const shops = [
     {
         'name' : 'One Love Society & Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-love.jpeg',
         'location' : 'Burnaby',
         'about' : 'We want to empower those in need, to help them succeed by steering them in the right direction by identifying, refining and unfolding their potential and gifting. We will do this by initiating and running a wide range of projects and fostering new ideas to ignite a new hope in individuals, and organizations in community and culture.',
         'contact' : '604-620-5683',
@@ -184,7 +184,7 @@ export const shops = [
     {
         'name' : 'Burnaby Hospice Society Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : '/store-hospice.jpeg',
         'location' : 'Burnaby',
         'about' : 'Burnaby Hospice Society is a not-for-profit organization dedicated to providing compassionate care to individuals and families during the end-of-life journey, and to educating the community about death and dying.',
         'contact' : '604-520-5082',
@@ -197,7 +197,7 @@ export const shops = [
     {
         'name' : 'The Salvation Army Thrift Store',
         'type' : 'in-store',
-        'image' : '',
+        'image' : 'store-salvation.jpeg',
         'location' : 'Burnaby',
         'about' : 'The Salvation Armys goal, is both to generate funds to help The Salvation Army achieve its mission, and to influence positively the communities in which we operate.',
         'contact' : '604-299-0264',

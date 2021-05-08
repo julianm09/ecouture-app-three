@@ -150,8 +150,8 @@ const StorePage = ({
       <StoreImage>
         <img
         style={{
-          
-          transform: `translateY(${offset * 0.5}px`
+      
+          transform: `translateY(${offset *0.5}px`
         }}
     
            src={storeImage}></img>
