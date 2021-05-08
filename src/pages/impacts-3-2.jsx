@@ -152,9 +152,10 @@ const Impact = () => {
             bottom: '-20vh',
             width: '100%',
             height: '50%',
-            animation: '30s waterUp ease forwards',
+            animation: '20s waterUp ease forwards',
             zIndex: '400',
-            transition: 'all 2s ease-in'
+            transition: 'all 2s ease-in',
+            cursor: 'pointer'
           }}
           src='/water-2.png'
           id='wave'

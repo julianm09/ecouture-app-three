@@ -89,7 +89,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
+      <CompletionCard completeImage="/garbage.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
 
         <Information>
         The average American throws out about 82 pounds of textile waste per year. Textiles can take up to 200+ years to decompose in landfills.

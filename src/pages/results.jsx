@@ -12,7 +12,7 @@ import { Tip } from '../components/Tip'
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background: white;
+  background: ${colors.blue};
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@ const Score = styled.div`
   height: 5vh;
   z-index: 0;
   padding: 0 5vw 0 5vw;
-  cursor: pointer;
+  
   transition: 0s ease;
 
   &:hover {
@@ -57,7 +57,7 @@ const ResultsUI = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${colors.green};
+  color: white;
   font-family: Nunito;
   font-size: 14px;
   animation: 5s ease blink-1 infinite;
@@ -71,7 +71,7 @@ const Progress = styled.div`
   align-items: center;
   justify-content: left;
   background: white;
-  border: 1px solid ${colors.blue};
+  border: 1px solid white;
   font-family: Nunito;
   border-radius: 0 0 10px 10px;
   overflow: hidden;
@@ -162,7 +162,7 @@ const Results = () => {
     let completed = () => {
       if (process.browser) {
         if (localStorage.getItem('completed') === null) {
-          return [false, false, false]
+          return [false, false, false, false, false, false, false, false, false, false, false, false]
         } else {
           return JSON.parse(localStorage.getItem('completed'))
         }
@@ -202,13 +202,15 @@ const Results = () => {
       <Menu
         hide={hide}
         setHide={setHide}
-        logo='/logo-small-blue.png'
-        iconColor={colors.blue}
+        logo='/logo-small.png'
+        iconColor={'white'}
         three={true}
         backButton={false}
       />
 
       <ResultsUI>click the points to see your impact on the earth</ResultsUI>
+
+      
       <ThreeCanvas
         r3f
         hide={hide}
@@ -226,6 +228,7 @@ const Results = () => {
           justifyContent: scoreCardExpand ? 'space-between' : 'center',
           padding: scoreCardExpand ? '2vh' : '0 2vh',
           flexDirection: 'column',
+          border: '2px solid white'
         }}
         
       >
@@ -234,6 +237,7 @@ const Results = () => {
             display: 'flex',
             width: '100%',
             justifyContent: 'space-between',
+            
           }}
         >
           <div
@@ -241,6 +245,8 @@ const Results = () => {
             style={{
               display: 'flex',
               width: '100%',
+              cursor: 'pointer',
+              
             }}
           >
             Eco Score:
@@ -250,7 +256,7 @@ const Results = () => {
             </animated.div>
             <Space></Space>
           </div>
-          {scoreCardExpand ? <Icon.ChevronDown onClick={showScoreCard}/> : <Icon.ChevronUp onClick={showScoreCard} />}
+          {scoreCardExpand ? <Icon.ChevronDown style={{cursor: 'pointer'}} onClick={showScoreCard}/> : <Icon.ChevronUp style={{cursor: 'pointer'}} onClick={showScoreCard} />}
         </div>
 
         <ScoreInfo
@@ -262,6 +268,7 @@ const Results = () => {
           }}
         >
           <div
+          onClick={() => setShowFact(!showFact)}
                style={{
                 width: '90vw',
                 height: '92%',
@@ -272,14 +279,17 @@ const Results = () => {
                 display: showFact ? 'flex' : 'none',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                cursor: 'pointer',
+                border: '1px solid white'
               }}>
 
                 <Icon.X 
                 style={{
                   position: 'absolute',
                   top: '10px',
-                  left: '10px'
+                  left: '10px',
+                  
                 }}
                 onClick={() => setShowFact(!showFact)}/>
                 <FactUI>
@@ -317,29 +327,31 @@ const Results = () => {
           </div>
 
           <TipsContainer>
-            <Tip image='/bottle-empty.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Beans"/>
 
-            <Tip image='/microfiber.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+            <Tip position={0} progress={progress} image='/microfiber.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
-            <Tip image='/garbage.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
+            <Tip position={1} progress={progress} image='/bottle-empty.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Beans"/>
 
-            <Tip image='/iceberg.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try to compose a majority of your wardrobe from used clothing, as the fashion industry contributes more than 10% of global carbon emissions annually."/>
+            <Tip position={2} progress={progress} image='/factory.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+           
+            <Tip position={3} progress={progress} image='/garbage.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
 
-            <Tip image='/grey-cloud.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={4} progress={progress} image='/tee.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program."/>
 
-            <Tip image='/oil-drum.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To help lessen water pollution try purchasing clothing from companies that use a carbon based dyeing process."/>
+            <Tip position={5} progress={progress} image='/oil-drum.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To help lessen water pollution try purchasing clothing from companies that use a carbon based dyeing process."/>
             
-            <Tip image='/water-drop.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={6} progress={progress} image='/tree.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try not to buy clothing made from rayon or viscose, as these fibers are almost completely constucted from wood pulp."/>
 
-            <Tip image='/building.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try to shop locally more often than not, as emissions from transportation contributes to the melting of our ice caps and the expansion of our oceans."/>
+            <Tip position={7} progress={progress} image='/building.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try to shop locally more often than not, as emissions from transportation contributes to the melting of our ice caps and the expansion of our oceans."/>
 
-            <Tip image='/factory.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={8} progress={progress} image='/iceberg.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try to compose a majority of your wardrobe from used clothing, as the fashion industry contributes more than 10% of global carbon emissions annually."/>
 
-            <Tip image='/tee.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program."/>
+            <Tip position={9} progress={progress} image='/grey-cloud.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+           
+            <Tip position={10} progress={progress} image='/water-drop.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
 
-            <Tip image='/tree.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try not to buy clothing made from rayon or viscose, as these fibers are almost completely constucted from wood pulp."/>
+            <Tip position={11} progress={progress} image='/sheep.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
 
-            <Tip image='/sheep.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
           </TipsContainer>
         </ScoreInfo>
       </Score>
@@ -360,7 +372,7 @@ const Results = () => {
 
         <div
           style={{
-            width: progressBar[1] + 'vw',
+            width: progressBar[1] - 10 + 'vw',
             minHeight: '5vh',
             bottom: '0',
             display: 'flex',

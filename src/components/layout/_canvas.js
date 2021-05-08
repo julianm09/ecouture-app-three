@@ -1,5 +1,5 @@
 import { Canvas, useThree } from '@react-three/fiber'
-import { Html, OrbitControls, Preload, Sphere } from '@react-three/drei'
+import { Html, OrbitControls, Preload, Sphere, Stars} from '@react-three/drei'
 import { a, useSpring, PerspectiveCamera } from '@react-spring/three'
 import { A11yUserPreferences } from '@react-three/a11y'
 import EarthUI from '../Earth'
@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { colors } from '../color'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { Suspense } from 'react'
 
 const Point = styled.div`
   width: 25px;
@@ -145,7 +146,6 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
       style={{
         position: 'absolute',
         top: 0,
-        background: 'none',
         zIndex: hide ? -100 : 0,
       }}
     >
@@ -154,6 +154,11 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
       <FillLight />
 
       <EarthUI />
+
+      {
+       progressBar[0] + progressBar[1] >= 100 ? <Stars/> : <></>
+      }
+      
 
 
       { progressBar[0] <= 30 || progressBar[0] + progressBar[1] >= 100 ? (
@@ -315,6 +320,7 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
         enableZoom={false}
         enableDamping={true}
         autoRotate
+        autoRotateSpeed={0.5}
       />
     </Canvas>
   )

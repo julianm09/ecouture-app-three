@@ -137,7 +137,7 @@ style={{
             zIndex: '300',
             cursor: 'pointer',
             top: '100px',
-            left: '150px',
+            left: '16vh',
             
           }}
           src='/water-drop.png'

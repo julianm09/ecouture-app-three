@@ -109,7 +109,7 @@ export const FormButton = ({
     } else if (page == 'form4'){
       /* console.log('form4' + answer) */
       
-      answer == '1' ? points += 5 : answer == '2-3' ? points += 20 : answer == '4-5' ? points += 10 : points+= 5;
+      answer == '1' ? points += 20 : answer == '2-3' ? points += 15 : answer == '4-5' ? points += 10 : points+= 5;
     
     } else if (page == 'form5'){
       /* console.log('form5' + answer) */

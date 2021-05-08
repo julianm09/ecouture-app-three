@@ -121,9 +121,8 @@ const Impact = () => {
         onClick={(e) => handleClick(e)}
         style={{
           position:'absolute',
-          width: '350px',
-          marginTop: '50px',
-          marginLeft: '-80px',
+          width: '30vh',
+  
           animation: 'oilDrum 1s linear infinite',
         }}
         />
@@ -133,7 +132,7 @@ const Impact = () => {
           onClick={(e) => handleClick(e)}
           style={{
             position:'absolute',
-            width: '200px',
+            width: '20vh',
             marginTop: '250px',
             marginLeft: '150px',
             zIndex: '1',
@@ -147,7 +146,7 @@ const Impact = () => {
           onClick={(e) => handleClick(e)}
           style={{
             position:'absolute',
-            width: '300px',
+            width: '30vh',
             marginTop: '350px',
             marginLeft: '-50px',
             zIndex: '200',

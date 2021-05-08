@@ -179,7 +179,7 @@ const Impact = () => {
             bottom: '0vh',
             width: '100%',
             zIndex: '0',
-            height: '70vh',
+            height: '50vh',
           }}
           src='/grass.png'
         />

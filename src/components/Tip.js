@@ -34,19 +34,28 @@ const TipImage = styled.img`
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 1vh;
-  filter: grayscale(100%)
+  
 `
 
-export const Tip = ({ image='/bottle-empty.png', setShowFact, showFact, tip='beans', setFact}) => {
+export const Tip = ({ image='/bottle-empty.png', setShowFact, showFact, tip='beans', setFact, position, progress}) => {
 
     const handleClick = () => {
+
+        if(progress[position]){
         setShowFact(!showFact)
         setFact(tip)
+        } else{return}
+
+        
     }
  
   return (
             <TipUI onClick={handleClick}>
-              <TipImage src={image}/>
+              <TipImage style={{
+                  filter: progress[position] ? 'grayscale(0%)': 'grayscale(100%)',
+                  opacity: progress[position] ? '100%': '10%',
+                  cursor: progress[position] ? 'pointer' : 'auto'
+              }}src={image}/>
             </TipUI>     
   )
 }
