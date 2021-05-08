@@ -19,6 +19,7 @@ export const Container = styled.div`
   justify-content: center;
   overflow-x: hidden;
   overflow-y: hidden;
+  position: relative
 `
 
 export const CompletionInformation = styled.div`

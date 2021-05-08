@@ -19,6 +19,7 @@ const Container = styled.div`
   justify-content: center;
   overflow: hidden;
   color: ${colors.blue};
+  position: relative
 
 `
 

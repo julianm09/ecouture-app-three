@@ -175,7 +175,7 @@ const Results = () => {
     //check if points are complete and add increment to score
     let count = p.filter(Boolean).length
 
-    var number = Math.min(Math.max(parseInt(count), 1), 3);
+    var number = Math.min(Math.max(parseInt(count), 0), 3);
 
     localStorage.setItem('count', count)
 
