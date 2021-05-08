@@ -31,7 +31,7 @@ export default function MyApp({}) {
         page='form3'
         waterHeight={waterHeight}
         buttons={['new', 'used', 'both']}
-        dialogue='Buying used clothing can reduce your carbon footprint.'
+        dialogue=''
       ></SurveyPage>
     </>
   )

@@ -10,6 +10,7 @@ import {
 import { FormButton } from "./FormButton";
 import Wave from "react-wavify";
 import { useRouter } from 'next/router'
+import {colors} from './color'
 
 
 
@@ -72,7 +73,7 @@ export const DialogueUI = styled.div`
   height: 15vh;
   width: 90vw;
   position: absolute;
-  bottom: 1vh;
+  bottom: 5vh;
   text-align: center;
 
 `;
@@ -93,6 +94,43 @@ const Loading = styled.div`
   color: white;
 `;
 
+
+const Instructions = styled.div`
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  background: ${colors.blue};
+  position: absolute;
+  color: white;
+  z-index: 10000;
+  flex-direction: column;
+  text-align: center;
+  padding: 20vh 0;
+  transition: 0.7s ease-out;
+
+  `
+
+  const StartButton = styled.div`
+  width: 90vw;
+  height: 50px;
+
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 0 25px 0;
+  border: 1px solid white;
+  font-weight: 600;
+  transition: 0.3s ease-out;
+
+`;
+
 export const SurveyPage = ({
   linkTo,
   page,
@@ -108,6 +146,7 @@ export const SurveyPage = ({
 
   const router = useRouter()
 
+  const [hideInstruction, setHideInstruction] = useState(false)
 
   useEffect(() => {
     if (page == "loading") {
@@ -119,6 +158,12 @@ export const SurveyPage = ({
 
   return (
     <SurveyPageUI>
+      {page == 'home' ? (<Instructions style={{transform: hideInstruction ? 'translateY(-100vh)' : 'translateY(0)'}} onClick={() => setHideInstruction(!hideInstruction)}>
+        <img src="logo-small.png"/>
+        <p>At ecouture our mission is to raise awarenesss around clothing sustainability through interactive and memorable experiences.</p>
+        <StartButton onClick={() => setHideInstruction(!hideInstruction)}>Got it</StartButton>
+        <p>created by: <br></br>Julian Mayes, Saihahj Gil, Jurgen Albanel, Jesse Welk</p>
+      </Instructions>) : (<></>)}
       <LogoUI>
         <img 
         style={{

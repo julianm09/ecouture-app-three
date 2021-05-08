@@ -30,7 +30,7 @@ export default function MyApp({}) {
         page='form2'
         waterHeight={waterHeight}
         buttons={['online', 'local', 'both']}
-        dialogue='Shopping online contributes significantly more waste than in store.'
+        dialogue=''
         title='Where do you shop for clothes?'
       ></SurveyPage>
     </>

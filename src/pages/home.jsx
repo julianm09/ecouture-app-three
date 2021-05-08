@@ -1,13 +1,17 @@
 import { FormButton } from '../components/FormButton'
 import { SurveyPage } from '../components/survey'
 /* import '../styles/index.module.css' */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components'
+
+
 
 export default function MyApp({}) {
   const [choices, setChoices] = useState([])
 
   return (
     <>
+
       <SurveyPage
         colorOne='#3884ff'
         choices={choices}
