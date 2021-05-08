@@ -161,7 +161,7 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
       
 
 
-      { progressBar[0] <= 30 || progressBar[0] + progressBar[1] >= 100 ? (
+      { progressBar[0] < 35 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
       <Html position={[0.7, 0.7, 0.7]}>
         <Point
@@ -197,7 +197,7 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
       ) : (<></>)
         }
 
-{ progressBar[0] >= 30 && progressBar[0] <= 50 || progressBar[0] + progressBar[1] >= 100 ? (
+{ progressBar[0] >= 35 && progressBar[0] < 50 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
       <Html position={[0.7, 0.7, -0.7]}>
         <Point
@@ -237,7 +237,7 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
         }
 
 
-{ progressBar[0] >= 50 && progressBar[0] <= 60 || progressBar[0] + progressBar[1] >= 100 ? (
+{ progressBar[0] >= 50 && progressBar[0] < 65 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
         <Html position={[-0.7, -0.7, -0.7]}>
           <Point
@@ -275,7 +275,7 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
         }
         
 
-        { progressBar[0] >= 60 && progressBar[0] <= 80 || progressBar[0] + progressBar[1] >= 100 ? (
+        { progressBar[0] >= 65 && progressBar[0] <= 80 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
         <Html position={[1.2, 0, 0]}>
           <Point
