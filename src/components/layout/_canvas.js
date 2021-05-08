@@ -317,7 +317,7 @@ const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
 
       <Controls
         enablePan={false}
-        enableZoom={false}
+        enableZoom={true}
         enableDamping={true}
         autoRotate
         autoRotateSpeed={0.5}
