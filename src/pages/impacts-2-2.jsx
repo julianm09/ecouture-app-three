@@ -64,13 +64,13 @@ const Impact = () => {
   const router = useRouter()
 
   const handleClick = (e) => {
-    e.target.style.animation = 'teeShirt 3s linear forwards'
-    document.getElementById('cotton').style.animation = 'cotton 3s linear forwards'
+    e.target.style.animation = 'teeShirt 2s linear forwards'
+    document.getElementById('cotton').style.animation = 'cotton 2s linear forwards'
     
     setTimeout(()=>{
 
       setCompleteTask(true)
-    },3500)
+    },2500)
 
     
   }
@@ -89,7 +89,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/cotton.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program"/>
+      <CompletionCard completeImage="/cotton.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="If your clothing is ruined and no longer wearable, consider donating to your local textile recycling program."/>
 
         <Information>
         Less than 1 percent of fashion materials are recycled into new clothing at the end of their life cycle.
@@ -103,14 +103,14 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>tap to recycle the t-shirt</ResultsUI>
+        <ResultsUI>tap to recycle the t-shirt into cotton</ResultsUI>
 
         <img 
           src='/tee.png'
           onClick={(e) => handleClick(e)}
           style={{
             position:'absolute',
-            width:'350px',
+            width:'30vh',
           }}
         />
 

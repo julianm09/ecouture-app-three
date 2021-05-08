@@ -1,10 +1,18 @@
 import { FormButton } from '../components/FormButton'
 import { SurveyPage } from '../components/survey'
 /* import '../styles/index.module.css' */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function MyApp({}) {
-  const [choices, setChoices] = useState([])
+  const [choices, setChoices] = useState([]);
+  const [waterHeight, setWaterHeight] = useState(5);
+
+  useEffect(() => {
+    
+      setWaterHeight(25)
+
+  }, [])
+
 
   return (
     <>
@@ -14,7 +22,7 @@ export default function MyApp({}) {
         setChoices={setChoices}
         linkTo='/form2'
         page='form1'
-        waterHeight='25'
+        waterHeight={waterHeight}
         buttons={['burnaby', 'vancouver', 'richmond', 'surrey']}
         dialogue=''
         title='Where are you located?'

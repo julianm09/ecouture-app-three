@@ -15,14 +15,15 @@ import {
 export default function MyApp({}) {
   const [choices, setChoices] = useState([])
 
-  let water = 110;
-
+  const [waterHeight, setWaterHeight] = useState(100);
 
   useEffect(() => {
+    
+      setWaterHeight(120)
 
-    water = 0
-    // Update the document title using the browser API
-  });
+  }, [])
+
+  
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function MyApp({}) {
         setChoices={setChoices}
         linkTo='/home'
         page='loading'
-        waterHeight= {water}
+        waterHeight= {waterHeight}
         buttons={['cotton', 'animal', 'plant', 'synthetic']}
         dialogue=''
         logo='/logo-small.png'

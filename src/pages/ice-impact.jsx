@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
 import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
-import '../styles/animation.module.css'
+
 
 const Container = styled.div`
   width: 100vw;

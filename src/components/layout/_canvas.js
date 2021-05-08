@@ -63,37 +63,10 @@ function RimLight({ brightness, color }) {
 const Controls = OrbitControls
 
 
-const ThreeCanvas = ({ hide, setHide }) => {
+const ThreeCanvas = ({ hide, setHide, progress, progressBar }) => {
   const router = useRouter()
 
-  const [progress, setProgress] = useState([false, false, false, false])
 
-
-  useEffect(() => {
-    console.log(progress)
-
-    let score = JSON.parse(localStorage.getItem('score'))
-
-    const completed = () => {
-      if (localStorage.getItem("completed") === null) {
-        return [false, false, false]
-      } else {
-        return JSON.parse(localStorage.getItem('completed'))
-      }
-    }
-
-    setProgress(completed)
-
-    console.log(completed)
-
-
-
-  },[])
-
-
-  let score = JSON.parse(localStorage.getItem('score'))
-
-  
 
   const handleClick = (el) => {
     if(el.target.id == 0){
@@ -112,47 +85,47 @@ const ThreeCanvas = ({ hide, setHide }) => {
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
     } else if (el.target.id == 3){
-      progress[0] = true
+      progress[3] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-2-1')
     } else if (el.target.id == 4){
-      progress[1] = true
+      progress[4] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-2-2')
     } else if (el.target.id == 5){
-      progress[2] = true
+      progress[5] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-2-3')
     } else if (el.target.id == 6){
-      progress[0] = true
+      progress[6] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-3-1')
     } else if (el.target.id == 7){
-      progress[1] = true
+      progress[7] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-3-2')
     } else if (el.target.id == 8){
-      progress[2] = true
+      progress[8] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-3-3')
     } else if (el.target.id == 9){
-      progress[0] = true
+      progress[9] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-4-1')
     } else if (el.target.id == 10){
-      progress[1] = true
+      progress[10] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-4-2')
     } else if (el.target.id == 11){
-      progress[2] = true
+      progress[11] = true
         console.log(progress)
         localStorage.setItem('completed', JSON.stringify(progress))
       router.push('/impacts-4-3')
@@ -183,7 +156,7 @@ const ThreeCanvas = ({ hide, setHide }) => {
       <EarthUI />
 
 
-      { score <= 30 ? (
+      { progressBar[0] <= 30 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
       <Html position={[0.7, 0.7, 0.7]}>
         <Point
@@ -216,23 +189,26 @@ const ThreeCanvas = ({ hide, setHide }) => {
         />
       </Html>
       </>
-      ) : score >= 30 && score <= 50 ? (
+      ) : (<></>)
+        }
+
+{ progressBar[0] >= 30 && progressBar[0] <= 50 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
-      <Html position={[0.9, 0.9, 0.9]}>
+      <Html position={[0.7, 0.7, -0.7]}>
         <Point
           id='3'
           style={{
-            background: progress[0] ? colors.green : 'white',
+            background: progress[3] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           
         />
       </Html>
       
-      <Html position={[-0.9, 0.9, -0.9]}>
+      <Html position={[0.7, -0.7, 0.7]}>
         <Point
           style={{
-            background: progress[1] ? colors.green : 'white',
+            background: progress[4] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           id='4'
@@ -240,11 +216,11 @@ const ThreeCanvas = ({ hide, setHide }) => {
         />
       </Html>
       
-      <Html position={[-0.9, -0.9, 0.9]}>
+      <Html position={[0.7, -0.7, -0.7]}>
         <Point
           style={{
             background: 'white',
-            background: progress[2] ? colors.green : 'white',
+            background: progress[5] ? colors.green : 'white',
           }}
           onClick={(e) => handleClick(e)}
           id='5'
@@ -252,75 +228,84 @@ const ThreeCanvas = ({ hide, setHide }) => {
         />
       </Html>
       </>
-      ) : score >= 50 && score <= 60 ? (
+      ) : (<></>)
+        }
+
+
+{ progressBar[0] >= 50 && progressBar[0] <= 60 || progressBar[0] + progressBar[1] >= 100 ? (
         <>
-      <Html position={[1.1, 1.1, 1.1]}>
-        <Point
-          id='6'
-          style={{
-            background: progress[0] ? colors.green : 'white',
-          }}
-          onClick={(e) => handleClick(e)}
-          
-        />
-      </Html>
-      <Html position={[-1.1, 1.1, -1.1]}>
-        <Point
-          style={{
-            background: progress[1] ? colors.green : 'white',
-          }}
-          id='7'
-          onClick={(e) => handleClick(e)}
-          
-        />
-      </Html>
-      <Html position={[-1.1, -1.1, 1.1]}>
-        <Point
-          style={{
-            background: 'white',
-            background: progress[2] ? colors.green : 'white',
-          }}
-          id='8'
-          onClick={(e) => handleClick(e)}
-          
-        />
-      </Html>
-      </>
-) : (
-  <>
-      <Html position={[1.3, 1.3, 1.3]}>
-        <Point
-          id='9'
-          style={{
-            background: progress[0] ? colors.green : 'white',
-          }}
-          onClick={(e) => handleClick(e)}
-          
-        />
-      </Html>
-      <Html position={[-1.3, 1.3, -1.3]}>
-        <Point
-          style={{
-            background: progress[1] ? colors.green : 'white',
-          }}
-          id='10'
-          onClick={(e) => handleClick(e)}
-          
-        />
-      </Html>
-      <Html position={[-1.3, -1.3, 1.3]}>
-        <Point
-          style={{
-            background: 'white',
-            background: progress[2] ? colors.green : 'white',
-          }}
-          id='11'
-          onClick={(e) => handleClick(e)}
-        />
-      </Html>
-      </>
-)
-      }
+        <Html position={[-0.7, -0.7, -0.7]}>
+          <Point
+            id='6'
+            style={{
+              background: progress[6] ? colors.green : 'white',
+            }}
+            onClick={(e) => handleClick(e)}
+            
+          />
+        </Html>
+        <Html position={[0, -1.2, 0]}>
+          <Point
+            style={{
+              background: progress[7] ? colors.green : 'white',
+            }}
+            id='7'
+            onClick={(e) => handleClick(e)}
+            
+          />
+        </Html>
+        <Html position={[0, 1.2, 0]}>
+          <Point
+            style={{
+              background: 'white',
+              background: progress[8] ? colors.green : 'white',
+            }}
+            id='8'
+            onClick={(e) => handleClick(e)}
+            
+          />
+        </Html>
+        </>  
+      ) : (<></>)
+        }
+        
+
+        { progressBar[0] >= 60 && progressBar[0] <= 80 || progressBar[0] + progressBar[1] >= 100 ? (
+        <>
+        <Html position={[1.2, 0, 0]}>
+          <Point
+            id='9'
+            style={{
+              background: progress[9] ? colors.green : 'white',
+            }}
+            onClick={(e) => handleClick(e)}
+            
+          />
+        </Html>
+        <Html position={[-1.2, 0, 0]}>
+          <Point
+            style={{
+              background: progress[10] ? colors.green : 'white',
+            }}
+            id='10'
+            onClick={(e) => handleClick(e)}
+            
+          />
+        </Html>
+        <Html position={[0, 0, 1.2]}>
+          <Point
+            style={{
+              background: 'white',
+              background: progress[11] ? colors.green : 'white',
+            }}
+            id='11'
+            onClick={(e) => handleClick(e)}
+          />
+        </Html>
+        </>  
+      ) : (<></>)
+        }
+
 
 
 
