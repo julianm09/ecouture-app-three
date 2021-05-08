@@ -1,7 +1,7 @@
 import { FormButton } from '../components/FormButton'
 import { SurveyPage } from '../components/survey'
 /* import '../styles/index.module.css' */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +12,13 @@ import {
 
 export default function MyApp({}) {
   const [choices, setChoices] = useState([])
+  const [waterHeight, setWaterHeight] = useState(60);
+
+  useEffect(() => {
+    
+      setWaterHeight(75)
+
+  }, [])
 
   return (
     <>
@@ -22,7 +29,7 @@ export default function MyApp({}) {
         setChoices={setChoices}
         linkTo='/form5'
         page='form4'
-        waterHeight='75'
+        waterHeight={waterHeight}
         buttons={['1', '2-3', '4-5', '6+']}
         dialogue='Buying used clothing can reduce your carbon footprint.'
       ></SurveyPage>

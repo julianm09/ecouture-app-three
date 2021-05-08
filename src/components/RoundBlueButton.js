@@ -24,8 +24,13 @@ cursor: pointer;
 export const RoundBlueButton = ({
     text = 'Burnaby',
     bgcolor = colors.blue,
-    textcolor = 'white'
+    textcolor = 'white',
 }) => {
+
+    const handleClick = () => {
+        router.push('/results')
+        
+    }
 
     const router = useRouter()
 
@@ -34,7 +39,7 @@ export const RoundBlueButton = ({
         <RoundBlueButtonUI
         bgcolor={bgcolor}
         textcolor={textcolor}
-        onClick = {() => router.push('/results')}
+        onClick = {handleClick}
         >
             {text}
             </RoundBlueButtonUI>

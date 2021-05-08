@@ -105,6 +105,7 @@ const Impact = () => {
     if (count == 3) {
       setCompleteTask(true)
       /* setInstructions('swipe up to see how you can help') */
+      
     }
   }
 

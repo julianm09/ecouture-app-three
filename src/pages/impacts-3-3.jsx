@@ -64,12 +64,12 @@ const Impact = () => {
   const router = useRouter()
 
   const handleClick = (e) => {
-    document.getElementById('ice').style.animation = 'icegrow 3s ease forwards, 5s waves ease infinite'
+    document.getElementById('ice').style.animation = 'icegrow 2s ease forwards, 5s waves ease infinite'
     count++
 
     setTimeout(() => {
       setCompleteTask(true)
-    }, 4000)
+    }, 1500)
   }
 
   const [completeTask, setCompleteTask] = useState(false)

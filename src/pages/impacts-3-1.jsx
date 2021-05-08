@@ -73,13 +73,13 @@ const Impact = () => {
 
 
   const handleClick = (e) => {
-    document.getElementById('tree1').style.animation = 'treedrop 4s ease forwards'
-    document.getElementById('tree2').style.animation = 'treedrop 4s ease forwards 2s'
+    document.getElementById('tree1').style.animation = 'treedrop 2s ease forwards'
+    document.getElementById('tree2').style.animation = 'treedrop 2s ease forwards 1s'
     count++
 
     setTimeout(() => {
       setCompleteTask(true)
-    }, 5500)
+    }, 2500)
   }
 
 
@@ -119,7 +119,7 @@ const Impact = () => {
           position:'absolute',
           bottom:'0vh',
           width:'100%',
-          height:'100%'
+          height:'50%'
         }}
         onClick={(e) => handleClick(e)}
         src='/grass.png'

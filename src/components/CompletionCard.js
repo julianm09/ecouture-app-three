@@ -132,7 +132,7 @@ export const CompletionCard = ({completeTask, completeImage="microfiber.png", co
             {completeFact}
           </CompletionFact>
 
-          <RoundBlueButton text={'more impacts'} />
+          <RoundBlueButton text={'more impacts'}/>
         </CompletionCardUI>
 
 

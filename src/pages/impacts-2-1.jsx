@@ -110,8 +110,9 @@ const Impact = () => {
             position: 'absolute',
             bottom: '0vh',
             width: '100%',
+            height: '50vh',
             zIndex: '0',
-            height: '85vh',
+            
           }}
         />
 

@@ -69,7 +69,7 @@ const Impact = () => {
 
     setTimeout(() => {
       setCompleteTask(true)
-    }, 4000)
+    }, 2000)
   }
 
   const [completeTask, setCompleteTask] = useState(false)
@@ -109,7 +109,7 @@ const Impact = () => {
           position:'absolute',
           bottom:'0vh',
           width:'100%',
-          height:'100%'
+          height:'50%'
         }}
         src='/grass.png'
         />
@@ -128,7 +128,7 @@ const Impact = () => {
           position:'absolute',
           bottom:'10vh',
           height:'40%',
-          left: '15vw',
+          left: '20vw',
           zIndex:'1'
         }}
         src='/building.png'

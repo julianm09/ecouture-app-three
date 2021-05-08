@@ -87,7 +87,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To help lessen water pollution try purchasing clothing from companies that use a carbon based dyeing process"/>
+      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To help lessen water pollution try purchasing clothing from companies that use a carbon based dyeing process."/>
 
         <Information>
         Fashion causes water-pollution problems, too. Textile dyeing is the world’s second-largest polluter of water, since the water leftover from the dyeing process is often dumped into ditches, streams, or rivers.
