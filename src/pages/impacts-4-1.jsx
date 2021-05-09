@@ -100,11 +100,11 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/microfiber.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/bottle-empty.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try bringing unwanted clothing to thrift stores or textile recycling shops as 95% of textiles can be recycled."/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+        Theres a patch of garbage floating in the ocean the size of India, Europe, and Mexico combined.
+
         </Information>
 
         <Menu
@@ -115,7 +115,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>click to clean up the ocean</ResultsUI>
 
         {/* do animations here  */}
 

@@ -117,7 +117,7 @@ const Impact = () => {
   return (
     <>
       <Container>
-        <CompletionCard completeImage="/microfiber.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+        <CompletionCard completeImage="/microfiber.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
           
         <Information>
           U.S. and Canadian households release over 870 tons of plastic
@@ -132,7 +132,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>click to pick up the microfibers from the ocean</ResultsUI>
 
         <Plastic
           src='/microfiber.png'

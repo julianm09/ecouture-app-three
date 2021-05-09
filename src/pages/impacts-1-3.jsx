@@ -86,12 +86,11 @@ const Impact = () => {
     <>
       <Container>
 
-      <CompletionCard completeImage="/grey-cloud.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/factory.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try purchasing clothing made from recycled materials to avoid adding to emissions."/>
 
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+        Clothing is one of the leading drivers of climate change, responsible for 8% of all carbon emissions more than all international flights combined.
         </Information>
 
         <Menu
@@ -102,7 +101,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>click the smoke to lessen emissions.</ResultsUI>
 
 
         <div

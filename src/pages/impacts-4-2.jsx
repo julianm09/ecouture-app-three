@@ -89,11 +89,10 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/water-drop.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+      <CompletionCard completeImage="/water-drop.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Avoid purchasing clothing made of cotton as cotton requires more water to dye than other textiles."/>
 
         <Information>
-          U.S. and Canadian households release over 870 tons of plastic
-          microfibers into the ocean every year from laundry alone.
+        The dyeing process used to dye textiles is enough water to fill 2 million Olympic-sized swimming pools each year.
         </Information>
 
         <Menu
@@ -104,7 +103,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click to pick up the microfibers from the ocean</ResultsUI>
+        <ResultsUI>Click to turn off the tap.</ResultsUI>
 
         {/* do animations here  */}
 

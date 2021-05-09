@@ -103,7 +103,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>tap to clear the landfill</ResultsUI>
+        <ResultsUI>click to clear the landfill</ResultsUI>
 
         <img
           src='/grass.png'

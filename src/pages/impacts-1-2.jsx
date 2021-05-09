@@ -121,7 +121,7 @@ const Impact = () => {
     <>
       <Container>
    
-        <CompletionCard completeImage="/bottle-filled.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
+        <CompletionCard completeImage="/bottle-filled.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To help lessen water usage try washing your clothes in bigger batches and less often."/>
 
 
         <Information>
@@ -136,7 +136,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>Click up to fill bottle</ResultsUI>
+        <ResultsUI>click up to fill bottle</ResultsUI>
 
         <img
           onClick={handleClick}
