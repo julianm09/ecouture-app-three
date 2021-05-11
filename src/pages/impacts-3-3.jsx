@@ -87,7 +87,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/iceberg.png" completeTask={completeTask} completeMessage="You've unlocked a task!" completeFact="Try to compose a majority of your wardrobe from used clothing, as the fashion industry contributes more than 10% of global carbon emissions annually."/>
+      <CompletionCard completeImage="/iceberg.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try to compose a majority of your wardrobe from used clothing, as the fashion industry contributes more than 10% of global carbon emissions annually."/>
 
         <Information>
           In the last 25 years, our Earth has lost 28 trillion tonnes of ice.
