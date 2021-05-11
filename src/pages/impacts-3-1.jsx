@@ -98,7 +98,7 @@ const Impact = () => {
 
       {/* change image here  */}
 
-      <CompletionCard completeImage="/tree.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try to not buy clothing made from rayon or viscose, as these fibers are almost completely constucted from wood pulp."/>
+      <CompletionCard completeImage="/tree.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try to not buy clothing made from rayon or viscose, as these fibres are almost completely constructed from wood pulp."/>
 
         <Information>
           70 million trees are cut down each year to make our clothes.
