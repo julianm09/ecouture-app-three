@@ -24,23 +24,27 @@ export const Container = styled.div`
 `
 export const CompletionCardUI = styled.div`
   width: 90vw;
-  height: 70vh;
+  height: 75vh;
   background: ${colors.blue};
-  top: 15vw;
+
   z-index: 1000;
   border-radius: 10px;
   border: 1px solid white;;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.5vh 0;
+  padding: 5vh 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   flex-direction: column;
   transition: 0.5s ease;
   position: absolute; 
   left: 5vw;
-  top: 2.5vh;
+  top: 5vh;
   z-index: 10000000;
+
+  @media (max-width: 400px) {
+    height: 70vh;
+  }
   
 `
 
@@ -63,8 +67,8 @@ export const CompletionFact = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   font-family: Nunito;
   text-align: center;
 `
@@ -119,10 +123,11 @@ border-radius: 10px;
 background-color: ${colors.green};
 margin-top: 20px;
 font-family: 'Nunito',sans-serif;
-font-size: 18;
+font-size: 16px;
 color: white;
 border: 1px solid white;
 display: flex;
+font-weight: 700;
 justify-content: center;
 align-items: center;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

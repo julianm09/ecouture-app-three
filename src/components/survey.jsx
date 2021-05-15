@@ -11,6 +11,7 @@ import { FormButton } from "./FormButton";
 import Wave from "react-wavify";
 import { useRouter } from 'next/router'
 import {colors} from './color'
+import { Menu } from "./Menu";
 
 
 
@@ -160,16 +161,13 @@ export const SurveyPage = ({
     <SurveyPageUI>
       {page == 'home' ? (<Instructions style={{transform: hideInstruction ? 'translateY(-100vh)' : 'translateY(0)'}} onClick={() => setHideInstruction(!hideInstruction)}>
         <img src="logo-small.png"/>
-        <p>At ecouture our mission is to raise awarenesss around clothing sustainability through interactive and memorable experiences.</p>
-        <StartButton onClick={() => setHideInstruction(!hideInstruction)}>Got it</StartButton>
-        <p>created by: <br></br>Julian Mayes, Saihahj Gil, Jurgen Albanel, Jesse Welk</p>
+        <p style={{width:'80%'}}>At ecouture our mission is to raise awarenesss around the sustainability of clothing through interactive and memorable experiences.</p>
+        <StartButton onClick={() => setHideInstruction(!hideInstruction)}>got it</StartButton>
+        <p style={{width:'80%'}}><strong>Created by: </strong><br></br>Julian Mayes, Saihaj Gill, <br></br> Jurgen Albanel, Jesse Welk</p>
       </Instructions>) : (<></>)}
+      <Menu logo={logo} hideMenu={true} iconColor={colors.blue} backButton={page == 'home' ? false : true}/>
       <LogoUI>
-        <img 
-        style={{
-          
-        }}
-        src={logo} />
+
       </LogoUI>
 
       <TitleContainerUI style={{

@@ -4,7 +4,22 @@ import { colors } from '../components/color'
 import { FiberButtonContainer } from '../components/FiberButtonContainer'
 import { StoreContainer } from '../components/StoreContainer'
 import { MaterialButtonSlider } from '../components/MaterialButtonSlider'
-import { StoreText } from '@/components/StoreText'
+import { StoreText } from '@/components/StoreText';
+import styled from 'styled-components'
+
+const HeaderUI = styled.div`
+
+font-family: Nunito;
+font-weight: 700;
+font-size: 24px;
+color: white;
+padding: 0 0 50px 0;
+
+text-align left;
+width: 90vw;
+
+
+`
 
 const Materials = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
   const [changePage, setChangePage] = useState('cotton')
@@ -30,6 +45,8 @@ const Materials = ({ pageColor = colors.teal, fiberName = 'Cotton' }) => {
       <Menu />
 
       <div id='spacer' style={{ height: '150px' }}></div>
+
+      <HeaderUI>Select a material type</HeaderUI>
 
       <FiberButtonContainer changePage={changePage} setChangePage={setChangePage} />
 

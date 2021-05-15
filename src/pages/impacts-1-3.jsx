@@ -51,6 +51,7 @@ const ResultsUI = styled.div`
   font-family: Nunito;
   z-index: 500;
   animation: 5s blink-1 infinite;
+  text-align: center;
 `
 
 

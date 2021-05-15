@@ -25,9 +25,9 @@ export const Container = styled.div`
 `
 export const CompletionCardUI = styled.div`
   width: 90vw;
-  height: 80vh;
+  height: 90vh;
   background: white;
-  top: 15vw;
+  top: 5vh;
   z-index: 1000;
   border-radius: 25px;
   border: 1px solid ${colors.blue};
@@ -40,7 +40,7 @@ export const CompletionCardUI = styled.div`
   transition: 0.5s ease;
   position: absolute; 
   left: 5vw;
-  top: 10vh;
+  
   z-index: 1000000;
 `
 
@@ -61,8 +61,8 @@ export const CompletionFact = styled.div`
   align-items: center;
   justify-content: center;
   color: ${colors.blue};
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   font-family: Nunito;
   text-align: center;
 `

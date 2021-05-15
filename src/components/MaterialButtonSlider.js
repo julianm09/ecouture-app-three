@@ -31,7 +31,7 @@ const ScrollContainerUI = styled.div`
 padding: 0 0 0 5vw;
 overflow-x: scroll;
 height: 300px;
-margin: 0 5vw 0 0;
+
 
 
 &::-webkit-scrollbar {

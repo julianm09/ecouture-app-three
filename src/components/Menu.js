@@ -98,7 +98,7 @@ cursor: pointer;
 
 
 
-export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white', three=false, backButton=true }) => {
+export const Menu = ({ hideMenu = false, hide=false, setHide=false, menuColor='transparent', logo='/logo-small.png', iconColor='white', three=false, backButton=true }) => {
 
 
     const router = useRouter()
@@ -138,16 +138,16 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
         <IconUI>
 
           
-            {menuActive ? (  
+            {menuActive && !hideMenu ? (  
             <Icon.X 
             onClick={handleClick}/>
-            ) : (            
+            ) : !menuActive && !hideMenu ? (            
             <Icon.Menu 
             style={{
                 color:iconColor
             }}
             onClick={handleClick}/>
-            )}
+            ) : <></>}
 
         </IconUI>
     </NavBarUI>
@@ -160,7 +160,7 @@ export const Menu = ({ hide=false, setHide=false, menuColor='transparent', logo=
 
         <LinkUI onClick={()=> router.push('/results')}>Back to Earth</LinkUI>
         <LinkUI onClick={()=> router.push('/shops')}>Sustainable Stores</LinkUI>
-        <LinkUI onClick={()=> router.push('/materials')}>Materials</LinkUI>
+        <LinkUI onClick={()=> router.push('/materials')}>Learn about Materials</LinkUI>
         <LinkUI onClick={()=> router.push('/home')}>Retake Eco Test</LinkUI>
 {/*         <LinkUI onClick={()=> router.push('/learn')}>Learn</LinkUI>
  */}
