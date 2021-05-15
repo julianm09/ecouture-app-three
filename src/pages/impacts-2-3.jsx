@@ -9,6 +9,7 @@ import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton'
 import {CompletionCard} from '../components/CompletionCard'
+import { Loader } from '@/components/Loader'
 
 const Container = styled.div`
   width: 100vw;
@@ -49,7 +50,7 @@ const ResultsUI = styled.div`
   color: white;
   font-family: Nunito;
   z-index: 500;
-  animation: 3s blink infinite;
+  animation: 5s blink-1 infinite;
 `
 
 
@@ -84,6 +85,7 @@ const Impact = () => {
 
   return (
     <>
+    <Loader/>
       <Container>
 
       {/* change image here  */}
@@ -124,6 +126,8 @@ const Impact = () => {
           width: '30vh',
   
           animation: 'oilDrum 1s linear infinite',
+          cursor: 'pointer',
+
         }}
         />
 
@@ -137,6 +141,8 @@ const Impact = () => {
             marginLeft: '150px',
             zIndex: '1',
             animation: 'oilTwoFloat 3s ease infinite',
+            cursor: 'pointer',
+
 
           }}
         />
@@ -151,6 +157,8 @@ const Impact = () => {
             marginLeft: '-50px',
             zIndex: '200',
             animation: 'oilFloat 10s ease infinite',
+            cursor: 'pointer',
+
           }}
         />
         

@@ -9,6 +9,7 @@ import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton'
 import {CompletionCard} from '../components/CompletionCard'
+import { Loader } from '@/components/Loader'
 
 const Container = styled.div`
   width: 100vw;
@@ -49,7 +50,7 @@ const ResultsUI = styled.div`
   color: white;
   font-family: Nunito;
   z-index: 500;
-  animation: 3s blink infinite;
+  animation: 5s blink-1 infinite;
 `
 
 
@@ -85,6 +86,7 @@ const Impact = () => {
 
   return (
     <>
+    <Loader/>
       <Container>
 
       {/* change image here  */}
@@ -126,6 +128,8 @@ const Impact = () => {
             marginLeft: '-70px',
             marginTop: '25px',
             zIndex: '1',
+            cursor: 'pointer',
+
           }}
         />
 
@@ -138,6 +142,8 @@ const Impact = () => {
             marginLeft: '70px',
             marginTop: '30px',
             zIndex: '1',
+            cursor: 'pointer',
+
           }}
         />
 
@@ -149,6 +155,8 @@ const Impact = () => {
             width:'250px',
             marginTop: '15px',
             zIndex: '1',
+            cursor: 'pointer',
+
           }}
         />
 
@@ -161,6 +169,8 @@ const Impact = () => {
             marginLeft: '-100px',
             width:'250px',
             zIndex: '1',
+            cursor: 'pointer',
+
           }}
         />
 
@@ -173,6 +183,8 @@ const Impact = () => {
             marginLeft: '100px',
             width:'250px',
             zIndex: '1',
+            cursor: 'pointer',
+
           }}
         />
 
@@ -184,6 +196,8 @@ const Impact = () => {
             marginTop: '155px',
             width:'250px',
             zIndex: '1',
+            cursor: 'pointer',
+
           }}
         />
 

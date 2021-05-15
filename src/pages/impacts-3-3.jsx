@@ -9,6 +9,7 @@ import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton'
 import {CompletionCard} from '../components/CompletionCard'
+import { Loader } from '../components/Loader'
 
 const Container = styled.div`
   width: 100vw;
@@ -49,7 +50,7 @@ const ResultsUI = styled.div`
   color: white;
   font-family: Nunito;
   z-index: 500;
-  animation: 3s blink infinite;
+  animation: 5s blink-1 infinite;
 `
 
 
@@ -83,6 +84,7 @@ const Impact = () => {
 
   return (
     <>
+    <Loader/>
       <Container>
 
       {/* change image here  */}
@@ -101,7 +103,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>click to make the ice come back</ResultsUI>
+        <ResultsUI style={{color: colors.blue}}>click to bring back the ice</ResultsUI>
 
         {/* do animations here  */}
 
@@ -140,6 +142,7 @@ const Impact = () => {
               maxHeight:'800px',
               height: '50%',
               animation: '5s waves ease infinite',
+              cursor: 'pointer'
             }}
           src='/iceberg.png'
           id='ice'

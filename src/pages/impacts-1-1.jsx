@@ -9,6 +9,7 @@ import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton';
 import { CompletionCard } from '../components/CompletionCard'
+import { Loader } from '@/components/Loader'
 
 export const Container = styled.div`
   width: 100vw;
@@ -73,7 +74,7 @@ export const ResultsUI = styled.div`
   color: ${colors.blue};
   font-family: Nunito;
   z-index: 500;
-  animation: 3s blink infinite;
+  animation: 5s blink-1 infinite;
 `
 
 const Plastic = styled.img`
@@ -116,6 +117,7 @@ const Impact = () => {
 
   return (
     <>
+    <Loader/>
       <Container>
         <CompletionCard completeImage="/microfiber.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
           

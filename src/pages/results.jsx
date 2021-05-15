@@ -1,7 +1,5 @@
 import ThreeCanvas from '../components/layout/_canvas'
-
 import { Menu } from '../components/Menu'
-/* import '../styles/index.module.css'*/
 import React, { useState, useEffect } from 'react'
 import { colors } from '@/components/color'
 import styled from 'styled-components'
@@ -16,7 +14,6 @@ const Container = styled.div`
   z-index: 0;
   display: flex;
   justify-content: center;
-	
 `
 
 const Score = styled.div`
@@ -39,7 +36,6 @@ const Score = styled.div`
   height: 5vh;
   z-index: 0;
   padding: 0 5vw 0 5vw;
-  
   transition: 0s ease;
 
   &:hover {
@@ -138,7 +134,6 @@ const TipImage = styled.img`
 const FactUI = styled.div`
 width: 50%;
 text-align: center;
-
 `
 
 const Results = () => {
@@ -341,9 +336,9 @@ const Results = () => {
 
             <Tip position={0} progress={progress} image='/microfiber.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
-            <Tip position={1} progress={progress} image='/bottle-empty.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Beans"/>
+            <Tip position={1} progress={progress} image='/bottle-empty.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To help lessen water usage try washing your clothes in bigger batches and less often."/>
 
-            <Tip position={2} progress={progress} image='/factory.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={2} progress={progress} image='/factory.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try purchasing clothing made from recycled materials to avoid adding to carbon emissions."/>
            
             <Tip position={3} progress={progress} image='/garbage.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
 
@@ -357,11 +352,11 @@ const Results = () => {
 
             <Tip position={8} progress={progress} image='/iceberg.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try to compose a majority of your wardrobe from used clothing, as the fashion industry contributes more than 10% of global carbon emissions annually."/>
 
-            <Tip position={9} progress={progress} image='/grey-cloud.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={9} progress={progress} image='/grey-cloud.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try bringing unwanted clothing to thrift stores or textile recycling shops as 95% of textiles can be recycled."/>
            
-            <Tip position={10} progress={progress} image='/water-drop.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={10} progress={progress} image='/water-drop.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Avoid purchasing clothing made of cotton as cotton requires more water to dye than other textiles."/>
 
-            <Tip position={11} progress={progress} image='/sheep.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
+            <Tip position={11} progress={progress} image='/sheep.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Hemp is a natural, biodegradable material which doesn't require pesticides to grow and is a great alternative to wool."/>
 
           </TipsContainer>
         </ScoreInfo>

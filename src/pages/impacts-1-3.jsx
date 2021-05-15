@@ -9,6 +9,7 @@ import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton'
 import {CompletionCard} from '../components/CompletionCard'
+import { Loader } from '@/components/Loader'
 
 const Container = styled.div`
   width: 100vw;
@@ -49,7 +50,7 @@ const ResultsUI = styled.div`
   color: white;
   font-family: Nunito;
   z-index: 500;
-  animation: 3s blink infinite;
+  animation: 5s blink-1 infinite;
 `
 
 
@@ -84,9 +85,10 @@ const Impact = () => {
 
   return (
     <>
+    <Loader/>
       <Container>
 
-      <CompletionCard completeImage="/factory.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try purchasing clothing made from recycled materials to avoid adding to emissions."/>
+      <CompletionCard completeImage="/factory.png" completeTask={completeTask} completeMessage="You've unlocked a tip!" completeFact="Try purchasing clothing made from recycled materials to avoid adding to carbon emissions."/>
 
 
         <Information>

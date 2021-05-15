@@ -268,7 +268,7 @@
 
  @keyframes teeShirt {
    from{
-     width: 350px;
+     width: 30vh;
      transform: rotate(0deg);
    }
 
@@ -288,4 +288,13 @@
      width: 30vh;
      transform:rotate(0deg);
    }
+ }
+
+ @keyframes spin {
+   from{
+     transform: rotate(0);
+   }
+   to{
+    transform: rotate(360deg);
+  }
  }

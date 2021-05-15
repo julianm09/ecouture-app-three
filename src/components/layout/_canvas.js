@@ -13,11 +13,11 @@ const Point = styled.div`
   width: 25px;
   height: 25px;
   background: white;
-  border-radius 50% 50% 50% 0;
+  border-radius 50%;
   cursor: pointer;
   border: 1px solid ${colors.green};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform rotate(-45deg);
+
   
 `
 

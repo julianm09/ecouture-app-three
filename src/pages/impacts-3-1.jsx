@@ -9,6 +9,7 @@ import Wave from 'react-wavify'
 import { useRouter } from 'next/router'
 import { RoundBlueButton } from '@/components/RoundBlueButton'
 import {CompletionCard} from '../components/CompletionCard'
+import { Loader } from '@/components/Loader'
 
 const Container = styled.div`
   width: 100vw;
@@ -49,7 +50,7 @@ const ResultsUI = styled.div`
   color: white;
   font-family: Nunito;
   z-index: 500;
-  animation: 3s blink infinite;
+  animation: 5s blink-1 infinite;
 `
 
 const Tree = styled.img`
@@ -94,6 +95,7 @@ const Impact = () => {
 
   return (
     <>
+    <Loader/>
       <Container>
 
       {/* change image here  */}
@@ -112,7 +114,7 @@ const Impact = () => {
           three={true}
         />
 
-        <ResultsUI>click to plant more trees</ResultsUI>
+        <ResultsUI>click on the grass to plant more trees</ResultsUI>
 
         {/* do animations here  */}
 
@@ -120,7 +122,9 @@ const Impact = () => {
           position:'absolute',
           bottom:'0vh',
           width:'100%',
-          height:'50%'
+          height:'50%',
+          cursor: 'pointer',
+
         }}
         onClick={(e) => handleClick(e)}
         src='/grass.png'
@@ -130,7 +134,9 @@ const Impact = () => {
           position:'absolute',
           bottom:'20vh',
           height:'40%',
-          zIndex:'1'
+          zIndex:'1',
+          cursor: 'pointer',
+
         }}
         onClick={(e) => handleClick(e)}
         src='/tree.png'
@@ -141,7 +147,9 @@ const Impact = () => {
           bottom:'30vh',
           height:'30%',
           left:'50vw',
-          zIndex:'0'
+          zIndex:'0',
+          cursor: 'pointer',
+
         }}
         onClick={(e) => handleClick(e)}
         src='/tree.png'
@@ -152,7 +160,9 @@ const Impact = () => {
           bottom:'35vh',
           height:'28%',
           right:'50vw',
-          zIndex:'0'
+          zIndex:'0',
+          cursor: 'pointer',
+
         }}
         onClick={(e) => handleClick(e)}
         src='/tree.png'

@@ -21,6 +21,7 @@ export const Container = styled.div`
   position: absolute; 
   left: 10vw;
   
+  
 `
 export const CompletionCardUI = styled.div`
   width: 90vw;
@@ -40,6 +41,7 @@ export const CompletionCardUI = styled.div`
   position: absolute; 
   left: 5vw;
   top: 10vh;
+  z-index: 1000000;
 `
 
 export const CompletionInformation = styled.div`
