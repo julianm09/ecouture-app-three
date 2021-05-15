@@ -8,14 +8,15 @@ import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
 import * as Icon from 'react-feather';
 import { Tip } from '../components/Tip'
+import { CheckpointCard } from '../components/CheckpointCard'
 
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background: ${colors.blue};
   z-index: 0;
   display: flex;
   justify-content: center;
+	
 `
 
 const Score = styled.div`
@@ -145,6 +146,8 @@ const Results = () => {
     setScoreCardExpand(!scoreCardExpand)
   }
 
+  const [count, setCount] = useState(null)
+
   const [scoreCardExpand, setScoreCardExpand] = useState(false)
 
   const [progress, setProgress] = useState([false, false, false, false, false, false, false, false, false, false, false, false])
@@ -179,6 +182,8 @@ const Results = () => {
 
     localStorage.setItem('count', count)
 
+    setCount(count)
+
     setProgressBar([score, ((100 - score) / 3) * number])
   }, [])
 
@@ -198,7 +203,7 @@ const Results = () => {
   const [hide, setHide] = useState(false)
   console.log('progress bar', progressBar)
   return (
-    <Container>
+    <Container style={{background: count == 12 ? 'linear-gradient(-45deg, #3884FF, #51B27E)' : colors.blue}}>
       <Menu
         hide={hide}
         setHide={setHide}
@@ -210,7 +215,12 @@ const Results = () => {
 
       <ResultsUI>click the points to see your impact on the earth</ResultsUI>
 
-      
+      { count == 0 ? <CheckpointCard completeImage="/earth.png" completeMessage="Your Eco Score Could be Better.." completeFact="The recent increase in fast fashion has polluted our air and water. Complete the tasks to increase your score and bring the stars back!"/> : <></> }
+
+      { count == 3 ? <CheckpointCard completeImage="/earth.png" completeMessage="You brought the stars back!" completeFact="Complete more tasks to unlock more tips or check out our other resources."/> : <></> }
+
+      { count == 12 ? <CheckpointCard completeImage="/earth.png" completeMessage="You've completed all the tasks!" completeFact="Share this with your friends and check out our resources!"/> : <></> }
+
       <ThreeCanvas
         r3f
         hide={hide}
@@ -312,11 +322,12 @@ const Results = () => {
               alignItems: 'center' 
             }}
           >
+            
             <p style={{
               position: 'absolute',
               animation: 'blink 6s ease infinite',
       
-            }}>Your Eco score could be better</p>
+            }}>{count < 3 ? 'Your Eco Score Could be Better' : 'Your Eco Score is Complete!'}</p>
             <p style={{
               position: 'absolute',
               animation: 'blink 6s ease infinite',
@@ -330,9 +341,9 @@ const Results = () => {
 
             <Tip position={0} progress={progress} image='/microfiber.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To reduce the microfibers you produce, buy natural textiles and try washing less with cool water."/>
 
-            <Tip position={1} progress={progress} image='/bottle-empty.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To help lessen water usage try washing your clothes in bigger batches and less often."/>
+            <Tip position={1} progress={progress} image='/bottle-empty.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Beans"/>
 
-            <Tip position={2} progress={progress} image='/factory.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try purchasing clothing made from recycled materials to avoid adding to emissions."/>
+            <Tip position={2} progress={progress} image='/factory.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
            
             <Tip position={3} progress={progress} image='/garbage.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="To lessen the amount of textiles populating landfills try donating your clothes to thrift stores, where they can be reused and recycled instead."/>
 
@@ -346,11 +357,11 @@ const Results = () => {
 
             <Tip position={8} progress={progress} image='/iceberg.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try to compose a majority of your wardrobe from used clothing, as the fashion industry contributes more than 10% of global carbon emissions annually."/>
 
-            <Tip position={9} progress={progress} image='/grey-cloud.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Try bringing unwanted clothing to thrift stores or textile recycling shops as 95% of textiles can be recycled."/>
+            <Tip position={9} progress={progress} image='/grey-cloud.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
            
-            <Tip position={10} progress={progress} image='/water-drop.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Avoid purchasing clothing made of cotton as cotton requires more water to dye than other textiles."/>
+            <Tip position={10} progress={progress} image='/water-drop.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
 
-            <Tip position={11} progress={progress} image='/sheep.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="Hemp is a natural, biodegradable material which doesn't require pesticides to grow and is a great alternative to wool."/>
+            <Tip position={11} progress={progress} image='/sheep.png' setShowFact={setShowFact} showFact={showFact} setFact={setFact} tip="you need beans"/>
 
           </TipsContainer>
         </ScoreInfo>
