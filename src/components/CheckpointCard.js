@@ -53,6 +53,8 @@ export const CompletionInformation = styled.div`
   font-size: 18px;
   font-weight: 700;
   font-family: Nunito;
+  text-align: center;
+
 `
 
 export const CompletionFact = styled.div`

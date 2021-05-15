@@ -13,7 +13,7 @@ const TotalContainer = styled.div`
 
 display: flex;
 flex-direction: column;
-
+width:90vw;
 
 `
 
