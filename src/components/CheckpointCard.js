@@ -24,7 +24,7 @@ export const Container = styled.div`
 `
 export const CompletionCardUI = styled.div`
   width: 90vw;
-  height: 80vh;
+  height: 70vh;
   background: ${colors.blue};
   top: 15vw;
   z-index: 1000;
@@ -33,7 +33,7 @@ export const CompletionCardUI = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5vh 0 5vh 0;
+  padding: 2.5vh 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   flex-direction: column;
   transition: 0.5s ease;
