@@ -110,7 +110,7 @@ const Instructions = styled.div`
   flex-direction: column;
   text-align: center;
   padding: 20vh 0;
-  transition: 0.7s ease-out;
+ 
 
   `
 
