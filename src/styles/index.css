@@ -298,3 +298,20 @@
     transform: rotate(360deg);
   }
  }
+
+
+ @keyframes jump {
+  from{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(25px);
+  }
+
+  to{
+    transform: translateY(0);
+ }
+}
+
+ 

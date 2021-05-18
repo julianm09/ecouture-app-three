@@ -12,6 +12,7 @@ import Wave from "react-wavify";
 import { useRouter } from 'next/router'
 import {colors} from './color'
 import { Menu } from "./Menu";
+import { Calculating } from "./Calculating";
 
 
 
@@ -110,7 +111,6 @@ const Instructions = styled.div`
   flex-direction: column;
   text-align: center;
   padding: 20vh 0;
- 
 
   `
 
@@ -153,13 +153,13 @@ export const SurveyPage = ({
     if (page == "loading") {
       setTimeout(() => {
         router.push("/results");
-      }, 2000);
+      }, 3000);
     }
   });
 
   return (
     <SurveyPageUI>
-      {page == 'home' ? (<Instructions style={{transform: hideInstruction ? 'translateY(-100vh)' : 'translateY(0)'}} onClick={() => setHideInstruction(!hideInstruction)}>
+      {page == 'home' ? (<Instructions style={{transition: hideInstruction ? '0.7s ease-out' : 'none', transform: hideInstruction ? 'translateY(-100vh)' : 'translateY(0)'}}>
         <img src="logo-small.png"/>
         <p style={{width:'80%'}}>At ecouture our mission is to raise awarenesss around the sustainability of clothing through interactive and memorable experiences.</p>
         <StartButton onClick={() => setHideInstruction(!hideInstruction)}>got it</StartButton>
@@ -175,7 +175,7 @@ export const SurveyPage = ({
       }}>{title}</TitleContainerUI>
 
       {page == "loading" ? (
-        <Loading>calculating your score...</Loading>
+        <Loading><Calculating/></Loading>
       ) : (
         <>
           <ButtonContainerUI>
@@ -212,9 +212,6 @@ export const SurveyPage = ({
           points: 3,
         }}
       />
-
-
-
 
 
     </SurveyPageUI>

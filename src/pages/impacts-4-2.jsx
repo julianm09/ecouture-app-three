@@ -68,7 +68,7 @@ const Impact = () => {
   const router = useRouter()
 
   const handleClick = (e) => {
-    e.target.style.display = 'none'
+    document.getElementById('drip').style.display = 'none'
     count++
 
     if (count == 1) {
@@ -119,6 +119,8 @@ style={{
   position: 'relative'
 }}>
         <img
+
+onClick={handleClick}
           
           style={{
             
@@ -131,6 +133,7 @@ style={{
         />
 
         <img
+        id="drip"
           onClick={handleClick}
           style={{
             position: 'absolute',

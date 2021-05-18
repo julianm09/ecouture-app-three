@@ -133,13 +133,17 @@ export const Menu = ({ hideMenu = false, hide=false, setHide=false, menuColor='t
 )}
 
 
-        {menuActive ? <img onClick={() => router.push('/results')} src='/logo-small.png'/> : <img onClick={() => router.push('/results')} src={logo}/>}
+        {menuActive ? <img onClick={() => router.push('/results')} src='/logo-small-blue.png'/> : <img onClick={() => router.push('/results')} src={logo}/>}
 
         <IconUI>
 
           
             {menuActive && !hideMenu ? (  
             <Icon.X 
+            style={{
+                color:colors.blue
+            }}
+            
             onClick={handleClick}/>
             ) : !menuActive && !hideMenu ? (            
             <Icon.Menu 
@@ -155,15 +159,16 @@ export const Menu = ({ hideMenu = false, hide=false, setHide=false, menuColor='t
                 
     <MenuUI
     style={{
-        background: colors.blue
+        background: 'white'
     }}>
 
-        <LinkUI onClick={()=> router.push('/results')}>Back to Earth</LinkUI>
-        <LinkUI onClick={()=> router.push('/shops')}>Sustainable Stores</LinkUI>
-        <LinkUI onClick={()=> router.push('/materials')}>Learn about Materials</LinkUI>
-        <LinkUI onClick={()=> router.push('/home')}>Retake Eco Test</LinkUI>
+        <LinkUI style={{ color: colors.blue}} onClick={()=> router.push('/results')}>back to earth</LinkUI>
+        <LinkUI style={{ color: colors.green}} onClick={()=> router.push('/shops')}>sustainable stores</LinkUI>
+        <LinkUI style={{ color: colors.orange}} onClick={()=> router.push('/materials')}>learn about materials</LinkUI>
+        <LinkUI style={{ color: colors.cyan}} target="_blank" href="https://taigomayes.github.io/ecouture-infographic/pages/nav.html">check out our infographic</LinkUI>
+        <LinkUI style={{ color: colors.purple}} onClick={()=> router.push('/home')}>retake eco test</LinkUI>
 {/*         <LinkUI onClick={()=> router.push('/learn')}>Learn</LinkUI>
- */}
+ 
         <SocialUI>
             <SocialLinkUI>
                 <Icon.Instagram />
@@ -172,6 +177,8 @@ export const Menu = ({ hideMenu = false, hide=false, setHide=false, menuColor='t
                 <Icon.Facebook />
             </SocialLinkUI>
         </SocialUI>
+
+        */}
 
         <style jsx global>{`
 

@@ -12,7 +12,6 @@ import { useRouter } from 'next/router'
 const ButtonUI = styled.div`
   width: 90vw;
   height: 50px;
-
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
