@@ -1,2 +1,3 @@
-This project was bootstrapped with [`create-r3f-app`](https://github.com/RenaudROHLINGER/create-r3f-app)
+View here: https://www.ecouture.ca/
+Ecouture is a interactive web app created to bring awarness to the sustainability of fast fashion.
 
